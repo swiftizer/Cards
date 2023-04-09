@@ -1,0 +1,734 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B339619229E2183F006DEDDD /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339619129E2183F006DEDDD /* extensions.swift */; };
+		B339619529E21959006DEDDD /* CardSetMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339619329E21959006DEDDD /* CardSetMO+CoreDataClass.swift */; };
+		B339619629E21959006DEDDD /* CardSetMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339619429E21959006DEDDD /* CardSetMO+CoreDataProperties.swift */; };
+		B339619829E228DA006DEDDD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339619729E228DA006DEDDD /* CoreDataManager.swift */; };
+		B339619A29E2BB85006DEDDD /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339619929E2BB85006DEDDD /* FileManager.swift */; };
+		B339619D29E2E2A6006DEDDD /* CardMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339619B29E2E2A6006DEDDD /* CardMO+CoreDataClass.swift */; };
+		B339619E29E2E2A6006DEDDD /* CardMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339619C29E2E2A6006DEDDD /* CardMO+CoreDataProperties.swift */; };
+		B350D22629C904EB0026B934 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B350D22529C904EB0026B934 /* AppDelegate.swift */; };
+		B350D22829C904EB0026B934 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B350D22729C904EB0026B934 /* SceneDelegate.swift */; };
+		B350D22A29C904EB0026B934 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B350D22929C904EB0026B934 /* ViewController.swift */; };
+		B350D22F29C904EC0026B934 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B350D22E29C904EC0026B934 /* Assets.xcassets */; };
+		B350D23229C904EC0026B934 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B350D23029C904EC0026B934 /* LaunchScreen.storyboard */; };
+		B350D23E29C90FEF0026B934 /* ControllerInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = B350D23D29C90FEF0026B934 /* ControllerInterfaces.swift */; };
+		B350D24029C9100D0026B934 /* RepositoryInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = B350D23F29C9100D0026B934 /* RepositoryInterfaces.swift */; };
+		B350D24229C910850026B934 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B350D24129C910850026B934 /* Models.swift */; };
+		B374877229D8780200CECD41 /* DataBasePPOCards.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B374877029D8780200CECD41 /* DataBasePPOCards.xcdatamodeld */; };
+		B376BC0129D343B000BBB524 /* PPOCardControllerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B376BC0029D343B000BBB524 /* PPOCardControllerUnitTests.swift */; };
+		B376BC0829D5FCEC00BBB524 /* PPOCardSetControllerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B376BC0729D5FCEC00BBB524 /* PPOCardSetControllerUnitTests.swift */; };
+		B376BC0A29D5FD0000BBB524 /* PPOSettingsUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B376BC0929D5FD0000BBB524 /* PPOSettingsUnitTests.swift */; };
+		B378FD9929E3102900879570 /* PPOCardSetRepositoryIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B378FD9829E3102900879570 /* PPOCardSetRepositoryIntegrationTests.swift */; };
+		B378FDA029E31E4100879570 /* PPOCardRepositoryIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B378FD9F29E31E4100879570 /* PPOCardRepositoryIntegrationTests.swift */; };
+		B378FDA229E321CF00879570 /* PPOSettingsRepositoryIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B378FDA129E321CF00879570 /* PPOSettingsRepositoryIntegrationTests.swift */; };
+		B378FDA429E324B700879570 /* CoreDataCardSetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B378FDA329E324B700879570 /* CoreDataCardSetRepository.swift */; };
+		B378FDA629E324DB00879570 /* CoreDataCardRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B378FDA529E324DB00879570 /* CoreDataCardRepository.swift */; };
+		B378FDA829E3250F00879570 /* CoreDataSettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B378FDA729E3250F00879570 /* CoreDataSettingsRepository.swift */; };
+		B378FDAB29E3255500879570 /* CardSetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B378FDAA29E3255500879570 /* CardSetController.swift */; };
+		B378FDAD29E3257100879570 /* CardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B378FDAC29E3257100879570 /* CardController.swift */; };
+		B378FDAF29E3258B00879570 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B378FDAE29E3258B00879570 /* SettingsController.swift */; };
+		B3C47C6329D8925500FCC58A /* SettingsMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C47C5D29D8925500FCC58A /* SettingsMO+CoreDataClass.swift */; };
+		B3C47C6429D8925500FCC58A /* SettingsMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C47C5E29D8925500FCC58A /* SettingsMO+CoreDataProperties.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B376BC0229D343B000BBB524 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B350D21A29C904EB0026B934 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B350D22129C904EB0026B934;
+			remoteInfo = PPOcards;
+		};
+		B378FD9A29E3102900879570 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B350D21A29C904EB0026B934 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B350D22129C904EB0026B934;
+			remoteInfo = PPOcards;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B339619129E2183F006DEDDD /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		B339619329E21959006DEDDD /* CardSetMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardSetMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B339619429E21959006DEDDD /* CardSetMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardSetMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B339619729E228DA006DEDDD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		B339619929E2BB85006DEDDD /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		B339619B29E2E2A6006DEDDD /* CardMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B339619C29E2E2A6006DEDDD /* CardMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B350D22229C904EB0026B934 /* PPOcards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PPOcards.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B350D22529C904EB0026B934 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B350D22729C904EB0026B934 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B350D22929C904EB0026B934 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B350D22E29C904EC0026B934 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B350D23129C904EC0026B934 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B350D23329C904EC0026B934 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B350D23D29C90FEF0026B934 /* ControllerInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerInterfaces.swift; sourceTree = "<group>"; };
+		B350D23F29C9100D0026B934 /* RepositoryInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryInterfaces.swift; sourceTree = "<group>"; };
+		B350D24129C910850026B934 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		B374877129D8780200CECD41 /* DataBasePPOCards.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataBasePPOCards.xcdatamodel; sourceTree = "<group>"; };
+		B376BBFE29D343B000BBB524 /* PPOcardsUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PPOcardsUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B376BC0029D343B000BBB524 /* PPOCardControllerUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPOCardControllerUnitTests.swift; sourceTree = "<group>"; };
+		B376BC0729D5FCEC00BBB524 /* PPOCardSetControllerUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPOCardSetControllerUnitTests.swift; sourceTree = "<group>"; };
+		B376BC0929D5FD0000BBB524 /* PPOSettingsUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPOSettingsUnitTests.swift; sourceTree = "<group>"; };
+		B378FD9629E3102900879570 /* PPOcardsIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PPOcardsIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B378FD9829E3102900879570 /* PPOCardSetRepositoryIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPOCardSetRepositoryIntegrationTests.swift; sourceTree = "<group>"; };
+		B378FD9F29E31E4100879570 /* PPOCardRepositoryIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPOCardRepositoryIntegrationTests.swift; sourceTree = "<group>"; };
+		B378FDA129E321CF00879570 /* PPOSettingsRepositoryIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPOSettingsRepositoryIntegrationTests.swift; sourceTree = "<group>"; };
+		B378FDA329E324B700879570 /* CoreDataCardSetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataCardSetRepository.swift; sourceTree = "<group>"; };
+		B378FDA529E324DB00879570 /* CoreDataCardRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataCardRepository.swift; sourceTree = "<group>"; };
+		B378FDA729E3250F00879570 /* CoreDataSettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSettingsRepository.swift; sourceTree = "<group>"; };
+		B378FDAA29E3255500879570 /* CardSetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSetController.swift; sourceTree = "<group>"; };
+		B378FDAC29E3257100879570 /* CardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardController.swift; sourceTree = "<group>"; };
+		B378FDAE29E3258B00879570 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		B3C47C5D29D8925500FCC58A /* SettingsMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B3C47C5E29D8925500FCC58A /* SettingsMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B350D21F29C904EB0026B934 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B376BBFB29D343B000BBB524 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B378FD9329E3102900879570 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B350D21929C904EB0026B934 = {
+			isa = PBXGroup;
+			children = (
+				B350D22429C904EB0026B934 /* PPOcards */,
+				B376BBFF29D343B000BBB524 /* PPOcardsUnitTests */,
+				B378FD9729E3102900879570 /* PPOcardsIntegrationTests */,
+				B350D22329C904EB0026B934 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B350D22329C904EB0026B934 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B350D22229C904EB0026B934 /* PPOcards.app */,
+				B376BBFE29D343B000BBB524 /* PPOcardsUnitTests.xctest */,
+				B378FD9629E3102900879570 /* PPOcardsIntegrationTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B350D22429C904EB0026B934 /* PPOcards */ = {
+			isa = PBXGroup;
+			children = (
+				B374877329D88E7800CECD41 /* DataBase */,
+				B350D22529C904EB0026B934 /* AppDelegate.swift */,
+				B350D22729C904EB0026B934 /* SceneDelegate.swift */,
+				B350D22929C904EB0026B934 /* ViewController.swift */,
+				B350D22E29C904EC0026B934 /* Assets.xcassets */,
+				B350D23029C904EC0026B934 /* LaunchScreen.storyboard */,
+				B350D23329C904EC0026B934 /* Info.plist */,
+				B350D24129C910850026B934 /* Models.swift */,
+				B339619129E2183F006DEDDD /* extensions.swift */,
+				B378FDA929E3253100879570 /* Repositories */,
+				B378FDB029E325A500879570 /* Controllers */,
+			);
+			path = PPOcards;
+			sourceTree = "<group>";
+		};
+		B374877329D88E7800CECD41 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				B3C47C4E29D8915300FCC58A /* Models */,
+				B374877029D8780200CECD41 /* DataBasePPOCards.xcdatamodeld */,
+				B378FDB129E325C500879570 /* DataManagers */,
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
+		B376BBFF29D343B000BBB524 /* PPOcardsUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				B376BC0029D343B000BBB524 /* PPOCardControllerUnitTests.swift */,
+				B376BC0729D5FCEC00BBB524 /* PPOCardSetControllerUnitTests.swift */,
+				B376BC0929D5FD0000BBB524 /* PPOSettingsUnitTests.swift */,
+			);
+			path = PPOcardsUnitTests;
+			sourceTree = "<group>";
+		};
+		B378FD9729E3102900879570 /* PPOcardsIntegrationTests */ = {
+			isa = PBXGroup;
+			children = (
+				B378FD9829E3102900879570 /* PPOCardSetRepositoryIntegrationTests.swift */,
+				B378FD9F29E31E4100879570 /* PPOCardRepositoryIntegrationTests.swift */,
+				B378FDA129E321CF00879570 /* PPOSettingsRepositoryIntegrationTests.swift */,
+			);
+			path = PPOcardsIntegrationTests;
+			sourceTree = "<group>";
+		};
+		B378FDA929E3253100879570 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				B350D23F29C9100D0026B934 /* RepositoryInterfaces.swift */,
+				B378FDA329E324B700879570 /* CoreDataCardSetRepository.swift */,
+				B378FDA529E324DB00879570 /* CoreDataCardRepository.swift */,
+				B378FDA729E3250F00879570 /* CoreDataSettingsRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		B378FDB029E325A500879570 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B350D23D29C90FEF0026B934 /* ControllerInterfaces.swift */,
+				B378FDAA29E3255500879570 /* CardSetController.swift */,
+				B378FDAC29E3257100879570 /* CardController.swift */,
+				B378FDAE29E3258B00879570 /* SettingsController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B378FDB129E325C500879570 /* DataManagers */ = {
+			isa = PBXGroup;
+			children = (
+				B339619729E228DA006DEDDD /* CoreDataManager.swift */,
+				B339619929E2BB85006DEDDD /* FileManager.swift */,
+			);
+			path = DataManagers;
+			sourceTree = "<group>";
+		};
+		B3C47C4E29D8915300FCC58A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B339619B29E2E2A6006DEDDD /* CardMO+CoreDataClass.swift */,
+				B339619C29E2E2A6006DEDDD /* CardMO+CoreDataProperties.swift */,
+				B339619329E21959006DEDDD /* CardSetMO+CoreDataClass.swift */,
+				B339619429E21959006DEDDD /* CardSetMO+CoreDataProperties.swift */,
+				B3C47C5D29D8925500FCC58A /* SettingsMO+CoreDataClass.swift */,
+				B3C47C5E29D8925500FCC58A /* SettingsMO+CoreDataProperties.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B350D22129C904EB0026B934 /* PPOcards */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B350D23629C904EC0026B934 /* Build configuration list for PBXNativeTarget "PPOcards" */;
+			buildPhases = (
+				B350D21E29C904EB0026B934 /* Sources */,
+				B350D21F29C904EB0026B934 /* Frameworks */,
+				B350D22029C904EB0026B934 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PPOcards;
+			productName = PPOcards;
+			productReference = B350D22229C904EB0026B934 /* PPOcards.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B376BBFD29D343B000BBB524 /* PPOcardsUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B376BC0429D343B000BBB524 /* Build configuration list for PBXNativeTarget "PPOcardsUnitTests" */;
+			buildPhases = (
+				B376BBFA29D343B000BBB524 /* Sources */,
+				B376BBFB29D343B000BBB524 /* Frameworks */,
+				B376BBFC29D343B000BBB524 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B376BC0329D343B000BBB524 /* PBXTargetDependency */,
+			);
+			name = PPOcardsUnitTests;
+			productName = PPOcardsTests;
+			productReference = B376BBFE29D343B000BBB524 /* PPOcardsUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B378FD9529E3102900879570 /* PPOcardsIntegrationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B378FD9C29E3102900879570 /* Build configuration list for PBXNativeTarget "PPOcardsIntegrationTests" */;
+			buildPhases = (
+				B378FD9229E3102900879570 /* Sources */,
+				B378FD9329E3102900879570 /* Frameworks */,
+				B378FD9429E3102900879570 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B378FD9B29E3102900879570 /* PBXTargetDependency */,
+			);
+			name = PPOcardsIntegrationTests;
+			productName = PPOcardsIntegrationTests;
+			productReference = B378FD9629E3102900879570 /* PPOcardsIntegrationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B350D21A29C904EB0026B934 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					B350D22129C904EB0026B934 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					B376BBFD29D343B000BBB524 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = B350D22129C904EB0026B934;
+					};
+					B378FD9529E3102900879570 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = B350D22129C904EB0026B934;
+					};
+				};
+			};
+			buildConfigurationList = B350D21D29C904EB0026B934 /* Build configuration list for PBXProject "PPOcards" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B350D21929C904EB0026B934;
+			productRefGroup = B350D22329C904EB0026B934 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B350D22129C904EB0026B934 /* PPOcards */,
+				B376BBFD29D343B000BBB524 /* PPOcardsUnitTests */,
+				B378FD9529E3102900879570 /* PPOcardsIntegrationTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B350D22029C904EB0026B934 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B350D23229C904EC0026B934 /* LaunchScreen.storyboard in Resources */,
+				B350D22F29C904EC0026B934 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B376BBFC29D343B000BBB524 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B378FD9429E3102900879570 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B350D21E29C904EB0026B934 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3C47C6429D8925500FCC58A /* SettingsMO+CoreDataProperties.swift in Sources */,
+				B339619629E21959006DEDDD /* CardSetMO+CoreDataProperties.swift in Sources */,
+				B350D22A29C904EB0026B934 /* ViewController.swift in Sources */,
+				B339619829E228DA006DEDDD /* CoreDataManager.swift in Sources */,
+				B378FDAB29E3255500879570 /* CardSetController.swift in Sources */,
+				B350D24229C910850026B934 /* Models.swift in Sources */,
+				B378FDA429E324B700879570 /* CoreDataCardSetRepository.swift in Sources */,
+				B350D23E29C90FEF0026B934 /* ControllerInterfaces.swift in Sources */,
+				B339619D29E2E2A6006DEDDD /* CardMO+CoreDataClass.swift in Sources */,
+				B339619E29E2E2A6006DEDDD /* CardMO+CoreDataProperties.swift in Sources */,
+				B378FDA829E3250F00879570 /* CoreDataSettingsRepository.swift in Sources */,
+				B339619529E21959006DEDDD /* CardSetMO+CoreDataClass.swift in Sources */,
+				B350D22629C904EB0026B934 /* AppDelegate.swift in Sources */,
+				B3C47C6329D8925500FCC58A /* SettingsMO+CoreDataClass.swift in Sources */,
+				B374877229D8780200CECD41 /* DataBasePPOCards.xcdatamodeld in Sources */,
+				B339619229E2183F006DEDDD /* extensions.swift in Sources */,
+				B378FDAD29E3257100879570 /* CardController.swift in Sources */,
+				B378FDA629E324DB00879570 /* CoreDataCardRepository.swift in Sources */,
+				B350D24029C9100D0026B934 /* RepositoryInterfaces.swift in Sources */,
+				B378FDAF29E3258B00879570 /* SettingsController.swift in Sources */,
+				B339619A29E2BB85006DEDDD /* FileManager.swift in Sources */,
+				B350D22829C904EB0026B934 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B376BBFA29D343B000BBB524 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B376BC0829D5FCEC00BBB524 /* PPOCardSetControllerUnitTests.swift in Sources */,
+				B376BC0A29D5FD0000BBB524 /* PPOSettingsUnitTests.swift in Sources */,
+				B376BC0129D343B000BBB524 /* PPOCardControllerUnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B378FD9229E3102900879570 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B378FDA029E31E4100879570 /* PPOCardRepositoryIntegrationTests.swift in Sources */,
+				B378FDA229E321CF00879570 /* PPOSettingsRepositoryIntegrationTests.swift in Sources */,
+				B378FD9929E3102900879570 /* PPOCardSetRepositoryIntegrationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B376BC0329D343B000BBB524 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B350D22129C904EB0026B934 /* PPOcards */;
+			targetProxy = B376BC0229D343B000BBB524 /* PBXContainerItemProxy */;
+		};
+		B378FD9B29E3102900879570 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B350D22129C904EB0026B934 /* PPOcards */;
+			targetProxy = B378FD9A29E3102900879570 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B350D23029C904EC0026B934 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B350D23129C904EC0026B934 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B350D23429C904EC0026B934 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B350D23529C904EC0026B934 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B350D23729C904EC0026B934 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KVA3KA57F7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PPOcards/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-14.PPOcards";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B350D23829C904EC0026B934 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KVA3KA57F7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PPOcards/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-14.PPOcards";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B376BC0529D343B000BBB524 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KVA3KA57F7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-14.PPOcardsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PPOcards.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PPOcards";
+			};
+			name = Debug;
+		};
+		B376BC0629D343B000BBB524 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KVA3KA57F7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-14.PPOcardsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PPOcards.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PPOcards";
+			};
+			name = Release;
+		};
+		B378FD9D29E3102900879570 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q9ZS8V8CB6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-14.PPOcardsIntegrationTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PPOcards.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PPOcards";
+			};
+			name = Debug;
+		};
+		B378FD9E29E3102900879570 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q9ZS8V8CB6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-14.PPOcardsIntegrationTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PPOcards.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PPOcards";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B350D21D29C904EB0026B934 /* Build configuration list for PBXProject "PPOcards" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B350D23429C904EC0026B934 /* Debug */,
+				B350D23529C904EC0026B934 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B350D23629C904EC0026B934 /* Build configuration list for PBXNativeTarget "PPOcards" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B350D23729C904EC0026B934 /* Debug */,
+				B350D23829C904EC0026B934 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B376BC0429D343B000BBB524 /* Build configuration list for PBXNativeTarget "PPOcardsUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B376BC0529D343B000BBB524 /* Debug */,
+				B376BC0629D343B000BBB524 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B378FD9C29E3102900879570 /* Build configuration list for PBXNativeTarget "PPOcardsIntegrationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B378FD9D29E3102900879570 /* Debug */,
+				B378FD9E29E3102900879570 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B374877029D8780200CECD41 /* DataBasePPOCards.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B374877129D8780200CECD41 /* DataBasePPOCards.xcdatamodel */,
+			);
+			currentVersion = B374877129D8780200CECD41 /* DataBasePPOCards.xcdatamodel */;
+			path = DataBasePPOCards.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B350D21A29C904EB0026B934 /* Project object */;
+}
