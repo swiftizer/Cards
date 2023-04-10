@@ -6,14 +6,13 @@
 //
 
 import CoreData
-import UIKit
 
 
 class CoreDataSettingsRepository: SettingsRepositoryDescription {
 
     init() {
         if !UserDefaults.exists(key: "SettingsIsMixed") || !UserDefaults.exists(key: "SettingsMixingInPower") {
-            createSettings()
+            let _ = createSettings()
         }
     }
 

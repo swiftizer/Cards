@@ -32,19 +32,8 @@ final class PPOCardRepositoryIntegrationTests: XCTestCase {
             cardMO.questionText = card.questionText
             cardMO.answerText = card.answerText
             cardMO.isLearned = card.isLearned
-
-            var questionImgPath: URL? = nil
-            var answerImgPath: URL? = nil
-
-            if let questionImg = card.questionImage {
-                questionImgPath = self.fileManager.putImageToFS(with: questionImg)
-            }
-            if let answerImg = card.answerImage {
-                answerImgPath = self.fileManager.putImageToFS(with: answerImg)
-            }
-
-            cardMO.questionImageURL = questionImgPath
-            cardMO.answerImageURL = answerImgPath
+            cardMO.questionImageURL = card.questionImageURL
+            cardMO.answerImageURL = card.answerImageURL
 
         }
 
@@ -67,7 +56,7 @@ final class PPOCardRepositoryIntegrationTests: XCTestCase {
 
         guard let cardMO = db.fetch(request: fetchRequest).first else { return }
 
-        let cardRes = Card(id: cardMO.id ?? UUID(), setID: cardMO.setID, questionText: cardMO.questionText, questionImage: nil, answerText: cardMO.answerText, answerImage: nil, isLearned: cardMO.isLearned)
+        let cardRes = Card(id: cardMO.id ?? UUID(), setID: cardMO.setID, questionText: cardMO.questionText, questionImageURL: nil, answerText: cardMO.answerText, answerImageURL: nil, isLearned: cardMO.isLearned)
 
         XCTAssertEqual(card, cardRes)
     }
@@ -102,7 +91,7 @@ final class PPOCardRepositoryIntegrationTests: XCTestCase {
         guard let cardMO = db.fetch(request: fetchRequest).first else { return }
 
 
-        let cardRes = Card(id: cardMO.id ?? UUID(), setID: cardMO.setID, questionText: cardMO.questionText, questionImage: nil, answerText: cardMO.answerText, answerImage: nil, isLearned: cardMO.isLearned)
+        let cardRes = Card(id: cardMO.id ?? UUID(), setID: cardMO.setID, questionText: cardMO.questionText, questionImageURL: nil, answerText: cardMO.answerText, answerImageURL: nil, isLearned: cardMO.isLearned)
 
         XCTAssertEqual(card1, cardRes)
     }

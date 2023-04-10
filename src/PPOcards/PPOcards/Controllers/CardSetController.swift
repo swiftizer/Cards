@@ -5,7 +5,7 @@
 //  Created by Сергей Николаев on 09.04.2023.
 //
 
-import UIKit
+import Foundation
 
 
 class CardSetController: CardSetControllerDescription {
@@ -23,9 +23,9 @@ class CardSetController: CardSetControllerDescription {
     }
 
     func createCardSet(title: String) -> CardSet {
-        let cardSet = CardSet(id: UUID(), title: title, progress: "0/0", color: .red)
+        let cardSet = CardSet(id: UUID(), title: title, progress: "0/0", color: 0xFF0000)
 
-        dataSource.addCardSet(set: cardSet)
+        let _ = dataSource.addCardSet(set: cardSet)
 
         return cardSet
     }

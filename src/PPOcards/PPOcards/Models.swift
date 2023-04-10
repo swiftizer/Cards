@@ -5,22 +5,22 @@
 //  Created by Сергей Николаев on 21.03.2023.
 //
 
-import UIKit
+import Foundation
 
 struct CardSet: Equatable {
     let id: UUID
     var title: String
     var progress: String
-    var color: UIColor
+    var color: Int
 }
 
 struct Card: Equatable {
     let id: UUID
     let setID: UUID?
     var questionText: String?
-    var questionImage: UIImage?
+    var questionImageURL: URL?
     var answerText: String?
-    var answerImage: UIImage?
+    var answerImageURL: URL?
     var isLearned: Bool
 }
 

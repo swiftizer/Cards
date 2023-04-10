@@ -30,14 +30,14 @@ final class PPOCardSetRepositoryIntegrationTests: XCTestCase {
         let cardSetRepository = CoreDataCardSetRepository()
 
         let id = UUID()
-        let set = CardSet(id: id, title: "test_GetCardSet", progress: "0/0", color: .blue)
+        let set = CardSet(id: id, title: "test_GetCardSet", progress: "0/0", color: 0x0000FF)
         db.create(entityName: "CardSetMO") { cardSetMO in
             guard let cardSetMO = cardSetMO as? CardSetMO else { return }
 
             cardSetMO.id = set.id
             cardSetMO.title = set.title
             cardSetMO.progress = set.progress
-            cardSetMO.color = set.color.data
+            cardSetMO.color = Int32(set.color)
         }
 
         let res = cardSetRepository.getCardSet(ID: id)
@@ -49,7 +49,7 @@ final class PPOCardSetRepositoryIntegrationTests: XCTestCase {
         let cardSetRepository = CoreDataCardSetRepository()
 
         let id = UUID()
-        let set = CardSet(id: id, title: "test_addCardSet", progress: "0/0", color: .blue)
+        let set = CardSet(id: id, title: "test_addCardSet", progress: "0/0", color: 0x0000FF)
         let rc = cardSetRepository.addCardSet(set: set)
         XCTAssertEqual(rc, true)
 
@@ -58,7 +58,7 @@ final class PPOCardSetRepositoryIntegrationTests: XCTestCase {
 
         guard let cardSetMO = db.fetch(request: fetchRequest).first else { return }
 
-        let cardSet = CardSet(id: cardSetMO.id ?? UUID(), title: cardSetMO.title ?? "", progress: cardSetMO.progress ?? "", color: cardSetMO.color?.color ?? .black)
+        let cardSet = CardSet(id: cardSetMO.id ?? UUID(), title: cardSetMO.title ?? "", progress: cardSetMO.progress ?? "", color: Int(cardSetMO.color))
 
         XCTAssertEqual(set, cardSet)
     }
@@ -68,8 +68,8 @@ final class PPOCardSetRepositoryIntegrationTests: XCTestCase {
 
         let id1 = UUID()
         let id2 = UUID()
-        let set1 = CardSet(id: id1, title: "test_GetCardSet", progress: "0/0", color: .blue)
-        let set2 = CardSet(id: id2, title: "test_GetCardSet", progress: "0/0", color: .blue)
+        let set1 = CardSet(id: id1, title: "test_GetCardSet", progress: "0/0", color: 0x0000FF)
+        let set2 = CardSet(id: id2, title: "test_GetCardSet", progress: "0/0", color: 0x0000FF)
 
         db.delete(request: CardSetMO.fetchRequest())
 
@@ -79,7 +79,7 @@ final class PPOCardSetRepositoryIntegrationTests: XCTestCase {
             cardSetMO.id = set1.id
             cardSetMO.title = set1.title
             cardSetMO.progress = set1.progress
-            cardSetMO.color = set1.color.data
+            cardSetMO.color = Int32(set1.color)
         }
         db.create(entityName: "CardSetMO") { cardSetMO in
             guard let cardSetMO = cardSetMO as? CardSetMO else { return }
@@ -87,7 +87,7 @@ final class PPOCardSetRepositoryIntegrationTests: XCTestCase {
             cardSetMO.id = set2.id
             cardSetMO.title = set2.title
             cardSetMO.progress = set2.progress
-            cardSetMO.color = set2.color.data
+            cardSetMO.color = Int32(set2.color)
         }
 
         let res = cardSetRepository.getAllCardSetIDs()
@@ -101,7 +101,7 @@ final class PPOCardSetRepositoryIntegrationTests: XCTestCase {
         let id1 = UUID()
         let id2 = UUID()
         let id3 = UUID()
-        let card1 = Card(id: id1, setID: id3, answerImage: UIImage(systemName: "pencil"), isLearned: true)
+        let card1 = Card(id: id1, setID: id3, isLearned: true)
         let card2 = Card(id: id2, setID: id3, isLearned: false)
 
         db.delete(request: CardMO.fetchRequest())
@@ -114,19 +114,8 @@ final class PPOCardSetRepositoryIntegrationTests: XCTestCase {
             cardMO.questionText = card1.questionText
             cardMO.answerText = card1.answerText
             cardMO.isLearned = card1.isLearned
-
-            var questionImgPath: URL? = nil
-            var answerImgPath: URL? = nil
-
-            if let questionImg = card1.questionImage {
-                questionImgPath = self.fileManager.putImageToFS(with: questionImg)
-            }
-            if let answerImg = card1.answerImage {
-                answerImgPath = self.fileManager.putImageToFS(with: answerImg)
-            }
-
-            cardMO.questionImageURL = questionImgPath
-            cardMO.answerImageURL = answerImgPath
+            cardMO.questionImageURL = card1.questionImageURL
+            cardMO.answerImageURL = card1.answerImageURL
         }
 
         db.create(entityName: "CardMO") { cardMO in
@@ -137,19 +126,8 @@ final class PPOCardSetRepositoryIntegrationTests: XCTestCase {
             cardMO.questionText = card2.questionText
             cardMO.answerText = card2.answerText
             cardMO.isLearned = card2.isLearned
-
-            var questionImgPath: URL? = nil
-            var answerImgPath: URL? = nil
-
-            if let questionImg = card2.questionImage {
-                questionImgPath = self.fileManager.putImageToFS(with: questionImg)
-            }
-            if let answerImg = card2.answerImage {
-                answerImgPath = self.fileManager.putImageToFS(with: answerImg)
-            }
-
-            cardMO.questionImageURL = questionImgPath
-            cardMO.answerImageURL = answerImgPath
+            cardMO.questionImageURL = card2.questionImageURL
+            cardMO.answerImageURL = card2.answerImageURL
         }
 
         let res = cardSetRepository.getAllCardIDsFromSet(setID: id3)
@@ -163,7 +141,7 @@ final class PPOCardSetRepositoryIntegrationTests: XCTestCase {
         let id1 = UUID()
         let id2 = UUID()
         let id3 = UUID()
-        let card1 = Card(id: id1, setID: id3, answerImage: UIImage(systemName: "pencil"), isLearned: true)
+        let card1 = Card(id: id1, setID: id3, isLearned: true)
         let card2 = Card(id: id2, setID: id3, isLearned: false)
 
         db.delete(request: CardMO.fetchRequest())
@@ -176,19 +154,8 @@ final class PPOCardSetRepositoryIntegrationTests: XCTestCase {
             cardMO.questionText = card1.questionText
             cardMO.answerText = card1.answerText
             cardMO.isLearned = card1.isLearned
-
-            var questionImgPath: URL? = nil
-            var answerImgPath: URL? = nil
-
-            if let questionImg = card1.questionImage {
-                questionImgPath = self.fileManager.putImageToFS(with: questionImg)
-            }
-            if let answerImg = card1.answerImage {
-                answerImgPath = self.fileManager.putImageToFS(with: answerImg)
-            }
-
-            cardMO.questionImageURL = questionImgPath
-            cardMO.answerImageURL = answerImgPath
+            cardMO.questionImageURL = card1.questionImageURL
+            cardMO.answerImageURL = card1.answerImageURL
         }
 
         db.create(entityName: "CardMO") { cardMO in
@@ -199,19 +166,8 @@ final class PPOCardSetRepositoryIntegrationTests: XCTestCase {
             cardMO.questionText = card2.questionText
             cardMO.answerText = card2.answerText
             cardMO.isLearned = card2.isLearned
-
-            var questionImgPath: URL? = nil
-            var answerImgPath: URL? = nil
-
-            if let questionImg = card2.questionImage {
-                questionImgPath = self.fileManager.putImageToFS(with: questionImg)
-            }
-            if let answerImg = card2.answerImage {
-                answerImgPath = self.fileManager.putImageToFS(with: answerImg)
-            }
-
-            cardMO.questionImageURL = questionImgPath
-            cardMO.answerImageURL = answerImgPath
+            cardMO.questionImageURL = card2.questionImageURL
+            cardMO.answerImageURL = card2.answerImageURL
         }
 
         let res = cardSetRepository.getNotLearnedCardIDsFromSet(from: id3)
@@ -225,7 +181,7 @@ final class PPOCardSetRepositoryIntegrationTests: XCTestCase {
         let id1 = UUID()
         let id2 = UUID()
         let id3 = UUID()
-        let card1 = Card(id: id1, setID: id3, answerImage: UIImage(systemName: "pencil"), isLearned: true)
+        let card1 = Card(id: id1, setID: id3, isLearned: true)
         let card2 = Card(id: id2, setID: id3, isLearned: false)
 
         db.delete(request: CardMO.fetchRequest())
@@ -238,19 +194,8 @@ final class PPOCardSetRepositoryIntegrationTests: XCTestCase {
             cardMO.questionText = card1.questionText
             cardMO.answerText = card1.answerText
             cardMO.isLearned = card1.isLearned
-
-            var questionImgPath: URL? = nil
-            var answerImgPath: URL? = nil
-
-            if let questionImg = card1.questionImage {
-                questionImgPath = self.fileManager.putImageToFS(with: questionImg)
-            }
-            if let answerImg = card1.answerImage {
-                answerImgPath = self.fileManager.putImageToFS(with: answerImg)
-            }
-
-            cardMO.questionImageURL = questionImgPath
-            cardMO.answerImageURL = answerImgPath
+            cardMO.questionImageURL = card1.questionImageURL
+            cardMO.answerImageURL = card1.answerImageURL
         }
 
         db.create(entityName: "CardMO") { cardMO in
@@ -261,19 +206,8 @@ final class PPOCardSetRepositoryIntegrationTests: XCTestCase {
             cardMO.questionText = card2.questionText
             cardMO.answerText = card2.answerText
             cardMO.isLearned = card2.isLearned
-
-            var questionImgPath: URL? = nil
-            var answerImgPath: URL? = nil
-
-            if let questionImg = card2.questionImage {
-                questionImgPath = self.fileManager.putImageToFS(with: questionImg)
-            }
-            if let answerImg = card2.answerImage {
-                answerImgPath = self.fileManager.putImageToFS(with: answerImg)
-            }
-
-            cardMO.questionImageURL = questionImgPath
-            cardMO.answerImageURL = answerImgPath
+            cardMO.questionImageURL = card2.questionImageURL
+            cardMO.answerImageURL = card2.answerImageURL
         }
 
         let res = cardSetRepository.getLearnedCardIDsFromSet(from: id3)
@@ -298,17 +232,7 @@ final class PPOCardSetRepositoryIntegrationTests: XCTestCase {
 
         guard let cardMO = db.fetch(request: fetchRequest).first else { return }
 
-        var questionImg: UIImage? = nil
-        var answerImg: UIImage? = nil
-
-        if let questionImgURL = cardMO.questionImageURL {
-            questionImg = self.fileManager.getImageFromFS(path: questionImgURL)
-        }
-        if let answerImgURL = cardMO.answerImageURL {
-            answerImg = self.fileManager.getImageFromFS(path: answerImgURL)
-        }
-
-        let cardRes = Card(id: cardMO.id ?? UUID(), setID: cardMO.setID, questionText: cardMO.questionText, questionImage: questionImg, answerText: cardMO.answerText, answerImage: answerImg, isLearned: cardMO.isLearned)
+        let cardRes = Card(id: cardMO.id ?? UUID(), setID: cardMO.setID, questionText: cardMO.questionText, questionImageURL: cardMO.questionImageURL, answerText: cardMO.answerText, answerImageURL: cardMO.answerImageURL, isLearned: cardMO.isLearned)
 
         XCTAssertEqual(card1, cardRes)
     }
@@ -317,7 +241,7 @@ final class PPOCardSetRepositoryIntegrationTests: XCTestCase {
         let cardSetRepository = CoreDataCardSetRepository()
 
         let id = UUID()
-        let cs = CardSet(id: id, title: "deleteCardSet", progress: "0/0", color: .brown)
+        let cs = CardSet(id: id, title: "deleteCardSet", progress: "0/0", color: 0x0000FF)
 
         db.delete(request: CardSetMO.fetchRequest())
 
@@ -327,7 +251,7 @@ final class PPOCardSetRepositoryIntegrationTests: XCTestCase {
             cardSetMO.id = cs.id
             cardSetMO.title = cs.title
             cardSetMO.progress = cs.progress
-            cardSetMO.color = cs.color.data
+            cardSetMO.color = Int32(cs.color)
         }
 
         var res = db.fetch(request: CardSetMO.fetchRequest())
@@ -348,8 +272,8 @@ final class PPOCardSetRepositoryIntegrationTests: XCTestCase {
         let idOld = UUID()
         let idNew = UUID()
 
-        let csOld = CardSet(id: idOld, title: "deleteCardSet", progress: "0/0", color: .brown)
-        let csNew = CardSet(id: idNew, title: "deleteCardSet", progress: "0/0", color: .brown)
+        let csOld = CardSet(id: idOld, title: "deleteCardSet", progress: "0/0", color: 0x0000FF)
+        let csNew = CardSet(id: idNew, title: "deleteCardSet", progress: "0/0", color: 0x0000FF)
 
         db.delete(request: CardSetMO.fetchRequest())
 
@@ -365,7 +289,7 @@ final class PPOCardSetRepositoryIntegrationTests: XCTestCase {
         guard let cardSetMO = db.fetch(request: fetchRequest).first else { return }
 
 
-        let cardSetRes = CardSet(id: cardSetMO.id ?? UUID(), title: cardSetMO.title ?? "", progress: cardSetMO.progress ?? "", color: cardSetMO.color?.color ?? .black)
+        let cardSetRes = CardSet(id: cardSetMO.id ?? UUID(), title: cardSetMO.title ?? "", progress: cardSetMO.progress ?? "", color: Int(cardSetMO.color))
 
         XCTAssertEqual(csNew, cardSetRes)
     }

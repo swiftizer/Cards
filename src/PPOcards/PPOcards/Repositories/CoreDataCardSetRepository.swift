@@ -6,7 +6,6 @@
 //
 
 import CoreData
-import UIKit
 
 
 class CoreDataCardSetRepository: CardSetRepositoryDescription {
@@ -22,7 +21,7 @@ class CoreDataCardSetRepository: CardSetRepositoryDescription {
         guard let cardSetMO = coreDataManager.fetch(request: fetchRequest).first else { return nil }
 
 
-        let cardSet = CardSet(id: cardSetMO.id ?? UUID(), title: cardSetMO.title ?? "", progress: cardSetMO.progress ?? "", color: cardSetMO.color?.color ?? .black)
+        let cardSet = CardSet(id: cardSetMO.id ?? UUID(), title: cardSetMO.title ?? "", progress: cardSetMO.progress ?? "", color: Int(cardSetMO.color))
 
         return cardSet
 
@@ -35,7 +34,7 @@ class CoreDataCardSetRepository: CardSetRepositoryDescription {
             cardSetMO.id = set.id
             cardSetMO.title = set.title
             cardSetMO.progress = set.progress
-            cardSetMO.color = set.color.data
+            cardSetMO.color = Int32(set.color)
         }
 
         return true
@@ -84,20 +83,8 @@ class CoreDataCardSetRepository: CardSetRepositoryDescription {
             cardMO.questionText = card.questionText
             cardMO.answerText = card.answerText
             cardMO.isLearned = card.isLearned
-
-            var questionImgPath: URL? = nil
-            var answerImgPath: URL? = nil
-
-            if let questionImg = card.questionImage {
-                questionImgPath = self.fileManager.putImageToFS(with: questionImg)
-            }
-            if let answerImg = card.answerImage {
-                answerImgPath = self.fileManager.putImageToFS(with: answerImg)
-            }
-
-            cardMO.questionImageURL = questionImgPath
-            cardMO.answerImageURL = answerImgPath
-
+            cardMO.questionImageURL = card.questionImageURL
+            cardMO.answerImageURL = card.answerImageURL
         }
 
         return true
@@ -120,7 +107,7 @@ class CoreDataCardSetRepository: CardSetRepositoryDescription {
             cardSetMO?.id = newSet.id
             cardSetMO?.title = newSet.title
             cardSetMO?.progress = newSet.progress
-            cardSetMO?.color = newSet.color.data
+            cardSetMO?.color = Int32(newSet.color)
         }
 
         return true

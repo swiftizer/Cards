@@ -2,7 +2,7 @@
 //  CardSetMO+CoreDataClass.swift
 //  PPOcards
 //
-//  Created by Сергей Николаев on 09.04.2023.
+//  Created by ser.nikolaev on 10.04.2023.
 //
 //
 

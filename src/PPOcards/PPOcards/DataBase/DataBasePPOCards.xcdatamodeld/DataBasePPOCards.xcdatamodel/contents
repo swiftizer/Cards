@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22D68" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="21G526" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CardMO" representedClassName="CardMO" syncable="YES">
         <attribute name="answerImageURL" optional="YES" attributeType="URI"/>
         <attribute name="answerText" optional="YES" attributeType="String"/>
@@ -10,7 +10,7 @@
         <attribute name="setID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
     </entity>
     <entity name="CardSetMO" representedClassName="CardSetMO" syncable="YES">
-        <attribute name="color" optional="YES" attributeType="Binary"/>
+        <attribute name="color" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="progress" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>

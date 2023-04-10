@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B339619229E2183F006DEDDD /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339619129E2183F006DEDDD /* extensions.swift */; };
-		B339619529E21959006DEDDD /* CardSetMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339619329E21959006DEDDD /* CardSetMO+CoreDataClass.swift */; };
-		B339619629E21959006DEDDD /* CardSetMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339619429E21959006DEDDD /* CardSetMO+CoreDataProperties.swift */; };
 		B339619829E228DA006DEDDD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339619729E228DA006DEDDD /* CoreDataManager.swift */; };
 		B339619A29E2BB85006DEDDD /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339619929E2BB85006DEDDD /* FileManager.swift */; };
 		B339619D29E2E2A6006DEDDD /* CardMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339619B29E2E2A6006DEDDD /* CardMO+CoreDataClass.swift */; };
@@ -37,6 +35,8 @@
 		B378FDAF29E3258B00879570 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B378FDAE29E3258B00879570 /* SettingsController.swift */; };
 		B3C47C6329D8925500FCC58A /* SettingsMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C47C5D29D8925500FCC58A /* SettingsMO+CoreDataClass.swift */; };
 		B3C47C6429D8925500FCC58A /* SettingsMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C47C5E29D8925500FCC58A /* SettingsMO+CoreDataProperties.swift */; };
+		FA1D020829E4948100BA0E73 /* CardSetMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D020629E4948100BA0E73 /* CardSetMO+CoreDataClass.swift */; };
+		FA1D020929E4948100BA0E73 /* CardSetMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D020729E4948100BA0E73 /* CardSetMO+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +58,6 @@
 
 /* Begin PBXFileReference section */
 		B339619129E2183F006DEDDD /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
-		B339619329E21959006DEDDD /* CardSetMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardSetMO+CoreDataClass.swift"; sourceTree = "<group>"; };
-		B339619429E21959006DEDDD /* CardSetMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardSetMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B339619729E228DA006DEDDD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		B339619929E2BB85006DEDDD /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		B339619B29E2E2A6006DEDDD /* CardMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardMO+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -91,6 +89,8 @@
 		B378FDAE29E3258B00879570 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		B3C47C5D29D8925500FCC58A /* SettingsMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsMO+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B3C47C5E29D8925500FCC58A /* SettingsMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FA1D020629E4948100BA0E73 /* CardSetMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardSetMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FA1D020729E4948100BA0E73 /* CardSetMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardSetMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,10 +220,10 @@
 		B3C47C4E29D8915300FCC58A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FA1D020629E4948100BA0E73 /* CardSetMO+CoreDataClass.swift */,
+				FA1D020729E4948100BA0E73 /* CardSetMO+CoreDataProperties.swift */,
 				B339619B29E2E2A6006DEDDD /* CardMO+CoreDataClass.swift */,
 				B339619C29E2E2A6006DEDDD /* CardMO+CoreDataProperties.swift */,
-				B339619329E21959006DEDDD /* CardSetMO+CoreDataClass.swift */,
-				B339619429E21959006DEDDD /* CardSetMO+CoreDataProperties.swift */,
 				B3C47C5D29D8925500FCC58A /* SettingsMO+CoreDataClass.swift */,
 				B3C47C5E29D8925500FCC58A /* SettingsMO+CoreDataProperties.swift */,
 			);
@@ -361,7 +361,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3C47C6429D8925500FCC58A /* SettingsMO+CoreDataProperties.swift in Sources */,
-				B339619629E21959006DEDDD /* CardSetMO+CoreDataProperties.swift in Sources */,
 				B350D22A29C904EB0026B934 /* ViewController.swift in Sources */,
 				B339619829E228DA006DEDDD /* CoreDataManager.swift in Sources */,
 				B378FDAB29E3255500879570 /* CardSetController.swift in Sources */,
@@ -369,9 +368,9 @@
 				B378FDA429E324B700879570 /* CoreDataCardSetRepository.swift in Sources */,
 				B350D23E29C90FEF0026B934 /* ControllerInterfaces.swift in Sources */,
 				B339619D29E2E2A6006DEDDD /* CardMO+CoreDataClass.swift in Sources */,
+				FA1D020829E4948100BA0E73 /* CardSetMO+CoreDataClass.swift in Sources */,
 				B339619E29E2E2A6006DEDDD /* CardMO+CoreDataProperties.swift in Sources */,
 				B378FDA829E3250F00879570 /* CoreDataSettingsRepository.swift in Sources */,
-				B339619529E21959006DEDDD /* CardSetMO+CoreDataClass.swift in Sources */,
 				B350D22629C904EB0026B934 /* AppDelegate.swift in Sources */,
 				B3C47C6329D8925500FCC58A /* SettingsMO+CoreDataClass.swift in Sources */,
 				B374877229D8780200CECD41 /* DataBasePPOCards.xcdatamodeld in Sources */,
@@ -381,6 +380,7 @@
 				B350D24029C9100D0026B934 /* RepositoryInterfaces.swift in Sources */,
 				B378FDAF29E3258B00879570 /* SettingsController.swift in Sources */,
 				B339619A29E2BB85006DEDDD /* FileManager.swift in Sources */,
+				FA1D020929E4948100BA0E73 /* CardSetMO+CoreDataProperties.swift in Sources */,
 				B350D22829C904EB0026B934 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -610,6 +610,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KVA3KA57F7;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "-14.PPOcardsTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -628,6 +629,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KVA3KA57F7;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "-14.PPOcardsTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -646,7 +648,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q9ZS8V8CB6;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "-14.PPOcardsIntegrationTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -665,7 +667,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q9ZS8V8CB6;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "-14.PPOcardsIntegrationTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";

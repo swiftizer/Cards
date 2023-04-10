@@ -20,7 +20,7 @@ final class PPOCardSetControllerUnitTests: XCTestCase {
 
         let res = cardSetController.createCardSet(title: "test_GetCardSet")
 
-        XCTAssertEqual(cardSetController.getCardSet(ID: res.id), CardSet(id: res.id, title: "test_GetCardSet", progress: "0/0", color: .red))
+        XCTAssertEqual(cardSetController.getCardSet(ID: res.id), CardSet(id: res.id, title: "test_GetCardSet", progress: "0/0", color: 0xFF0000))
     }
 
     func test_CreateCardSet() {
@@ -28,7 +28,7 @@ final class PPOCardSetControllerUnitTests: XCTestCase {
         let cardSetController = CardSetController(dataSource: CoreDataCardSetRepository(), settingsController: settingsController)
 
         let testCardSet = cardSetController.createCardSet(title: "aboba")
-        let testRefCardSet = CardSet(id: UUID(), title: "aboba", progress: "0/0", color: .red)
+        let testRefCardSet = CardSet(id: UUID(), title: "aboba", progress: "0/0", color: 0xFF0000)
 
         XCTAssertEqual(testCardSet.title, testRefCardSet.title)
         XCTAssertEqual(testCardSet.progress, testRefCardSet.progress)
@@ -202,7 +202,7 @@ final class PPOCardSetControllerUnitTests: XCTestCase {
         let settingsController = SettingsController(dataSource: CoreDataSettingsRepository())
         let cardSetController = CardSetController(dataSource: CoreDataCardSetRepository(), settingsController: settingsController)
 
-        XCTAssertEqual(cardSetController.updateCardSet(oldID: UUID(), new: CardSet(id: UUID(), title: "aboba2", progress: "5/10", color: .yellow)), true)
+        XCTAssertEqual(cardSetController.updateCardSet(oldID: UUID(), new: CardSet(id: UUID(), title: "aboba2", progress: "5/10", color: 0xFF0000)), true)
     }
 
 }

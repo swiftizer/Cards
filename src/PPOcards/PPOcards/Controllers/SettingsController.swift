@@ -5,7 +5,7 @@
 //  Created by Сергей Николаев on 09.04.2023.
 //
 
-import UIKit
+import Foundation
 
 
 class SettingsController: SettingsControllerDescription {

@@ -6,7 +6,6 @@
 //
 
 import CoreData
-import UIKit
 
 
 class CoreDataCardRepository: CardRepositoryDescription {
@@ -20,18 +19,7 @@ class CoreDataCardRepository: CardRepositoryDescription {
 
         guard let cardMO = coreDataManager.fetch(request: fetchRequest).first else { return nil }
 
-        var questionImg: UIImage? = nil
-        var answerImg: UIImage? = nil
-
-        if let questionImgURL = cardMO.questionImageURL {
-            questionImg = self.fileManager.getImageFromFS(path: questionImgURL)
-        }
-        if let answerImgURL = cardMO.answerImageURL {
-            answerImg = self.fileManager.getImageFromFS(path: answerImgURL)
-        }
-
-
-        let card = Card(id: cardMO.id ?? UUID(), setID: cardMO.setID, questionText: cardMO.questionText, questionImage: questionImg, answerText: cardMO.answerText, answerImage: answerImg, isLearned: cardMO.isLearned)
+        let card = Card(id: cardMO.id ?? UUID(), setID: cardMO.setID, questionText: cardMO.questionText, questionImageURL: cardMO.questionImageURL, answerText: cardMO.answerText, answerImageURL: cardMO.answerImageURL, isLearned: cardMO.isLearned)
 
         return card
     }
@@ -45,20 +33,8 @@ class CoreDataCardRepository: CardRepositoryDescription {
             cardMO.questionText = card.questionText
             cardMO.answerText = card.answerText
             cardMO.isLearned = card.isLearned
-
-            var questionImgPath: URL? = nil
-            var answerImgPath: URL? = nil
-
-            if let questionImg = card.questionImage {
-                questionImgPath = self.fileManager.putImageToFS(with: questionImg)
-            }
-            if let answerImg = card.answerImage {
-                answerImgPath = self.fileManager.putImageToFS(with: answerImg)
-            }
-
-            cardMO.questionImageURL = questionImgPath
-            cardMO.answerImageURL = answerImgPath
-
+            cardMO.questionImageURL = card.questionImageURL
+            cardMO.answerImageURL = card.answerImageURL
         }
 
         return true
@@ -75,15 +51,13 @@ class CoreDataCardRepository: CardRepositoryDescription {
             cardMO?.answerText = newCard.answerText
             cardMO?.isLearned = newCard.isLearned
 
-            if let questionImg = newCard.questionImage {
+            if let questionImgURL = newCard.questionImageURL {
                 self.fileManager.deleteFile(at: cardMO?.questionImageURL)
-                let questionImgPath = self.fileManager.putImageToFS(with: questionImg)
-                cardMO?.questionImageURL = questionImgPath
+                cardMO?.questionImageURL = questionImgURL
             }
-            if let answerImg = newCard.answerImage {
+            if let answerImgURL = newCard.answerImageURL {
                 self.fileManager.deleteFile(at: cardMO?.answerImageURL)
-                let answerImgPath = self.fileManager.putImageToFS(with: answerImg)
-                cardMO?.answerImageURL = answerImgPath
+                cardMO?.answerImageURL = answerImgURL
             }
         }
 
