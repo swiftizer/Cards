@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "3D2AC2EA-1958-432A-8617-DE7EF27AE189"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FB461736-DF9D-43F3-AEA2-7C2E0B0A7756"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PPOcardsTests/PPOcardSetControllerTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "test_GetCardSet()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FB461736-DF9D-43F3-AEA2-7C2E0B0A7756 - c2dd5225cb23d41"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PPOcardsTests.PPOcardSetControllerTests.test_GetCardSet() -&gt; ()"
+                  moduleName = "PPOcardsTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sergey_nikolaev/Desktop/IOS/PPOcards/PPOcardsTests/PPOcardSetControllerTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "FB461736-DF9D-43F3-AEA2-7C2E0B0A7756 - c2dd5225cb23d41"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PPOcardsTests.PPOcardSetControllerTests.test_GetCardSet() -&gt; ()"
+                  moduleName = "PPOcardsTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sergey_nikolaev/Desktop/IOS/PPOcards/PPOcardsTests/PPOcardSetControllerTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "268">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E77D2324-D80E-4CF1-A4EA-361358DF43D0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PPOcardsTests/PPOcardSetControllerTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "test_GetNotLearnedCardIDsFromSet_mixing_50()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D8061D15-A5DA-4800-B8EB-1BD29B79D188"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PPOcardsTests/PPOcardSetControllerTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "test_CreateCardSet()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D8061D15-A5DA-4800-B8EB-1BD29B79D188 - b8060b88c6f939b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PPOcardsTests.PPOcardSetControllerTests.test_CreateCardSet() -&gt; ()"
+                  moduleName = "PPOcardsTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sergey_nikolaev/Desktop/IOS/PPOcards/PPOcardsTests/PPOcardSetControllerTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "668">
+               </Location>
+               <Location
+                  uuid = "D8061D15-A5DA-4800-B8EB-1BD29B79D188 - b8060b88c6f939b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PPOcardsTests.PPOcardSetControllerTests.test_CreateCardSet() -&gt; ()"
+                  moduleName = "PPOcardsTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sergey_nikolaev/Desktop/IOS/PPOcards/PPOcardsTests/PPOcardSetControllerTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "676">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
