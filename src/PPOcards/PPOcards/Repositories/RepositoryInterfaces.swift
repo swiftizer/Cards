@@ -27,7 +27,6 @@ protocol CardRepositoryDescription {
 }
 
 protocol SettingsRepositoryDescription {
-    func createSettings() -> Bool
     func getSettings() -> Settings
     func updateSettings(to newSettings: Settings) -> Bool
 }

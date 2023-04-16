@@ -46,7 +46,7 @@ final class PPOCardSetControllerUnitTests: XCTestCase {
         let settingsController = SettingsController(dataSource: CoreDataSettingsRepository())
         let cardSetController = CardSetController(dataSource: CoreDataCardSetRepository(), settingsController: settingsController)
 
-        XCTAssertEqual(cardSetController.deleteCardSet(ID: UUID()), true)
+        XCTAssertEqual(cardSetController.deleteCardSet(ID: UUID()), false)
     }
 
     func test_GetLearnedCardIDsFromSet() {

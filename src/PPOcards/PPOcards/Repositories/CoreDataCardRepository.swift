@@ -68,6 +68,10 @@ class CoreDataCardRepository: CardRepositoryDescription {
         let fetchRequest: NSFetchRequest<CardMO> = CardMO.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", ID as CVarArg)
 
+        if coreDataManager.fetch(request: fetchRequest).count == 0 {
+            return false
+        }
+
         coreDataManager.delete(request: fetchRequest)
 
         return true

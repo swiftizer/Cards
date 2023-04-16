@@ -93,6 +93,10 @@ class CoreDataCardSetRepository: CardSetRepositoryDescription {
     func deleteCardSet(ID: UUID) -> Bool {
         let fetchRequest: NSFetchRequest<CardSetMO> = CardSetMO.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", ID as CVarArg)
+        
+        if coreDataManager.fetch(request: fetchRequest).count == 0 {
+            return false
+        }
 
         coreDataManager.delete(request: fetchRequest)
 

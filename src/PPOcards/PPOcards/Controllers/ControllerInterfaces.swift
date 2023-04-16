@@ -9,6 +9,7 @@ import Foundation
 
 protocol CardSetControllerDescription: AnyObject {
     var settings: Settings { get set }
+    func getAllCardSets() -> [CardSet]
     func getCardSet(ID: UUID) -> CardSet?
     func createCardSet(title: String) -> CardSet
     func addCard(card: Card, toSet cardSet: UUID) -> Bool

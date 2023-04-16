@@ -9,13 +9,27 @@ import Foundation
 
 
 class CardSetController: CardSetControllerDescription {
+    
     private let dataSource: CardSetRepositoryDescription
+    weak var cardController: CardControllerDescription?
     var settings: Settings
 
     init(dataSource: CardSetRepositoryDescription, settingsController: SettingsControllerDescription) {
         self.dataSource = dataSource
         self.settings = settingsController.getSettings()
         settingsController.cardSetController = self
+    }
+    
+    func getAllCardSets() -> [CardSet] {
+        let setIDs = dataSource.getAllCardSetIDs()
+        
+        var res = [CardSet]()
+        
+        for setID in setIDs {
+            res.append(dataSource.getCardSet(ID: setID)!)
+        }
+        
+        return res
     }
 
     func getCardSet(ID: UUID) -> CardSet? {
@@ -31,10 +45,23 @@ class CardSetController: CardSetControllerDescription {
     }
 
     func addCard(card: Card, toSet cardSetID: UUID) -> Bool {
-        return dataSource.addCard(card: card, toSet: cardSetID)
+        let res = dataSource.addCard(card: card, toSet: cardSetID)
+        
+        if var set = getCardSet(ID: cardSetID) {
+            set.progress = "\(getAllCardIDsFromSet(from: cardSetID).count - getNotLearnedCardIDsFromSet(from: cardSetID).count)/\(getAllCardIDsFromSet(from: cardSetID).count)"
+            updateCardSet(oldID: cardSetID, new: set)
+        }
+        
+        return res
     }
 
     func deleteCardSet(ID: UUID) -> Bool {
+        let cardIDs = getAllCardIDsFromSet(from: ID)
+        
+        for cardID in cardIDs {
+            cardController?.deleteCard(ID: cardID)
+        }
+        
         return dataSource.deleteCardSet(ID: ID)
     }
 
@@ -59,17 +86,17 @@ class CardSetController: CardSetControllerDescription {
             resultArray.insert(elem, at: randomIndex)
             currentIndex = randomIndex + 1
         }
+        
+        if settings.isMixed {
+            return resultArray.shuffled()
+        }
 
         return resultArray
     }
 
 
     func getAllCardIDsFromSet(from setID: UUID) -> [UUID] {
-        let cardIDs = dataSource.getAllCardIDsFromSet(setID: setID)
-        if settings.isMixed {
-            return cardIDs.shuffled()
-        }
-        return cardIDs
+        return dataSource.getAllCardIDsFromSet(setID: setID)
     }
 
     func updateCardSet(oldID: UUID, new: CardSet) -> Bool {

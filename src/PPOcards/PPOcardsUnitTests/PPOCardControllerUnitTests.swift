@@ -10,7 +10,8 @@ import XCTest
 
 final class PPOCardControllerUnitTests: XCTestCase {
     
-    var cardController = CardController(dataSource: CoreDataCardRepository())
+    var cardSetController = CardSetController(dataSource: CoreDataCardSetRepository(), settingsController: SettingsController(dataSource: CoreDataSettingsRepository()))
+    lazy var cardController = CardController(dataSource: CoreDataCardRepository(), cardSetController: cardSetController)
 
     private func setUUID(param: Int) -> UUID {
         return UUID(uuidString: "00000000-0000-0000-0000-00000000000" + String(param))!
@@ -31,7 +32,7 @@ final class PPOCardControllerUnitTests: XCTestCase {
     }
 
     func test_DeleteCard() {
-        XCTAssertEqual(cardController.deleteCard(ID: UUID()), true)
+        XCTAssertEqual(cardController.deleteCard(ID: UUID()), false)
     }
 
     func test_UpdateCard() {

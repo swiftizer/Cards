@@ -37,6 +37,7 @@
 		B3C47C6429D8925500FCC58A /* SettingsMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C47C5E29D8925500FCC58A /* SettingsMO+CoreDataProperties.swift */; };
 		FA1D020829E4948100BA0E73 /* CardSetMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D020629E4948100BA0E73 /* CardSetMO+CoreDataClass.swift */; };
 		FA1D020929E4948100BA0E73 /* CardSetMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D020729E4948100BA0E73 /* CardSetMO+CoreDataProperties.swift */; };
+		FACD698129EA035300CB0E33 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD698029EA035300CB0E33 /* AlertManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		B3C47C5E29D8925500FCC58A /* SettingsMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FA1D020629E4948100BA0E73 /* CardSetMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardSetMO+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FA1D020729E4948100BA0E73 /* CardSetMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardSetMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FACD698029EA035300CB0E33 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				B339619129E2183F006DEDDD /* extensions.swift */,
 				B378FDA929E3253100879570 /* Repositories */,
 				B378FDB029E325A500879570 /* Controllers */,
+				FACD698029EA035300CB0E33 /* AlertManager.swift */,
 			);
 			path = PPOcards;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				B378FDAB29E3255500879570 /* CardSetController.swift in Sources */,
 				B350D24229C910850026B934 /* Models.swift in Sources */,
 				B378FDA429E324B700879570 /* CoreDataCardSetRepository.swift in Sources */,
+				FACD698129EA035300CB0E33 /* AlertManager.swift in Sources */,
 				B350D23E29C90FEF0026B934 /* ControllerInterfaces.swift in Sources */,
 				B339619D29E2E2A6006DEDDD /* CardMO+CoreDataClass.swift in Sources */,
 				FA1D020829E4948100BA0E73 /* CardSetMO+CoreDataClass.swift in Sources */,
@@ -553,7 +557,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KVA3KA57F7;
+				DEVELOPMENT_TEAM = Q9ZS8V8CB6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PPOcards/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -566,7 +570,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "-14.PPOcards";
+				PRODUCT_BUNDLE_IDENTIFIER = "-1455.PPOcards";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -581,7 +585,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KVA3KA57F7;
+				DEVELOPMENT_TEAM = Q9ZS8V8CB6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PPOcards/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -594,7 +598,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "-14.PPOcards";
+				PRODUCT_BUNDLE_IDENTIFIER = "-1455.PPOcards";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

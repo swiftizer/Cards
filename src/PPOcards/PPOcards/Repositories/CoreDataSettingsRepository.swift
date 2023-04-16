@@ -16,7 +16,7 @@ class CoreDataSettingsRepository: SettingsRepositoryDescription {
         }
     }
 
-    func createSettings() -> Bool {
+    private func createSettings() -> Bool {
         UserDefaults.standard.set(false, forKey: "SettingsIsMixed")
         UserDefaults.standard.set(0, forKey: "SettingsMixingInPower")
         return true
