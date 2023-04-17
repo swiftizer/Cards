@@ -324,7 +324,7 @@ class ViewController: UIViewController {
                     var card = cardController.getCard(ID: curCardId)!
                     card.questionText = input
                     let _ = cardController.updateCard(oldID: curCardId, new: card)
-                    curState = .updatingCard
+                    curState = .enteringNewCardData
                     outputContent = showCardUpdatingMenu(cardID: curCardId)
                 }
             case .enteringNewCardAnswer:
@@ -415,6 +415,10 @@ class ViewController: UIViewController {
     private func setupDB() {
         cardSetController.cardController = cardController
         
+        fillDB()
+    }
+    
+    private func fillDB() {
         let setID1 = cardSetController.createCardSet(title: "test1").id
         let setID2 = cardSetController.createCardSet(title: "test2").id
         let setID3 = cardSetController.createCardSet(title: "test3").id
@@ -466,7 +470,6 @@ class ViewController: UIViewController {
         c34.questionText = "Question34"
         c34.isLearned = false
         let _ = cardController.updateCard(oldID: c34.id, new: c34)
-        
     }
     
     private func setupUI() {

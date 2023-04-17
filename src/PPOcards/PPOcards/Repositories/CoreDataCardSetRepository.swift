@@ -21,7 +21,7 @@ class CoreDataCardSetRepository: CardSetRepositoryDescription {
         guard let cardSetMO = coreDataManager.fetch(request: fetchRequest).first else { return nil }
 
 
-        let cardSet = CardSet(id: cardSetMO.id ?? UUID(), title: cardSetMO.title ?? "", progress: cardSetMO.progress ?? "", color: Int(cardSetMO.color))
+        let cardSet = CardSet(id: cardSetMO.id ?? UUID(), title: cardSetMO.title ?? "", allCardsCount: Int(cardSetMO.allCardsCount), learnedCardsCount: Int(cardSetMO.learnedCardsCount), color: Int(cardSetMO.color))
 
         return cardSet
 
@@ -33,7 +33,8 @@ class CoreDataCardSetRepository: CardSetRepositoryDescription {
 
             cardSetMO.id = set.id
             cardSetMO.title = set.title
-            cardSetMO.progress = set.progress
+            cardSetMO.allCardsCount = Int32(set.allCardsCount)
+            cardSetMO.learnedCardsCount = Int32(set.learnedCardsCount)
             cardSetMO.color = Int32(set.color)
         }
 
@@ -110,7 +111,8 @@ class CoreDataCardSetRepository: CardSetRepositoryDescription {
         coreDataManager.update(request: fetchRequest) { cardSetMO in
             cardSetMO?.id = newSet.id
             cardSetMO?.title = newSet.title
-            cardSetMO?.progress = newSet.progress
+            cardSetMO?.allCardsCount = Int32(newSet.allCardsCount)
+            cardSetMO?.learnedCardsCount = Int32(newSet.learnedCardsCount)
             cardSetMO?.color = Int32(newSet.color)
         }
 

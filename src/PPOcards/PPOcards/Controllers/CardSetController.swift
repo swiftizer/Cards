@@ -37,7 +37,7 @@ class CardSetController: CardSetControllerDescription {
     }
 
     func createCardSet(title: String) -> CardSet {
-        let cardSet = CardSet(id: UUID(), title: title, progress: "0/0", color: 0xFF0000)
+        let cardSet = CardSet(id: UUID(), title: title, allCardsCount: 0, learnedCardsCount: 0, color: 0xFF0000)
 
         let _ = dataSource.addCardSet(set: cardSet)
 
@@ -48,7 +48,7 @@ class CardSetController: CardSetControllerDescription {
         let res = dataSource.addCard(card: card, toSet: cardSetID)
         
         if var set = getCardSet(ID: cardSetID) {
-            set.progress = "\(getAllCardIDsFromSet(from: cardSetID).count - getNotLearnedCardIDsFromSet(from: cardSetID).count)/\(getAllCardIDsFromSet(from: cardSetID).count)"
+            updateCardSetProgress(cardSetID: cardSetID)
             updateCardSet(oldID: cardSetID, new: set)
         }
         
@@ -103,5 +103,13 @@ class CardSetController: CardSetControllerDescription {
         return dataSource.updateCardSet(oldID: oldID, newSet: new)
     }
 
-
+    func updateCardSetProgress(cardSetID: UUID) {
+        if var set = getCardSet(ID: cardSetID) {
+            set.allCardsCount = getAllCardIDsFromSet(from: cardSetID).count
+            set.learnedCardsCount = getLearnedCardIDsFromSet(from: cardSetID).count
+            
+            updateCardSet(oldID: cardSetID, new: set)
+        }
+    }
+    
 }

@@ -10,11 +10,12 @@ import Foundation
 struct CardSet: Equatable {
     let id: UUID
     var title: String
-    var progress: String
+    var allCardsCount: Int
+    var learnedCardsCount: Int
     var color: Int
     
     var description: String {
-        return "  - id: \(id)\n  - title: \(title)\n  - progress: \(progress)\n  - color: \(String(format: "0x%X", color))\n"
+        return "  - id: \(id)\n  - title: \(title)\n  - progress: \(learnedCardsCount)/\(allCardsCount)\n  - color: \(String(format: "0x%X", color))\n"
     }
 }
 

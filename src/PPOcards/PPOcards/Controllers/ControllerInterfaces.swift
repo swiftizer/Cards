@@ -18,6 +18,7 @@ protocol CardSetControllerDescription: AnyObject {
     func getLearnedCardIDsFromSet(from setID: UUID) -> [UUID]
     func updateCardSet(oldID: UUID, new: CardSet) -> Bool
     func deleteCardSet(ID: UUID) -> Bool
+    func updateCardSetProgress(cardSetID: UUID)
 }
 
 protocol CardControllerDescription: AnyObject {

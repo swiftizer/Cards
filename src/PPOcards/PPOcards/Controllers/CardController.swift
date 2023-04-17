@@ -25,10 +25,7 @@ class CardController: CardControllerDescription {
         let card = Card(id: UUID(), setID: cardSetID, isLearned: false)
 
         dataSource.addCard(card: card)
-        if var set = cardSetController.getCardSet(ID: cardSetID) {
-            set.progress = "\(cardSetController.getAllCardIDsFromSet(from: cardSetID).count - cardSetController.getNotLearnedCardIDsFromSet(from: cardSetID).count)/\(cardSetController.getAllCardIDsFromSet(from: cardSetID).count)"
-            cardSetController.updateCardSet(oldID: cardSetID, new: set)
-        }
+        cardSetController.updateCardSetProgress(cardSetID: cardSetID)
 
         return card
     }
@@ -36,24 +33,15 @@ class CardController: CardControllerDescription {
     func deleteCard(ID: UUID) -> Bool {
         var res = false
         
-        if let card = getCard(ID: ID), let cardSetID = card.setID, var set = cardSetController.getCardSet(ID: cardSetID) {
-            
-            res = dataSource.deleteCard(ID: ID)
-            
-            set.progress = "\(cardSetController.getAllCardIDsFromSet(from: cardSetID).count - cardSetController.getNotLearnedCardIDsFromSet(from: cardSetID).count)/\(cardSetController.getAllCardIDsFromSet(from: cardSetID).count)"
-            cardSetController.updateCardSet(oldID: cardSetID, new: set)
-        }
+        res = dataSource.deleteCard(ID: ID)
+        cardSetController.updateCardSetProgress(cardSetID: getCard(ID: ID)?.setID ?? UUID())
         
         return res
     }
 
     func updateCard(oldID: UUID, new: Card) -> Bool {
         let res = dataSource.updateCard(oldID: oldID, newCard: new)
-        
-        if let setId = new.setID, var set = cardSetController.getCardSet(ID: setId) {
-            set.progress = "\(cardSetController.getAllCardIDsFromSet(from: setId).count - cardSetController.getNotLearnedCardIDsFromSet(from: setId).count)/\(cardSetController.getAllCardIDsFromSet(from: setId).count)"
-            cardSetController.updateCardSet(oldID: setId, new: set)
-        }
+        cardSetController.updateCardSetProgress(cardSetID: new.setID ?? UUID())
         
         return res
     }

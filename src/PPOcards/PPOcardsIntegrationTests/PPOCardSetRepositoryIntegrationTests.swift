@@ -30,13 +30,14 @@ final class PPOCardSetRepositoryIntegrationTests: XCTestCase {
         let cardSetRepository = CoreDataCardSetRepository()
 
         let id = UUID()
-        let set = CardSet(id: id, title: "test_GetCardSet", progress: "0/0", color: 0x0000FF)
+        let set = CardSet(id: id, title: "test_GetCardSet", allCardsCount: 0, learnedCardsCount: 0, color: 0x0000FF)
         db.create(entityName: "CardSetMO") { cardSetMO in
             guard let cardSetMO = cardSetMO as? CardSetMO else { return }
 
             cardSetMO.id = set.id
             cardSetMO.title = set.title
-            cardSetMO.progress = set.progress
+            cardSetMO.allCardsCount = Int32(set.allCardsCount)
+            cardSetMO.learnedCardsCount = Int32(set.learnedCardsCount)
             cardSetMO.color = Int32(set.color)
         }
 
@@ -49,7 +50,7 @@ final class PPOCardSetRepositoryIntegrationTests: XCTestCase {
         let cardSetRepository = CoreDataCardSetRepository()
 
         let id = UUID()
-        let set = CardSet(id: id, title: "test_addCardSet", progress: "0/0", color: 0x0000FF)
+        let set = CardSet(id: id, title: "test_addCardSet", allCardsCount: 0, learnedCardsCount: 0, color: 0x0000FF)
         let rc = cardSetRepository.addCardSet(set: set)
         XCTAssertEqual(rc, true)
 
@@ -58,7 +59,7 @@ final class PPOCardSetRepositoryIntegrationTests: XCTestCase {
 
         guard let cardSetMO = db.fetch(request: fetchRequest).first else { return }
 
-        let cardSet = CardSet(id: cardSetMO.id ?? UUID(), title: cardSetMO.title ?? "", progress: cardSetMO.progress ?? "", color: Int(cardSetMO.color))
+        let cardSet = CardSet(id: cardSetMO.id ?? UUID(), title: cardSetMO.title ?? "", allCardsCount: Int(cardSetMO.allCardsCount ?? 0), learnedCardsCount: Int(cardSetMO.learnedCardsCount ?? 0), color: Int(cardSetMO.color))
 
         XCTAssertEqual(set, cardSet)
     }
@@ -68,8 +69,8 @@ final class PPOCardSetRepositoryIntegrationTests: XCTestCase {
 
         let id1 = UUID()
         let id2 = UUID()
-        let set1 = CardSet(id: id1, title: "test_GetCardSet", progress: "0/0", color: 0x0000FF)
-        let set2 = CardSet(id: id2, title: "test_GetCardSet", progress: "0/0", color: 0x0000FF)
+        let set1 = CardSet(id: id1, title: "test_GetCardSet", allCardsCount: 0, learnedCardsCount: 0, color: 0x0000FF)
+        let set2 = CardSet(id: id2, title: "test_GetCardSet", allCardsCount: 0, learnedCardsCount: 0, color: 0x0000FF)
 
         db.delete(request: CardSetMO.fetchRequest())
 
@@ -78,7 +79,8 @@ final class PPOCardSetRepositoryIntegrationTests: XCTestCase {
 
             cardSetMO.id = set1.id
             cardSetMO.title = set1.title
-            cardSetMO.progress = set1.progress
+            cardSetMO.allCardsCount = Int32(set1.allCardsCount)
+            cardSetMO.learnedCardsCount = Int32(set1.learnedCardsCount)
             cardSetMO.color = Int32(set1.color)
         }
         db.create(entityName: "CardSetMO") { cardSetMO in
@@ -86,7 +88,8 @@ final class PPOCardSetRepositoryIntegrationTests: XCTestCase {
 
             cardSetMO.id = set2.id
             cardSetMO.title = set2.title
-            cardSetMO.progress = set2.progress
+            cardSetMO.allCardsCount = Int32(set2.allCardsCount)
+            cardSetMO.learnedCardsCount = Int32(set2.learnedCardsCount)
             cardSetMO.color = Int32(set2.color)
         }
 
@@ -241,7 +244,7 @@ final class PPOCardSetRepositoryIntegrationTests: XCTestCase {
         let cardSetRepository = CoreDataCardSetRepository()
 
         let id = UUID()
-        let cs = CardSet(id: id, title: "deleteCardSet", progress: "0/0", color: 0x0000FF)
+        let cs = CardSet(id: id, title: "deleteCardSet", allCardsCount: 0, learnedCardsCount: 0, color: 0x0000FF)
 
         db.delete(request: CardSetMO.fetchRequest())
 
@@ -250,7 +253,8 @@ final class PPOCardSetRepositoryIntegrationTests: XCTestCase {
 
             cardSetMO.id = cs.id
             cardSetMO.title = cs.title
-            cardSetMO.progress = cs.progress
+            cardSetMO.allCardsCount = Int32(cs.allCardsCount)
+            cardSetMO.learnedCardsCount = Int32(cs.learnedCardsCount)
             cardSetMO.color = Int32(cs.color)
         }
 
@@ -272,8 +276,8 @@ final class PPOCardSetRepositoryIntegrationTests: XCTestCase {
         let idOld = UUID()
         let idNew = UUID()
 
-        let csOld = CardSet(id: idOld, title: "deleteCardSet", progress: "0/0", color: 0x0000FF)
-        let csNew = CardSet(id: idNew, title: "deleteCardSet", progress: "0/0", color: 0x0000FF)
+        let csOld = CardSet(id: idOld, title: "deleteCardSet", allCardsCount: 0, learnedCardsCount: 0, color: 0x0000FF)
+        let csNew = CardSet(id: idNew, title: "deleteCardSet", allCardsCount: 0, learnedCardsCount: 0, color: 0x0000FF)
 
         db.delete(request: CardSetMO.fetchRequest())
 
@@ -288,8 +292,7 @@ final class PPOCardSetRepositoryIntegrationTests: XCTestCase {
 
         guard let cardSetMO = db.fetch(request: fetchRequest).first else { return }
 
-
-        let cardSetRes = CardSet(id: cardSetMO.id ?? UUID(), title: cardSetMO.title ?? "", progress: cardSetMO.progress ?? "", color: Int(cardSetMO.color))
+        let cardSetRes = CardSet(id: cardSetMO.id ?? UUID(), title: cardSetMO.title ?? "", allCardsCount: Int(cardSetMO.allCardsCount ?? 0), learnedCardsCount: Int(cardSetMO.learnedCardsCount ?? 0), color: Int(cardSetMO.color))
 
         XCTAssertEqual(csNew, cardSetRes)
     }
