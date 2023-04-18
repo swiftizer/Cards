@@ -10,9 +10,10 @@
         <attribute name="setID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
     </entity>
     <entity name="CardSetMO" representedClassName="CardSetMO" syncable="YES">
+        <attribute name="allCardsCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="color" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="progress" optional="YES" attributeType="String"/>
+        <attribute name="learnedCardsCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <entity name="SettingsMO" representedClassName="SettingsMO" syncable="YES">

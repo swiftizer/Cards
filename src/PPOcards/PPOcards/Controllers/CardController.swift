@@ -10,9 +10,11 @@ import Foundation
 
 class CardController: CardControllerDescription {
     private let dataSource: CardRepositoryDescription
+    private let cardSetController: CardSetControllerDescription
 
-    init(dataSource: CardRepositoryDescription) {
+    init(dataSource: CardRepositoryDescription, cardSetController: CardSetControllerDescription) {
         self.dataSource = dataSource
+        self.cardSetController = cardSetController
     }
 
     func getCard(ID: UUID) -> Card? {
@@ -23,16 +25,25 @@ class CardController: CardControllerDescription {
         let card = Card(id: UUID(), setID: cardSetID, isLearned: false)
 
         dataSource.addCard(card: card)
+        cardSetController.updateCardSetProgress(cardSetID: cardSetID)
 
         return card
     }
 
     func deleteCard(ID: UUID) -> Bool {
-        return dataSource.deleteCard(ID: ID)
+        var res = false
+        
+        res = dataSource.deleteCard(ID: ID)
+        cardSetController.updateCardSetProgress(cardSetID: getCard(ID: ID)?.setID ?? UUID())
+        
+        return res
     }
 
     func updateCard(oldID: UUID, new: Card) -> Bool {
-        return dataSource.updateCard(oldID: oldID, newCard: new)
+        let res = dataSource.updateCard(oldID: oldID, newCard: new)
+        cardSetController.updateCardSetProgress(cardSetID: new.setID ?? UUID())
+        
+        return res
     }
 
 }

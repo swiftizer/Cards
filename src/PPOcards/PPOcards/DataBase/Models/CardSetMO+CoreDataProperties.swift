@@ -2,7 +2,7 @@
 //  CardSetMO+CoreDataProperties.swift
 //  PPOcards
 //
-//  Created by ser.nikolaev on 10.04.2023.
+//  Created by ser.nikolaev on 17.04.2023.
 //
 //
 
@@ -18,8 +18,9 @@ extension CardSetMO {
 
     @NSManaged public var color: Int32
     @NSManaged public var id: UUID?
-    @NSManaged public var progress: String?
+    @NSManaged public var allCardsCount: Int32
     @NSManaged public var title: String?
+    @NSManaged public var learnedCardsCount: Int32
 
 }
 

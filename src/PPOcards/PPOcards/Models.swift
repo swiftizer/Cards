@@ -10,8 +10,13 @@ import Foundation
 struct CardSet: Equatable {
     let id: UUID
     var title: String
-    var progress: String
+    var allCardsCount: Int
+    var learnedCardsCount: Int
     var color: Int
+    
+    var description: String {
+        return "  - id: \(id)\n  - title: \(title)\n  - progress: \(learnedCardsCount)/\(allCardsCount)\n  - color: \(String(format: "0x%X", color))\n"
+    }
 }
 
 struct Card: Equatable {
@@ -22,9 +27,17 @@ struct Card: Equatable {
     var answerText: String?
     var answerImageURL: URL?
     var isLearned: Bool
+    
+    var description: String {
+        return "  - id: \(id)\n  - setID: \(setID!)\n  - questionText: \(questionText ?? " - ")\n  - answerText: \(answerText ?? " - ")\n  - isLearned: \(isLearned)\n"
+    }
 }
 
 struct Settings: Equatable {
     var isMixed: Bool
     var mixingInPower: Int?
+    
+    var description: String {
+        return "  - isMixed: \(isMixed)\n  - mixingInPower: \(mixingInPower ?? 0)\n"
+    }
 }

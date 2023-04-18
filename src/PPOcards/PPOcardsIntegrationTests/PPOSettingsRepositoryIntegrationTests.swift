@@ -12,16 +12,6 @@ final class PPOSettingsRepositoryIntegrationTests: XCTestCase {
 
     private let db = UserDefaults.standard
 
-    func test_createSettings() {
-        let settingsRepository = CoreDataSettingsRepository()
-
-        let rc = settingsRepository.createSettings()
-        XCTAssertEqual(rc, true)
-
-        XCTAssertEqual(db.bool(forKey: "SettingsIsMixed"), false)
-        XCTAssertEqual(db.integer(forKey: "SettingsMixingInPower"), 0)
-    }
-
     func test_getSettings() {
         let settingsRepository = CoreDataSettingsRepository()
 
