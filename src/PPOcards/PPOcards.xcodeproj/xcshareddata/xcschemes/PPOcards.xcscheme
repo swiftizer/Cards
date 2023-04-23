@@ -34,9 +34,9 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B376BBFD29D343B000BBB524"
-               BuildableName = "PPOcardsUnitTests.xctest"
-               BlueprintName = "PPOcardsUnitTests"
+               BlueprintIdentifier = "B378FD9529E3102900879570"
+               BuildableName = "PPOcardsIntegrationTests.xctest"
+               BlueprintName = "PPOcardsIntegrationTests"
                ReferencedContainer = "container:PPOcards.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -45,9 +45,9 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B378FD9529E3102900879570"
-               BuildableName = "PPOcardsIntegrationTests.xctest"
-               BlueprintName = "PPOcardsIntegrationTests"
+               BlueprintIdentifier = "FA0CE2E829F447CA00DB094F"
+               BuildableName = "UnitTests.xctest"
+               BlueprintName = "UnitTests"
                ReferencedContainer = "container:PPOcards.xcodeproj">
             </BuildableReference>
          </TestableReference>

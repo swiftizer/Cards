@@ -6,14 +6,17 @@
 //
 
 import CoreData
+import Core
 
 
-class CoreDataCardSetRepository: CardSetRepositoryDescription {
+public class CoreDataCardSetRepository: CardSetRepositoryDescription {
 
     private let coreDataManager = CoreDataManager.shared
     private let fileManager = MyFileManager.shared
+    
+    public init() {}
 
-    func getCardSet(ID: UUID) -> CardSet? {
+    public func getCardSet(ID: UUID) -> CardSet? {
 
         let fetchRequest: NSFetchRequest<CardSetMO> = CardSetMO.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", ID as CVarArg)
@@ -27,7 +30,7 @@ class CoreDataCardSetRepository: CardSetRepositoryDescription {
 
     }
 
-    func addCardSet(set: CardSet) -> Bool {
+    public func addCardSet(set: CardSet) -> Bool {
         coreDataManager.create(entityName: "CardSetMO") { cardSetMO in
             guard let cardSetMO = cardSetMO as? CardSetMO else { return }
 
@@ -41,14 +44,14 @@ class CoreDataCardSetRepository: CardSetRepositoryDescription {
         return true
     }
 
-    func getAllCardSetIDs() -> [UUID] {
+    public func getAllCardSetIDs() -> [UUID] {
         let fetchRequest: NSFetchRequest<CardSetMO> = CardSetMO.fetchRequest()
         let cardSetMO = coreDataManager.fetch(request: fetchRequest)
 
         return cardSetMO.map { $0.id! }
     }
 
-    func getAllCardIDsFromSet(setID: UUID) -> [UUID] {
+    public func getAllCardIDsFromSet(setID: UUID) -> [UUID] {
         let fetchRequest: NSFetchRequest<CardMO> = CardMO.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "%K == %@", #keyPath(CardMO.setID), setID as CVarArg)
 
@@ -57,7 +60,7 @@ class CoreDataCardSetRepository: CardSetRepositoryDescription {
         return cardMO.map { $0.id! }
     }
 
-    func getNotLearnedCardIDsFromSet(from setID: UUID) -> [UUID] {
+    public func getNotLearnedCardIDsFromSet(from setID: UUID) -> [UUID] {
         let fetchRequest: NSFetchRequest<CardMO> = CardMO.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "%K == %@ AND %K == false", #keyPath(CardMO.setID), setID as CVarArg, #keyPath(CardMO.isLearned))
 
@@ -66,7 +69,7 @@ class CoreDataCardSetRepository: CardSetRepositoryDescription {
         return cardMO.map { $0.id! }
     }
 
-    func getLearnedCardIDsFromSet(from setID: UUID) -> [UUID] {
+    public func getLearnedCardIDsFromSet(from setID: UUID) -> [UUID] {
         let fetchRequest: NSFetchRequest<CardMO> = CardMO.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "%K == %@ AND %K == true", #keyPath(CardMO.setID), setID as CVarArg, #keyPath(CardMO.isLearned))
 
@@ -75,7 +78,7 @@ class CoreDataCardSetRepository: CardSetRepositoryDescription {
         return cardMO.map { $0.id! }
     }
 
-    func addCard(card: Card, toSet cardSetID: UUID) -> Bool {
+    public func addCard(card: Card, toSet cardSetID: UUID) -> Bool {
         coreDataManager.create(entityName: "CardMO") { cardMO in
             guard let cardMO = cardMO as? CardMO else { return }
 
@@ -91,7 +94,7 @@ class CoreDataCardSetRepository: CardSetRepositoryDescription {
         return true
     }
 
-    func deleteCardSet(ID: UUID) -> Bool {
+    public func deleteCardSet(ID: UUID) -> Bool {
         let fetchRequest: NSFetchRequest<CardSetMO> = CardSetMO.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", ID as CVarArg)
         
@@ -104,7 +107,7 @@ class CoreDataCardSetRepository: CardSetRepositoryDescription {
         return true
     }
 
-    func updateCardSet(oldID: UUID, newSet: CardSet) -> Bool {
+    public func updateCardSet(oldID: UUID, newSet: CardSet) -> Bool {
         let fetchRequest: NSFetchRequest<CardSetMO> = CardSetMO.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", oldID as CVarArg)
 

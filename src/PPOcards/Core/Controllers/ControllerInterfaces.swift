@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol CardSetControllerDescription: AnyObject {
+public protocol CardSetControllerDescription: AnyObject {
     var settings: Settings { get set }
     func getAllCardSets() -> [CardSet]
     func getCardSet(ID: UUID) -> CardSet?
@@ -21,13 +21,13 @@ protocol CardSetControllerDescription: AnyObject {
     func updateCardSetProgress(cardSetID: UUID)
 }
 
-protocol CardControllerDescription: AnyObject {
+public protocol CardControllerDescription: AnyObject {
     func getCard(ID: UUID) -> Card?
     func createCard(for cardSetID: UUID) -> Card
     func deleteCard(ID: UUID) -> Bool
 }
 
-protocol SettingsControllerDescription: AnyObject {
+public protocol SettingsControllerDescription: AnyObject {
     var cardSetController: CardSetControllerDescription? { get set }
     func getSettings() -> Settings
     func updateSettings(to newSettings: Settings) -> Bool

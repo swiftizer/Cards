@@ -7,7 +7,8 @@
 
 import XCTest
 import CoreData
-@testable import PPOcards
+@testable import Core
+@testable import DBCoreData
 
 final class PPOCardRepositoryIntegrationTests: XCTestCase {
 

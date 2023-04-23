@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Core
+import DBCoreData
 
 class ViewController: UIViewController {
     let settingsController = SettingsController(dataSource: CoreDataSettingsRepository())
@@ -399,8 +401,15 @@ class ViewController: UIViewController {
 
     }()
 
+    override func loadView() {
+        super.loadView()
+        Logger.shared.log(lvl: .INFO, msg: "VC loadView called")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Logger.shared.log(lvl: .INFO, msg: "VC viewDidLoad called")
         
         setupUI()
         setupDB()
@@ -408,14 +417,44 @@ class ViewController: UIViewController {
         outputContent = startMenu
     }
     
-    private func showMenu() {
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        Logger.shared.log(lvl: .INFO, msg: "VC viewWillAppear called")
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        Logger.shared.log(lvl: .INFO, msg: "VC viewWillLayoutSubviews called")
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        Logger.shared.log(lvl: .INFO, msg: "VC viewDidLayoutSubviews called")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        Logger.shared.log(lvl: .INFO, msg: "VC viewDidAppear called")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        Logger.shared.log(lvl: .INFO, msg: "VC viewWillDisappear called")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        Logger.shared.log(lvl: .INFO, msg: "VC viewDidDisappear called")
+    }
+    
+    deinit {
+        Logger.shared.log(lvl: .INFO, msg: "VC deinited")
     }
     
     private func setupDB() {
         cardSetController.cardController = cardController
         
-        fillDB()
+//        fillDB()
     }
     
     private func fillDB() {
