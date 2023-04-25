@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol CardSetRepositoryDescription {
+public protocol CardSetRepositoryDescription {
     func getCardSet(ID: UUID) -> CardSet?
     func addCardSet(set: CardSet) -> Bool
     func getAllCardSetIDs() -> [UUID]
@@ -19,14 +19,14 @@ protocol CardSetRepositoryDescription {
     func updateCardSet(oldID: UUID, newSet: CardSet) -> Bool
 }
 
-protocol CardRepositoryDescription {
+public protocol CardRepositoryDescription {
     func getCard(ID: UUID) -> Card?
     func addCard(card: Card) -> Bool
     func updateCard(oldID: UUID, newCard: Card) -> Bool
     func deleteCard(ID: UUID) -> Bool
 }
 
-protocol SettingsRepositoryDescription {
+public protocol SettingsRepositoryDescription {
     func getSettings() -> Settings
     func updateSettings(to newSettings: Settings) -> Bool
 }

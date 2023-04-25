@@ -6,11 +6,12 @@
 //
 
 import CoreData
+import Core
 
 
-class CoreDataSettingsRepository: SettingsRepositoryDescription {
+public class CoreDataSettingsRepository: SettingsRepositoryDescription {
 
-    init() {
+    public init() {
         if !UserDefaults.exists(key: "SettingsIsMixed") || !UserDefaults.exists(key: "SettingsMixingInPower") {
             let _ = createSettings()
         }
@@ -22,11 +23,11 @@ class CoreDataSettingsRepository: SettingsRepositoryDescription {
         return true
     }
 
-    func getSettings() -> Settings {
+    public func getSettings() -> Settings {
         Settings(isMixed: UserDefaults.standard.bool(forKey: "SettingsIsMixed"), mixingInPower: UserDefaults.standard.integer(forKey: "SettingsMixingInPower"))
     }
 
-    func updateSettings(to newSettings: Settings) -> Bool {
+    public func updateSettings(to newSettings: Settings) -> Bool {
         UserDefaults.standard.set(newSettings.isMixed, forKey: "SettingsIsMixed")
         UserDefaults.standard.set(newSettings.mixingInPower, forKey: "SettingsMixingInPower")
         return true

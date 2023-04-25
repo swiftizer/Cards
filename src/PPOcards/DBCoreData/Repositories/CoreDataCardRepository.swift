@@ -6,14 +6,17 @@
 //
 
 import CoreData
+import Core
 
 
-class CoreDataCardRepository: CardRepositoryDescription {
+public class CoreDataCardRepository: CardRepositoryDescription {
 
     private let coreDataManager = CoreDataManager.shared
     private let fileManager = MyFileManager.shared
+    
+    public init() {}
 
-    func getCard(ID: UUID) -> Card? {
+    public func getCard(ID: UUID) -> Card? {
         let fetchRequest: NSFetchRequest<CardMO> = CardMO.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", ID as CVarArg)
 
@@ -24,7 +27,7 @@ class CoreDataCardRepository: CardRepositoryDescription {
         return card
     }
 
-    func addCard(card: Card) -> Bool {
+    public func addCard(card: Card) -> Bool {
         coreDataManager.create(entityName: "CardMO") { cardMO in
             guard let cardMO = cardMO as? CardMO else { return }
 
@@ -40,7 +43,7 @@ class CoreDataCardRepository: CardRepositoryDescription {
         return true
     }
 
-    func updateCard(oldID: UUID, newCard: Card) -> Bool {
+    public func updateCard(oldID: UUID, newCard: Card) -> Bool {
         let fetchRequest: NSFetchRequest<CardMO> = CardMO.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", oldID as CVarArg)
 
@@ -64,7 +67,7 @@ class CoreDataCardRepository: CardRepositoryDescription {
         return true
     }
 
-    func deleteCard(ID: UUID) -> Bool {
+    public func deleteCard(ID: UUID) -> Bool {
         let fetchRequest: NSFetchRequest<CardMO> = CardMO.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", ID as CVarArg)
 

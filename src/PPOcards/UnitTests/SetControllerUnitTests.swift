@@ -6,7 +6,8 @@
 //
 
 import XCTest
-@testable import PPOcards
+@testable import Core
+@testable import DBCoreData
 
 final class PPOCardSetControllerUnitTests: XCTestCase {
 
@@ -72,6 +73,10 @@ final class PPOCardSetControllerUnitTests: XCTestCase {
     func test_GetNotLearnedCardIDsFromSet_mixing_0() {
         let settingsController = SettingsController(dataSource: CoreDataSettingsRepository())
         let cardSetController = CardSetController(dataSource: CoreDataCardSetRepository(), settingsController: settingsController)
+        
+        let rc = settingsController.updateSettings(to: Settings(isMixed: false, mixingInPower: 0))
+
+        XCTAssertEqual(rc, true)
 
         let cs = cardSetController.createCardSet(title: "test_GetCardSet")
 

@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class DataColorConverter {
+public final class DataColorConverter {
     
     static var shared = DataColorConverter()
     
@@ -18,19 +18,19 @@ final class DataColorConverter {
     }
 }
 
-extension Numeric {
+public extension Numeric {
     var data: Data {
         var bytes = self
         return Data(bytes: &bytes, count: MemoryLayout<Self>.size)
     }
 }
 
-extension Data {
+public extension Data {
     func object<T>() -> T { withUnsafeBytes{$0.load(as: T.self)} }
     var color: UIColor { .init(data: self) }
 }
 
-extension UIColor {
+public extension UIColor {
     convenience init(data: Data) {
         let size = MemoryLayout<CGFloat>.size
         self.init(red:   data.subdata(in: size*0..<size*1).object(),
@@ -49,7 +49,7 @@ extension UIColor {
     }
 }
 
-extension UIColor {
+public extension UIColor {
    convenience init(red: Int, green: Int, blue: Int) {
        assert(red >= 0 && red <= 255, "Invalid red component")
        assert(green >= 0 && green <= 255, "Invalid green component")
@@ -67,7 +67,7 @@ extension UIColor {
    }
 }
 
-extension UserDefaults {
+public extension UserDefaults {
 
     static func exists(key: String) -> Bool {
         return UserDefaults.standard.object(forKey: key) != nil

@@ -6,7 +6,8 @@
 //
 
 import XCTest
-@testable import PPOcards
+@testable import Core
+@testable import DBCoreData
 
 final class PPOSettingsRepositoryIntegrationTests: XCTestCase {
 
