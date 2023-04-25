@@ -7,6 +7,7 @@
 
 import CoreData
 import Core
+import Logger
 
 protocol CoreDataManagerDescription {
     func fetch<T: NSManagedObject>(request: NSFetchRequest<T>) -> [T]

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Logger
 
 
 public class SettingsController: SettingsControllerDescription {
@@ -13,12 +14,12 @@ public class SettingsController: SettingsControllerDescription {
     weak public var cardSetController: CardSetControllerDescription?
 
     public init(dataSource: SettingsRepositoryDescription) {
-        Logger.shared.log(lvl: .DEBUG, msg: "SettingsController inited")
+        Logger.shared.log(lvl: .VERBOSE, msg: "SettingsController inited")
         self.dataSource = dataSource
     }
 
     public func getSettings() -> Settings {
-        Logger.shared.log(lvl: .VERBOSE, msg: "User gets settings")
+        Logger.shared.log(lvl: .DEBUG, msg: "User gets settings")
         return dataSource.getSettings()
     }
 
@@ -36,7 +37,7 @@ public class SettingsController: SettingsControllerDescription {
         var msg = "User requests to update settings to new settings [\(newSettings.logDescription)]: "
         let res = dataSource.updateSettings(to: newSettingsCorrect)
         if res { msg += "Success" } else { msg += "Can not update settings" }
-        Logger.shared.log(lvl: .VERBOSE, msg: msg)
+        Logger.shared.log(lvl: .DEBUG, msg: msg)
         return res
     }
     

@@ -51,6 +51,17 @@
                ReferencedContainer = "container:PPOcards.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B376BBFD29D343B000BBB524"
+               BuildableName = "PPOcardsUnitTests.xctest"
+               BlueprintName = "PPOcardsUnitTests"
+               ReferencedContainer = "container:PPOcards.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

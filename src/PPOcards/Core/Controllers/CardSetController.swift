@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Logger
 
 
 public class CardSetController: CardSetControllerDescription {
@@ -15,14 +16,14 @@ public class CardSetController: CardSetControllerDescription {
     public var settings: Settings
 
     public init(dataSource: CardSetRepositoryDescription, settingsController: SettingsControllerDescription) {
-        Logger.shared.log(lvl: .DEBUG, msg: "CardSetController inited")
+        Logger.shared.log(lvl: .VERBOSE, msg: "CardSetController inited")
         self.dataSource = dataSource
         self.settings = settingsController.getSettings()
         settingsController.cardSetController = self
     }
     
     public func getAllCardSets() -> [CardSet] {
-        Logger.shared.log(lvl: .VERBOSE, msg: "User gets all card sets")
+        Logger.shared.log(lvl: .DEBUG, msg: "User gets all card sets")
         let setIDs = dataSource.getAllCardSetIDs()
         
         var res = [CardSet]()
@@ -38,13 +39,13 @@ public class CardSetController: CardSetControllerDescription {
         var msg = "User requests to get card set [id=\(ID.uuidString)]: "
         let card = dataSource.getCardSet(ID: ID)
         if card != nil { msg += "Success" } else { msg += "Card not found" }
-        Logger.shared.log(lvl: .VERBOSE, msg: msg)
+        Logger.shared.log(lvl: .DEBUG, msg: msg)
         return card
     }
 
     public func createCardSet(title: String) -> CardSet {
         let cardSet = CardSet(id: UUID(), title: title, allCardsCount: 0, learnedCardsCount: 0, color: 0xFF0000)
-        Logger.shared.log(lvl: .VERBOSE, msg: "User creates card set [id=\(cardSet.id.uuidString)] with [title=\(title)]")
+        Logger.shared.log(lvl: .DEBUG, msg: "User creates card set [id=\(cardSet.id.uuidString)] with [title=\(title)]")
 
         let _ = dataSource.addCardSet(set: cardSet)
         
@@ -53,7 +54,7 @@ public class CardSetController: CardSetControllerDescription {
 
     public func addCard(card: Card, toSet cardSetID: UUID) -> Bool {
         let res = dataSource.addCard(card: card, toSet: cardSetID)
-        Logger.shared.log(lvl: .VERBOSE, msg: "User adds card [id=\(card.id.uuidString)] to card set [id=\(cardSetID.uuidString)]")
+        Logger.shared.log(lvl: .DEBUG, msg: "User adds card [id=\(card.id.uuidString)] to card set [id=\(cardSetID.uuidString)]")
         
         if var set = getCardSet(ID: cardSetID) {
             updateCardSetProgress(cardSetID: cardSetID)
@@ -73,19 +74,19 @@ public class CardSetController: CardSetControllerDescription {
         var msg = "User requests to delete card set [id=\(ID.uuidString)]: "
         let res = dataSource.deleteCardSet(ID: ID)
         if res { msg += "Success" } else { msg += "Can not delete card set" }
-        Logger.shared.log(lvl: .VERBOSE, msg: msg)
+        Logger.shared.log(lvl: .DEBUG, msg: msg)
         
         return res
     }
 
     public func getLearnedCardIDsFromSet(from setID: UUID) -> [UUID] {
-        Logger.shared.log(lvl: .VERBOSE, msg: "User gets learned cards from set [id=\(setID.uuidString)]")
+        Logger.shared.log(lvl: .DEBUG, msg: "User gets learned cards from set [id=\(setID.uuidString)]")
         return dataSource.getLearnedCardIDsFromSet(from: setID)
     }
 
 
     public func getNotLearnedCardIDsFromSet(from setID: UUID) -> [UUID] {
-        Logger.shared.log(lvl: .VERBOSE, msg: "User gets not learned cards from set [id=\(setID.uuidString)]")
+        Logger.shared.log(lvl: .DEBUG, msg: "User gets not learned cards from set [id=\(setID.uuidString)]")
         let bufL = dataSource.getLearnedCardIDsFromSet(from: setID).shuffled()
         let bufNL = dataSource.getNotLearnedCardIDsFromSet(from: setID)
 
@@ -111,7 +112,7 @@ public class CardSetController: CardSetControllerDescription {
 
 
     public func getAllCardIDsFromSet(from setID: UUID) -> [UUID] {
-        Logger.shared.log(lvl: .VERBOSE, msg: "User gets all cards from set [id=\(setID.uuidString)]")
+        Logger.shared.log(lvl: .DEBUG, msg: "User gets all cards from set [id=\(setID.uuidString)]")
         return dataSource.getAllCardIDsFromSet(setID: setID)
     }
 
@@ -119,12 +120,12 @@ public class CardSetController: CardSetControllerDescription {
         var msg = "User requests to update card set [id=\(oldID.uuidString)] to new card set [id=\(new.id.uuidString)]: "
         let res = dataSource.updateCardSet(oldID: oldID, newSet: new)
         if res { msg += "Success" } else { msg += "Can not update card set" }
-        Logger.shared.log(lvl: .VERBOSE, msg: msg)
+        Logger.shared.log(lvl: .DEBUG, msg: msg)
         return res
     }
 
     public func updateCardSetProgress(cardSetID: UUID) {
-        Logger.shared.log(lvl: .VERBOSE, msg: "Updating progress in card set [id=\(cardSetID.uuidString)]")
+        Logger.shared.log(lvl: .DEBUG, msg: "Updating progress in card set [id=\(cardSetID.uuidString)]")
         if var set = getCardSet(ID: cardSetID) {
             set.allCardsCount = getAllCardIDsFromSet(from: cardSetID).count
             set.learnedCardsCount = getLearnedCardIDsFromSet(from: cardSetID).count
