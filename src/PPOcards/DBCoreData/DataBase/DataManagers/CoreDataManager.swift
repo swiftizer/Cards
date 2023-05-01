@@ -41,7 +41,6 @@ final class CoreDataManager {
         } errorBlock: { error in
             debugPrint("[DEBUG] coreData error. \(error.localizedDescription)")
         }
-
     }
 }
 

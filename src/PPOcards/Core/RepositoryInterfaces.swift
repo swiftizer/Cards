@@ -16,6 +16,7 @@ public protocol CardSetRepositoryDescription {
     func getLearnedCardIDsFromSet(from setID: UUID) -> [UUID]
     func addCard(card: Card, toSet cardSetID: UUID) -> Bool
     func deleteCardSet(ID: UUID) -> Bool
+    func deleteAllCardSets()
     func updateCardSet(oldID: UUID, newSet: CardSet) -> Bool
 }
 
@@ -24,6 +25,7 @@ public protocol CardRepositoryDescription {
     func addCard(card: Card) -> Bool
     func updateCard(oldID: UUID, newCard: Card) -> Bool
     func deleteCard(ID: UUID) -> Bool
+    func deleteAllCards()
 }
 
 public protocol SettingsRepositoryDescription {

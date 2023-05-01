@@ -6,8 +6,10 @@
 	<dict>
 		<key>Core.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>4</integer>
 		</dict>
 		<key>CoreUnitTests.xcscheme_^#shared#^_</key>
 		<dict>
@@ -16,18 +18,52 @@
 		</dict>
 		<key>DBCoreData.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
 		<key>Logger.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>PPOcards - Release.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
 		<key>PPOcards.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>B350D22129C904EB0026B934</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FA0CE40029F8070500DB094F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FA7B61B029F4395200F0AFEE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FA7B61C329F43CEA00F0AFEE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

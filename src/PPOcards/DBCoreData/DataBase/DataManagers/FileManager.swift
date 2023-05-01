@@ -7,24 +7,24 @@
 
 import UIKit
 
-protocol FileManagerDescription {
+public protocol FileManagerDescription {
     func putImageToFS(with image: UIImage) -> URL?
     func getImageFromFS(path: URL?) -> UIImage?
     func deleteFile(at path: URL?)
     func getDocumentDirUrl() -> URL?
 }
 
-enum FileError: Error {
+public enum FileError: Error {
     case invalidUrl
     case emptyData
 }
 
-final class MyFileManager: FileManagerDescription {
-    static let shared: FileManagerDescription = MyFileManager()
+public final class MyFileManager: FileManagerDescription {
+    public static let shared: FileManagerDescription = MyFileManager()
 
     private init() {}
 
-    func putImageToFS(with image: UIImage) -> URL? {
+    public func putImageToFS(with image: UIImage) -> URL? {
         guard let documentsUrl = getDocumentDirUrl() else {
             print("documentsUrl Error!")
             return nil
@@ -50,7 +50,7 @@ final class MyFileManager: FileManagerDescription {
     }
 
 
-    func getImageFromFS(path: URL?) -> UIImage? {
+    public func getImageFromFS(path: URL?) -> UIImage? {
         guard let fileURL = path else {
             print("Invalid file URL")
             return nil
@@ -66,7 +66,7 @@ final class MyFileManager: FileManagerDescription {
         }
     }
 
-    func deleteFile(at path: URL?) {
+    public func deleteFile(at path: URL?) {
         guard let filePath = path else {
             print("Invalid file path")
             return
@@ -81,7 +81,7 @@ final class MyFileManager: FileManagerDescription {
     }
 
 
-    func getDocumentDirUrl() -> URL? {
+    public func getDocumentDirUrl() -> URL? {
         return try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
     }
 }

@@ -54,11 +54,11 @@ public class CoreDataCardRepository: CardRepositoryDescription {
             cardMO?.answerText = newCard.answerText
             cardMO?.isLearned = newCard.isLearned
 
-            if let questionImgURL = newCard.questionImageURL {
+            if let questionImgURL = newCard.questionImageURL, questionImgURL != cardMO?.questionImageURL {
                 self.fileManager.deleteFile(at: cardMO?.questionImageURL)
                 cardMO?.questionImageURL = questionImgURL
             }
-            if let answerImgURL = newCard.answerImageURL {
+            if let answerImgURL = newCard.answerImageURL, answerImgURL != cardMO?.answerImageURL {
                 self.fileManager.deleteFile(at: cardMO?.answerImageURL)
                 cardMO?.answerImageURL = answerImgURL
             }
@@ -74,11 +74,20 @@ public class CoreDataCardRepository: CardRepositoryDescription {
         if coreDataManager.fetch(request: fetchRequest).count == 0 {
             return false
         }
+        
+        MyFileManager.shared.deleteFile(at: coreDataManager.fetch(request: fetchRequest).first?.answerImageURL)
+        MyFileManager.shared.deleteFile(at: coreDataManager.fetch(request: fetchRequest).first?.questionImageURL)
 
         coreDataManager.delete(request: fetchRequest)
 
         return true
     }
 
-
+    public func deleteAllCards() {
+        for card in coreDataManager.fetch(request: CardMO.fetchRequest()) {
+            MyFileManager.shared.deleteFile(at: card.questionImageURL)
+            MyFileManager.shared.deleteFile(at: card.answerImageURL)
+        }
+        coreDataManager.deleteAll(request: CardMO.fetchRequest())
+    }
 }

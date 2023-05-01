@@ -10,7 +10,6 @@ import Logger
 
 
 public class CardSetController: CardSetControllerDescription {
-    
     private let dataSource: CardSetRepositoryDescription
     weak public var cardController: CardControllerDescription?
     public var settings: Settings
@@ -56,9 +55,9 @@ public class CardSetController: CardSetControllerDescription {
         let res = dataSource.addCard(card: card, toSet: cardSetID)
         Logger.shared.log(lvl: .DEBUG, msg: "User adds card [id=\(card.id.uuidString)] to card set [id=\(cardSetID.uuidString)]")
         
-        if var set = getCardSet(ID: cardSetID) {
+        if let set = getCardSet(ID: cardSetID) {
             updateCardSetProgress(cardSetID: cardSetID)
-            updateCardSet(oldID: cardSetID, new: set)
+            let _ = updateCardSet(oldID: cardSetID, new: set)
         }
         
         return res
@@ -68,7 +67,7 @@ public class CardSetController: CardSetControllerDescription {
         let cardIDs = getAllCardIDsFromSet(from: ID)
         
         for cardID in cardIDs {
-            cardController?.deleteCard(ID: cardID)
+            let _ = cardController?.deleteCard(ID: cardID)
         }
         
         var msg = "User requests to delete card set [id=\(ID.uuidString)]: "
@@ -130,8 +129,12 @@ public class CardSetController: CardSetControllerDescription {
             set.allCardsCount = getAllCardIDsFromSet(from: cardSetID).count
             set.learnedCardsCount = getLearnedCardIDsFromSet(from: cardSetID).count
             
-            updateCardSet(oldID: cardSetID, new: set)
+            let _ = updateCardSet(oldID: cardSetID, new: set)
         }
+    }
+    
+    public func deleteAllCardSets() {
+        dataSource.deleteAllCardSets()
     }
     
     deinit {
