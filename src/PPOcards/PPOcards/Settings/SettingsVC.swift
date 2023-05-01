@@ -129,7 +129,7 @@ final class SettingsVC: UIViewController {
         
         mixingInPowerSlider.addTarget(self, action: #selector(handleSliderChange(slider:)), for: .valueChanged)
         
-        mixingInPowerSlider.addTarget(self, action: #selector(handleSliderDidStopEditing), for: .touchUpInside)
+        mixingInPowerSlider.addTarget(self, action: #selector(handleSliderDidStopEditing), for: .allTouchEvents)
         
         mixingSwitcher.addTarget(self, action: #selector(handleSwitherEdit), for: .valueChanged)
         
