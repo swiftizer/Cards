@@ -33,8 +33,6 @@ final class CoreDataManager {
 
     private init() {
         self.initIfNeeded {
-//            self.deleteAll(request: CardSetMO.fetchRequest())
-//            self.deleteAll(request: CardMO.fetchRequest())
             Logger.shared.log(lvl: .INFO, msg: "coreData inited")
             debugPrint("[DEBUG] coreData inited. \(self.count(request: CardSetMO.fetchRequest()))")
             debugPrint("[DEBUG] coreData inited. \(self.count(request: CardMO.fetchRequest()))")

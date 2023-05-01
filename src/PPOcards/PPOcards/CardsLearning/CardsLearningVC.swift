@@ -147,9 +147,14 @@ final class CardsLearningVC: UIViewController {
         curNotlearnedCardView.layer.borderWidth = 2
         curNotlearnedCardView.layer.cornerRadius = 10
         curNotlearnedCardView.isUserInteractionEnabled = true
-        let tapGR = UITapGestureRecognizer()
-        tapGR.addTarget(self, action: #selector(turn))
-        curNotlearnedCardView.addGestureRecognizer(tapGR)
+        let tapOnViewGR = UITapGestureRecognizer()
+        tapOnViewGR.addTarget(self, action: #selector(turn))
+        curNotlearnedCardView.addGestureRecognizer(tapOnViewGR)
+        
+        curImageView.isUserInteractionEnabled = true
+        let tapOnImageGR = UITapGestureRecognizer()
+        tapOnImageGR.addTarget(self, action: #selector(showImage))
+        curImageView.addGestureRecognizer(tapOnImageGR)
         
         let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
         longPressRecognizer.minimumPressDuration = 0.5
@@ -333,6 +338,11 @@ final class CardsLearningVC: UIViewController {
             restartButton.isHidden = false
             curNotlearnedCardView.isHidden = true
         }
+    }
+    
+    @objc
+    private func showImage() {
+        navigationController?.pushViewController(ImageViewerVC(image: curImageView.image), animated: true)
     }
     
     @objc
