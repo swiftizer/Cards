@@ -10,7 +10,7 @@ import Core
 import DBCoreData
 import Logger
 
-class ViewController: UIViewController {
+class TechnicalVC: UIViewController {
     let settingsController = SettingsController(dataSource: CoreDataSettingsRepository())
     lazy var cardSetController = CardSetController(dataSource: CoreDataCardSetRepository(), settingsController: settingsController)
     lazy var cardController = CardController(dataSource: CoreDataCardRepository(), cardSetController: cardSetController)
@@ -552,13 +552,13 @@ class ViewController: UIViewController {
 }
 
 
-extension ViewController: UITextFieldDelegate {
+extension TechnicalVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         done()
         return true
     }
 }
 
-extension ViewController: UITextViewDelegate {
+extension TechnicalVC: UITextViewDelegate {
     
 }

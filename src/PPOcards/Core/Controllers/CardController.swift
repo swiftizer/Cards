@@ -31,7 +31,7 @@ public class CardController: CardControllerDescription {
         let card = Card(id: UUID(), setID: cardSetID, isLearned: false)
         Logger.shared.log(lvl: .DEBUG, msg: "User creates card [id=\(card.id.uuidString)] for card set [id=\(cardSetID.uuidString)]")
 
-        dataSource.addCard(card: card)
+        let _ = dataSource.addCard(card: card)
         cardSetController.updateCardSetProgress(cardSetID: cardSetID)
 
         return card
@@ -39,11 +39,12 @@ public class CardController: CardControllerDescription {
 
     public func deleteCard(ID: UUID) -> Bool {
         var msg = "User requests to delete card [id=\(ID.uuidString)]: "
+        let setID = getCard(ID: ID)?.setID
         let res = dataSource.deleteCard(ID: ID)
         if res { msg += "Success" } else { msg += "Can not delete card" }
         Logger.shared.log(lvl: .DEBUG, msg: msg)
         
-        cardSetController.updateCardSetProgress(cardSetID: getCard(ID: ID)?.setID ?? UUID())
+        cardSetController.updateCardSetProgress(cardSetID: setID ?? UUID())
         
         return res
     }
@@ -57,6 +58,10 @@ public class CardController: CardControllerDescription {
         cardSetController.updateCardSetProgress(cardSetID: new.setID ?? UUID())
         
         return res
+    }
+    
+    public func deleteAllCards() {
+        dataSource.deleteAllCards()
     }
     
     deinit {

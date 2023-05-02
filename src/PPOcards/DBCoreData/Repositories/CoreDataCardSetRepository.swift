@@ -122,5 +122,7 @@ public class CoreDataCardSetRepository: CardSetRepositoryDescription {
         return true
     }
 
-
+    public func deleteAllCardSets() {
+        coreDataManager.deleteAll(request: CardSetMO.fetchRequest())
+    }
 }

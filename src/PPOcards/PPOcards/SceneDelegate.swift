@@ -21,7 +21,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = ViewController()
+        if CommandLine.arguments[1] == "-GUI" {
+            let nav1 = UINavigationController()
+            nav1.viewControllers = [CardSetsVC()]
+            window?.rootViewController = nav1
+        } else {
+            window?.rootViewController = TechnicalVC()
+        }
         window?.makeKeyAndVisible()
     }
 

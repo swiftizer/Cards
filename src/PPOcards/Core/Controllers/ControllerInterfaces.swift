@@ -18,13 +18,16 @@ public protocol CardSetControllerDescription: AnyObject {
     func getLearnedCardIDsFromSet(from setID: UUID) -> [UUID]
     func updateCardSet(oldID: UUID, new: CardSet) -> Bool
     func deleteCardSet(ID: UUID) -> Bool
+    func deleteAllCardSets()
     func updateCardSetProgress(cardSetID: UUID)
 }
 
 public protocol CardControllerDescription: AnyObject {
     func getCard(ID: UUID) -> Card?
     func createCard(for cardSetID: UUID) -> Card
+    func updateCard(oldID: UUID, new: Card) -> Bool
     func deleteCard(ID: UUID) -> Bool
+    func deleteAllCards()
 }
 
 public protocol SettingsControllerDescription: AnyObject {

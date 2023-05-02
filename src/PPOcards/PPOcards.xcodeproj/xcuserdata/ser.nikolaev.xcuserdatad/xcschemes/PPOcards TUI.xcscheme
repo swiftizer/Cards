@@ -86,7 +86,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "-GUI"
+            argument = "-TUI"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
