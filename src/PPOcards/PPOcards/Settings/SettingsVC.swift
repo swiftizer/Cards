@@ -15,8 +15,10 @@ final class SettingsVC: UIViewController {
     private var refillAction: (() -> ())
     
     private let isMixedLabel = UILabel()
+    private let isMixedDescriptionLabel = UILabel()
     private let mixingSwitcher = UISwitch()
     private let mixingInPowerLabel = UILabel()
+    private let mixingInPowerDescriptionLabel = UILabel()
     private let mixingInPowerSlider = UISlider()
     private let mixingInPowerValueLabel = UILabel()
     private let refillButton = UIButton()
@@ -68,6 +70,11 @@ final class SettingsVC: UIViewController {
             .height(40)
             .sizeToFit(.height)
         
+        isMixedDescriptionLabel.pin
+            .topLeft(to: isMixedLabel.anchor.bottomLeft)
+            .width(view.bounds.width - 20)
+            .sizeToFit(.width)
+        
         mixingSwitcher.pin
             .centerLeft(to: isMixedLabel.anchor.centerRight)
             .width(50)
@@ -76,10 +83,15 @@ final class SettingsVC: UIViewController {
             .marginLeft(10)
         
         mixingInPowerLabel.pin
-            .topLeft(to: isMixedLabel.anchor.bottomLeft)
+            .topLeft(to: isMixedDescriptionLabel.anchor.bottomLeft)
             .marginTop(20)
             .height(40)
             .sizeToFit(.height)
+        
+        mixingInPowerDescriptionLabel.pin
+            .topLeft(to: mixingInPowerLabel.anchor.bottomLeft)
+            .width(of: mixingInPowerLabel)
+            .sizeToFit(.width)
         
         mixingInPowerSlider.pin
             .centerLeft(to: mixingInPowerLabel.anchor.centerRight)
@@ -121,10 +133,12 @@ final class SettingsVC: UIViewController {
     private func setupUI() {
         view.backgroundColor = .systemBackground
         view.addSubview(isMixedLabel)
+        view.addSubview(isMixedDescriptionLabel)
         view.addSubview(mixingSwitcher)
         view.addSubview(mixingInPowerLabel)
         view.addSubview(mixingInPowerSlider)
         view.addSubview(mixingInPowerValueLabel)
+        view.addSubview(mixingInPowerDescriptionLabel)
         view.addSubview(refillButton)
         
         mixingInPowerSlider.addTarget(self, action: #selector(handleSliderChange(slider:)), for: .valueChanged)
@@ -145,6 +159,15 @@ final class SettingsVC: UIViewController {
         mixingInPowerValueLabel.text = "\(Int(round(mixingInPowerSlider.value * 100)))"
         mixingInPowerValueLabel.textAlignment = .center
         mixingSwitcher.isOn = presenter.isMixingValue
+        
+        isMixedDescriptionLabel.text = "Not learned cards shuffeling"
+        isMixedDescriptionLabel.font = isMixedDescriptionLabel.font.withSize(13)
+        isMixedDescriptionLabel.textColor = .gray
+        
+        mixingInPowerDescriptionLabel.text = "Degree of mixing learned cards into not learned"
+        mixingInPowerDescriptionLabel.font = mixingInPowerDescriptionLabel.font.withSize(13)
+        mixingInPowerDescriptionLabel.textColor = .gray
+        mixingInPowerDescriptionLabel.numberOfLines = 0
     }
     
     @objc

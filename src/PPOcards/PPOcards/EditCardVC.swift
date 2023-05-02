@@ -16,6 +16,8 @@ final class EditCardVC: UIViewController {
     private let answerTV = UITextView()
     private var imagePicker: ImagePicker?
     private let isLearnedLabel = UILabel()
+    private let questionLabel = UILabel()
+    private let answerLabel = UILabel()
     private let isLearnedSwitcher = UISwitch()
     
     private lazy var addQuestionImageButton: UIButton = {
@@ -130,9 +132,17 @@ final class EditCardVC: UIViewController {
         super.viewDidLayoutSubviews()
         Logger.shared.log(lvl: .VERBOSE, msg: "VC viewDidLayoutSubviews called")
         
-        questionTV.pin
+        questionLabel.pin
             .top(view.pin.safeArea.top + 20)
             .left(20)
+            .width(100)
+            .sizeToFit(.width)
+        
+        questionTV.pin
+            .topLeft(to: questionLabel.anchor.bottomLeft)
+            .marginTop(15)
+//            .top(view.pin.safeArea.top + 20)
+//            .left(20)
             .right(20)
             .height(view.bounds.height*0.3)
         
@@ -154,9 +164,14 @@ final class EditCardVC: UIViewController {
             .height(40)
             .marginLeft(15)
         
-        answerTV.pin
+        answerLabel.pin
             .topLeft(to: addQuestionImageButton.anchor.bottomLeft)
-            .left(20)
+            .marginTop(15)
+            .width(100)
+            .sizeToFit(.width)
+        
+        answerTV.pin
+            .topLeft(to: answerLabel.anchor.bottomLeft)
             .right(20)
             .marginTop(15)
             .height(view.bounds.height*0.3)
@@ -188,7 +203,7 @@ final class EditCardVC: UIViewController {
         isLearnedLabel.pin
             .topLeft(to: addAnswerImageButton.anchor.bottomLeft)
             .height(40)
-            .marginTop(30)
+            .marginTop(15)
             .sizeToFit(.height)
         
         isLearnedSwitcher.pin
@@ -221,7 +236,9 @@ final class EditCardVC: UIViewController {
     private func setupUI() {
         view.backgroundColor = .systemBackground
         
+        view.addSubview(questionLabel)
         view.addSubview(questionTV)
+        view.addSubview(answerLabel)
         view.addSubview(answerTV)
         view.addSubview(addAnswerImageButton)
         view.addSubview(addQuestionImageButton)
@@ -268,6 +285,9 @@ final class EditCardVC: UIViewController {
         doneButton.isHidden = readOnlyFlag
         isLearnedLabel.isHidden = readOnlyFlag
         isLearnedSwitcher.isHidden = readOnlyFlag
+        
+        questionLabel.text = "Question:"
+        answerLabel.text = "Answer:"
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard(_:)))
         view.addGestureRecognizer(tapGesture)

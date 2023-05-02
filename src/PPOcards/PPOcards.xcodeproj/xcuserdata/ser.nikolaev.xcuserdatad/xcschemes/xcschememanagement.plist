@@ -9,7 +9,7 @@
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>5</integer>
 		</dict>
 		<key>CoreUnitTests.xcscheme_^#shared#^_</key>
 		<dict>
@@ -21,16 +21,16 @@
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<key>Logger.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>4</integer>
 		</dict>
-		<key>PPOcards - Release.xcscheme</key>
+		<key>PPOcards TUI.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
@@ -50,6 +50,21 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>B376BBFD29D343B000BBB524</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B378FD9529E3102900879570</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FA0CE2E829F447CA00DB094F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>FA0CE40029F8070500DB094F</key>
 		<dict>
 			<key>primary</key>
@@ -61,6 +76,21 @@
 			<true/>
 		</dict>
 		<key>FA7B61C329F43CEA00F0AFEE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FAFC66B82A01856E0040B32A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FAFC66CD2A0185710040B32A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FAFC66D72A0185710040B32A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
