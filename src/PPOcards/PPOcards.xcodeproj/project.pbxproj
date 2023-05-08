@@ -39,6 +39,9 @@
 		FA0CE40729F8070600DB094F /* Logger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA0CE40129F8070500DB094F /* Logger.framework */; };
 		FA0CE40829F8070600DB094F /* Logger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA0CE40129F8070500DB094F /* Logger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA0CE40C29F8070F00DB094F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0CE30929F468F100DB094F /* Logger.swift */; };
+		FA2986D52A0831BE005B9B66 /* CardProgressMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2986D32A0831BE005B9B66 /* CardProgressMO+CoreDataClass.swift */; };
+		FA2986D62A0831BE005B9B66 /* CardProgressMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2986D42A0831BE005B9B66 /* CardProgressMO+CoreDataProperties.swift */; };
+		FA2986D82A085BB8005B9B66 /* CardSetsChoosingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2986D72A085BB8005B9B66 /* CardSetsChoosingVC.swift */; };
 		FA7B61B429F4395300F0AFEE /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = FA7B61B329F4395300F0AFEE /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FA7B61B729F4395300F0AFEE /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7B61B129F4395200F0AFEE /* Core.framework */; };
 		FA7B61B829F4395300F0AFEE /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA7B61B129F4395200F0AFEE /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -162,6 +165,9 @@
 		FA0CE30929F468F100DB094F /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		FA0CE40129F8070500DB094F /* Logger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Logger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA0CE40329F8070600DB094F /* Logger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Logger.h; sourceTree = "<group>"; };
+		FA2986D32A0831BE005B9B66 /* CardProgressMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardProgressMO+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		FA2986D42A0831BE005B9B66 /* CardProgressMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardProgressMO+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		FA2986D72A085BB8005B9B66 /* CardSetsChoosingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSetsChoosingVC.swift; sourceTree = "<group>"; };
 		FA7B61B129F4395200F0AFEE /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA7B61B329F4395300F0AFEE /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		FA7B61C429F43CEA00F0AFEE /* DBCoreData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DBCoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,9 +188,6 @@
 		FAFC65F429FF394A0040B32A /* CardsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsListPresenter.swift; sourceTree = "<group>"; };
 		FAFC65F629FF408F0040B32A /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		FAFC66B32A01838B0040B32A /* TechnicalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnicalVC.swift; sourceTree = "<group>"; };
-		FAFC66D22A0185710040B32A /* TechUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechUITests.swift; sourceTree = "<group>"; };
-		FAFC66DC2A0185710040B32A /* TechUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechUIUITests.swift; sourceTree = "<group>"; };
-		FAFC66DE2A0185710040B32A /* TechUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,8 +255,6 @@
 				B378FD9729E3102900879570 /* IntegrationTests */,
 				FA0CE40229F8070600DB094F /* Logger */,
 				B350D22429C904EB0026B934 /* PPOcards */,
-				FAFC66D12A0185710040B32A /* TechUITests */,
-				FAFC66DB2A0185710040B32A /* TechUIUITests */,
 				B350D22329C904EB0026B934 /* Products */,
 				FA0CE2EA29F447CA00DB094F /* UnitTests */,
 			);
@@ -289,6 +290,7 @@
 				FAFC65FC29FF45250040B32A /* Services */,
 				FAFC65FB29FF44DE0040B32A /* Settings */,
 				FAFC66B32A01838B0040B32A /* TechnicalVC.swift */,
+				FA2986D72A085BB8005B9B66 /* CardSetsChoosingVC.swift */,
 			);
 			path = PPOcards;
 			sourceTree = "<group>";
@@ -346,6 +348,8 @@
 		B3C47C4E29D8915300FCC58A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FA2986D32A0831BE005B9B66 /* CardProgressMO+CoreDataClass.swift */,
+				FA2986D42A0831BE005B9B66 /* CardProgressMO+CoreDataProperties.swift */,
 				FAEDF31D29EDEFD00059DD1C /* CardSetMO+CoreDataClass.swift */,
 				FAEDF31E29EDEFD00059DD1C /* CardSetMO+CoreDataProperties.swift */,
 				B339619B29E2E2A6006DEDDD /* CardMO+CoreDataClass.swift */,
@@ -442,23 +446,6 @@
 				FAFC65F229FF18B30040B32A /* PresenterConfig.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		FAFC66D12A0185710040B32A /* TechUITests */ = {
-			isa = PBXGroup;
-			children = (
-				FAFC66D22A0185710040B32A /* TechUITests.swift */,
-			);
-			path = TechUITests;
-			sourceTree = "<group>";
-		};
-		FAFC66DB2A0185710040B32A /* TechUIUITests */ = {
-			isa = PBXGroup;
-			children = (
-				FAFC66DC2A0185710040B32A /* TechUIUITests.swift */,
-				FAFC66DE2A0185710040B32A /* TechUIUITestsLaunchTests.swift */,
-			);
-			path = TechUIUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -758,6 +745,7 @@
 				FAFC65E729FDBE8A0040B32A /* ImagePicker.swift in Sources */,
 				B350D22629C904EB0026B934 /* AppDelegate.swift in Sources */,
 				FAFC65E529FDB67B0040B32A /* EditCardVC.swift in Sources */,
+				FA2986D82A085BB8005B9B66 /* CardSetsChoosingVC.swift in Sources */,
 				B374877229D8780200CECD41 /* DataBasePPOCards.xcdatamodeld in Sources */,
 				FAFC65EF29FF0B620040B32A /* ImagesProvider.swift in Sources */,
 				B350D22829C904EB0026B934 /* SceneDelegate.swift in Sources */,
@@ -827,8 +815,10 @@
 				FA0CE2FE29F4620600DB094F /* CoreDataCardRepository.swift in Sources */,
 				FA0CE2FD29F461FF00DB094F /* FileManager.swift in Sources */,
 				FA0CE2FF29F4620600DB094F /* CoreDataCardSetRepository.swift in Sources */,
+				FA2986D52A0831BE005B9B66 /* CardProgressMO+CoreDataClass.swift in Sources */,
 				FA0CE30529F4634000DB094F /* CardMO+CoreDataClass.swift in Sources */,
 				FA0CE30829F4634000DB094F /* CardSetMO+CoreDataProperties.swift in Sources */,
+				FA2986D62A0831BE005B9B66 /* CardProgressMO+CoreDataProperties.swift in Sources */,
 				FA0CE30629F4634000DB094F /* CardSetMO+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

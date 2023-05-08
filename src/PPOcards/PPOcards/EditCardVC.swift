@@ -217,6 +217,15 @@ final class EditCardVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         Logger.shared.log(lvl: .VERBOSE, msg: "VC viewDidAppear called")
+        
+        imagePicker = ImagePicker(presentationController: self, delegate: self)
+        
+        if #available(iOS 14.0, *) {
+            addAnswerImageButton.menu = createImagePickerMenu(for: .answer)
+            addAnswerImageButton.showsMenuAsPrimaryAction = true
+            addQuestionImageButton.menu = createImagePickerMenu(for: .question)
+            addQuestionImageButton.showsMenuAsPrimaryAction = true
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -250,8 +259,6 @@ final class EditCardVC: UIViewController {
         view.addSubview(isLearnedLabel)
         view.addSubview(isLearnedSwitcher)
         
-        imagePicker = ImagePicker(presentationController: self, delegate: self)
-        
         [questionTV, answerTV].forEach {
             $0.font = UIFont.boldSystemFont(ofSize: 16)
             $0.backgroundColor = .black
@@ -266,13 +273,6 @@ final class EditCardVC: UIViewController {
         
         questionTV.text = card?.questionText
         answerTV.text = card?.answerText
-        
-        if #available(iOS 14.0, *) {
-            addAnswerImageButton.menu = createImagePickerMenu(for: .answer)
-            addAnswerImageButton.showsMenuAsPrimaryAction = true
-            addQuestionImageButton.menu = createImagePickerMenu(for: .question)
-            addQuestionImageButton.showsMenuAsPrimaryAction = true
-        }
         
         addAnswerImageButton.isUserInteractionEnabled = !readOnlyFlag
         addQuestionImageButton.isUserInteractionEnabled = !readOnlyFlag

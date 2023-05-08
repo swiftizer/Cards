@@ -9,6 +9,12 @@
         <attribute name="questionText" optional="YES" attributeType="String"/>
         <attribute name="setID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
     </entity>
+    <entity name="CardProgressMO" representedClassName="CardProgressMO" syncable="YES" codeGenerationType="class">
+        <attribute name="allAttemptsCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="cardId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="cardSetId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="successCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
     <entity name="CardSetMO" representedClassName="CardSetMO" syncable="YES">
         <attribute name="allCardsCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="color" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>

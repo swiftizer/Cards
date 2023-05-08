@@ -23,9 +23,11 @@ public protocol CardSetRepositoryDescription {
 public protocol CardRepositoryDescription {
     func getCard(ID: UUID) -> Card?
     func addCard(card: Card) -> Bool
-    func updateCard(oldID: UUID, newCard: Card) -> Bool
+    func updateCard(oldID: UUID, newCard: Card, isRestart: Bool) -> Bool
     func deleteCard(ID: UUID) -> Bool
     func deleteAllCards()
+    func getCardProgress(cardSetID: UUID, cardID: UUID) -> CardProgress?
+    func shareCardToSet(cardID: UUID, newSetID: UUID) -> Bool
 }
 
 public protocol SettingsRepositoryDescription {

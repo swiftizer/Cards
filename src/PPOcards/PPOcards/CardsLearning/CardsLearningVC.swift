@@ -18,6 +18,7 @@ final class CardsLearningVC: UIViewController {
     private let cardFeedbackView = UIView()
     private let curTextLabel = UILabel()
     private let curImageView = UIImageView()
+    private let progressLabel = UILabel()
     
     private let acceptButton = UIButton()
     private let declineButton = UIButton()
@@ -104,11 +105,18 @@ final class CardsLearningVC: UIViewController {
             .height(70)
             .center()
         
-         cardsListButton.pin
+        cardsListButton.pin
             .width(50)
             .height(40)
             .bottom(view.pin.safeArea.bottom)
             .hCenter()
+        
+        progressLabel.pin
+            .topCenter(to: curNotlearnedCardView.anchor.bottomCenter)
+            .marginTop(15)
+            .maxHeight(28)
+            .maxWidth(view.bounds.width)
+            .sizeToFit(.width)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -139,6 +147,7 @@ final class CardsLearningVC: UIViewController {
         learningContainer.addSubview(acceptButton)
         learningContainer.addSubview(declineButton)
         learningContainer.addSubview(restartButton)
+        learningContainer.addSubview(progressLabel)
         curNotlearnedCardView.addSubview(cardFeedbackView)
         curNotlearnedCardView.addSubview(curTextLabel)
         curNotlearnedCardView.addSubview(curImageView)
@@ -190,6 +199,7 @@ final class CardsLearningVC: UIViewController {
             declineButton.isHidden = true
             restartButton.isHidden = false
             curNotlearnedCardView.isHidden = true
+            progressLabel.isHidden = true
         }
         
         counterLabel.text = presenter.counterLabelText()
@@ -200,8 +210,12 @@ final class CardsLearningVC: UIViewController {
         cardFeedbackView.layer.cornerRadius = 10
         cardFeedbackView.isHidden = true
         
+        progressLabel.text = presenter.progressLabelText()
+        progressLabel.textAlignment = .center
+        
         presenter.nextCardNotify = {
             self.counterLabel.text = self.presenter.counterLabelText()
+            self.progressLabel.text = self.presenter.progressLabelText()
         }
     }
     
@@ -252,6 +266,7 @@ final class CardsLearningVC: UIViewController {
     func reload() {
         presenter.reload()
         counterLabel.text = presenter.counterLabelText()
+        progressLabel.text = presenter.progressLabelText()
         
         if let _ = presenter.curNotlearnedCard {
             layoutForCard(.question)
@@ -260,6 +275,7 @@ final class CardsLearningVC: UIViewController {
             declineButton.isHidden = true
             restartButton.isHidden = false
             curNotlearnedCardView.isHidden = true
+            progressLabel.isHidden = true
         }
     }
     
@@ -293,6 +309,7 @@ final class CardsLearningVC: UIViewController {
                 self.declineButton.isHidden = true
                 self.restartButton.isHidden = false
                 self.curNotlearnedCardView.isHidden = true
+                self.progressLabel.isHidden = true
             }
         }
     }
@@ -317,6 +334,7 @@ final class CardsLearningVC: UIViewController {
                 self.declineButton.isHidden = true
                 self.restartButton.isHidden = false
                 self.curNotlearnedCardView.isHidden = true
+                self.progressLabel.isHidden = true
             }
         }
     }
@@ -327,6 +345,7 @@ final class CardsLearningVC: UIViewController {
         declineButton.isHidden = false
         restartButton.isHidden = true
         curNotlearnedCardView.isHidden = false
+        progressLabel.isHidden = false
         
         presenter.restart()
         

@@ -10,6 +10,7 @@ import Logger
 
 
 public class CardController: CardControllerDescription {
+    
     private let dataSource: CardRepositoryDescription
     private let cardSetController: CardSetControllerDescription
 
@@ -49,9 +50,9 @@ public class CardController: CardControllerDescription {
         return res
     }
 
-    public func updateCard(oldID: UUID, new: Card) -> Bool {
+    public func updateCard(oldID: UUID, new: Card, isRestart: Bool = false) -> Bool {
         var msg = "User requests to update card [id=\(oldID.uuidString)] to new card [id=\(new.id.uuidString)]: "
-        let res = dataSource.updateCard(oldID: oldID, newCard: new)
+        let res = dataSource.updateCard(oldID: oldID, newCard: new, isRestart: isRestart)
         if res { msg += "Success" } else { msg += "Can not update card" }
         Logger.shared.log(lvl: .DEBUG, msg: msg)
         
@@ -64,8 +65,26 @@ public class CardController: CardControllerDescription {
         dataSource.deleteAllCards()
     }
     
+    public func getCardProgress(cardSetID: UUID, cardID: UUID) -> CardProgress? {
+        var msg = "User requests to get cardProgress [cardSetID=\(cardSetID.uuidString), cardID=\(cardID.uuidString)]: "
+        let cardProgress = dataSource.getCardProgress(cardSetID: cardSetID, cardID: cardID)
+        if cardProgress != nil { msg += "Success" } else { msg += "cardProgress not found" }
+        Logger.shared.log(lvl: .DEBUG, msg: msg)
+        return cardProgress
+    }
+    
+    public func shareCardToSet(cardID: UUID, newSetID: UUID) -> Bool {
+        var msg = "User requests to share card [cardID=\(cardID.uuidString)] to set [newSetID=\(newSetID.uuidString)]: "
+        let res = dataSource.shareCardToSet(cardID: cardID, newSetID: newSetID)
+        if res { msg += "Success" } else { msg += "sharing faild" }
+        Logger.shared.log(lvl: .DEBUG, msg: msg)
+        
+        cardSetController.updateCardSetProgress(cardSetID: newSetID)
+        
+        return res
+    }
+    
     deinit {
         Logger.shared.log(lvl: .WARNING, msg: "CardController deinited")
     }
-
 }
