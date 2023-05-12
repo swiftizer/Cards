@@ -50,9 +50,9 @@ public class CardController: CardControllerDescription {
         return res
     }
 
-    public func updateCard(oldID: UUID, new: Card, isRestart: Bool = false) -> Bool {
+    public func updateCard(oldID: UUID, new: Card) -> Bool {
         var msg = "User requests to update card [id=\(oldID.uuidString)] to new card [id=\(new.id.uuidString)]: "
-        let res = dataSource.updateCard(oldID: oldID, newCard: new, isRestart: isRestart)
+        let res = dataSource.updateCard(oldID: oldID, newCard: new)
         if res { msg += "Success" } else { msg += "Can not update card" }
         Logger.shared.log(lvl: .DEBUG, msg: msg)
         
@@ -82,6 +82,22 @@ public class CardController: CardControllerDescription {
         cardSetController.updateCardSetProgress(cardSetID: newSetID)
         
         return res
+    }
+    
+    public func markAsLearned(cardID: UUID) {
+        var msg = "User marks card [id=\(cardID.uuidString)] as learned"
+        dataSource.markAsLearned(cardID: cardID)
+        Logger.shared.log(lvl: .DEBUG, msg: msg)
+        
+        cardSetController.updateCardSetProgress(cardSetID: getCard(ID: cardID)?.setID ?? UUID())
+    }
+    
+    public func markAsNotLearned(cardID: UUID) {
+        var msg = "User marks card [id=\(cardID.uuidString)] as not learned"
+        dataSource.markAsNotLearned(cardID: cardID)
+        Logger.shared.log(lvl: .DEBUG, msg: msg)
+        
+        cardSetController.updateCardSetProgress(cardSetID: getCard(ID: cardID)?.setID ?? UUID())
     }
     
     deinit {

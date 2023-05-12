@@ -88,19 +88,15 @@ final class CardsLearningPresenter {
     }
     
     func accept() {
-        guard let oldCard = curNotlearnedCard else { return }
-        var updCard = oldCard
-        updCard.isLearned = true
-        let _ = cardController?.updateCard(oldID: oldCard.id, new: updCard, isRestart: false)
+        guard let card = curNotlearnedCard else { return }
+        let _ = cardController?.markAsLearned(cardID: card.id)
         
         nextCard()
     }
     
     func decline() {
-        guard let oldCard = curNotlearnedCard else { return }
-        var updCard = oldCard
-        updCard.isLearned = false
-        let _ = cardController?.updateCard(oldID: oldCard.id, new: updCard, isRestart: false)
+        guard let card = curNotlearnedCard else { return }
+        let _ = cardController?.markAsNotLearned(cardID: card.id)
         
         nextCard()
     }
@@ -112,7 +108,7 @@ final class CardsLearningPresenter {
                 if let card = cardController?.getCard(ID: ID) {
                     var updCard = card
                     updCard.isLearned = false
-                    let _ = cardController?.updateCard(oldID: card.id, new: updCard, isRestart: true)
+                    let _ = cardController?.updateCard(oldID: card.id, new: updCard)
                 }
             }
             notLearnedCardIDs = getNotLearnedCardIDs

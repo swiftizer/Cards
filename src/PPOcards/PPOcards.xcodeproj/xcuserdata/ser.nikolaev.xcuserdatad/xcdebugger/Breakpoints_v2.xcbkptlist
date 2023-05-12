@@ -519,10 +519,10 @@
             filePath = "PPOcards/CardsLearning/CardsLearningPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
-            landmarkName = "progressLabelText()"
-            landmarkType = "7">
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "CardsLearningPresenter"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "2B249571-22B5-4F9F-8CCD-DDD28DACEC3B - fe23acaf51fa7e51"
@@ -575,69 +575,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AE13242F-ED4F-4ED0-9D55-212B9EB47D58"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DBCoreData/Repositories/CoreDataCardRepository.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "updateCard(oldID:newCard:isRestart:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "AE13242F-ED4F-4ED0-9D55-212B9EB47D58 - 81f90d79a129cf07"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DBCoreData.CoreDataCardRepository.updateCard(oldID: Foundation.UUID, newCard: Core.Card, isRestart: Swift.Bool) -&gt; Swift.Bool"
-                  moduleName = "DBCoreData"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ser.nikolaev/Library/Mobile%20Documents/com~apple~CloudDocs/IOS/PPOcards/DBCoreData/Repositories/CoreDataCardRepository.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "420">
-               </Location>
-               <Location
-                  uuid = "AE13242F-ED4F-4ED0-9D55-212B9EB47D58 - 1973b86a8963bb01"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;DBCoreData.CardMO&gt;) -&gt; () in DBCoreData.CoreDataCardRepository.updateCard(oldID: Foundation.UUID, newCard: Core.Card, isRestart: Swift.Bool) -&gt; Swift.Bool"
-                  moduleName = "DBCoreData"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ser.nikolaev/Library/Mobile%20Documents/com~apple~CloudDocs/IOS/PPOcards/DBCoreData/Repositories/CoreDataCardRepository.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "1032">
-               </Location>
-               <Location
-                  uuid = "AE13242F-ED4F-4ED0-9D55-212B9EB47D58 - 1ea10dd6cc6935db"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Optional&lt;DBCoreData.CardProgressMO&gt;) -&gt; () in DBCoreData.CoreDataCardRepository.updateCard(oldID: Foundation.UUID, newCard: Core.Card, isRestart: Swift.Bool) -&gt; Swift.Bool"
-                  moduleName = "DBCoreData"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ser.nikolaev/Library/Mobile%20Documents/com~apple~CloudDocs/IOS/PPOcards/DBCoreData/Repositories/CoreDataCardRepository.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "52">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "87A21E14-1AE4-444D-B167-7476A53C68CF"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -645,74 +582,10 @@
             filePath = "DBCoreData/Repositories/CoreDataCardRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "updateCard(oldID:newCard:isRestart:)"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "updateCard(oldID:newCard:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D4B44235-8DE0-42F3-8610-515406FBF941"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DBCoreData/Repositories/CoreDataCardRepository.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "updateCard(oldID:newCard:isRestart:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5E648A85-5C0D-4D72-B6F2-B938B050793B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DBCoreData/Repositories/CoreDataCardRepository.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "updateCard(oldID:newCard:isRestart:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "5E648A85-5C0D-4D72-B6F2-B938B050793B - 81f90d79a129b28a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DBCoreData.CoreDataCardRepository.updateCard(oldID: Foundation.UUID, newCard: Core.Card, isRestart: Swift.Bool) -&gt; Swift.Bool"
-                  moduleName = "DBCoreData"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ser.nikolaev/Library/Mobile%20Documents/com~apple~CloudDocs/IOS/PPOcards/DBCoreData/Repositories/CoreDataCardRepository.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "83"
-                  endingLineNumber = "83"
-                  offsetFromSymbolStart = "1684">
-               </Location>
-               <Location
-                  uuid = "5E648A85-5C0D-4D72-B6F2-B938B050793B - 1ea10dd6cc694856"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Optional&lt;DBCoreData.CardProgressMO&gt;) -&gt; () in DBCoreData.CoreDataCardRepository.updateCard(oldID: Foundation.UUID, newCard: Core.Card, isRestart: Swift.Bool) -&gt; Swift.Bool"
-                  moduleName = "DBCoreData"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ser.nikolaev/Library/Mobile%20Documents/com~apple~CloudDocs/IOS/PPOcards/DBCoreData/Repositories/CoreDataCardRepository.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "83"
-                  endingLineNumber = "83"
-                  offsetFromSymbolStart = "36">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -725,10 +598,10 @@
             filePath = "PPOcards/CardsLearning/CardsLearningPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "restart()"
-            landmarkType = "7">
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "CardsLearningPresenter"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

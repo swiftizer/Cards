@@ -10,7 +10,7 @@ import Core
 
 
 public class CoreDataCardRepository: CardRepositoryDescription {
-
+    
     private let coreDataManager = CoreDataManager.shared
     private let fileManager = MyFileManager.shared
     
@@ -52,8 +52,7 @@ public class CoreDataCardRepository: CardRepositoryDescription {
         return true
     }
 
-    public func updateCard(oldID: UUID, newCard: Card, isRestart: Bool = false) -> Bool {
-        var successLearnedIncrement = 0
+    public func updateCard(oldID: UUID, newCard: Card) -> Bool {
         let fetchRequest: NSFetchRequest<CardMO> = CardMO.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", oldID as CVarArg)
 
@@ -62,7 +61,6 @@ public class CoreDataCardRepository: CardRepositoryDescription {
             cardMO?.setID = newCard.setID
             cardMO?.questionText = newCard.questionText
             cardMO?.answerText = newCard.answerText
-            successLearnedIncrement = newCard.isLearned.intRepresentation() - (cardMO?.isLearned.intRepresentation() ?? 0)
             cardMO?.isLearned = newCard.isLearned
 
             if let questionImgURL = newCard.questionImageURL, questionImgURL != cardMO?.questionImageURL {
@@ -72,16 +70,6 @@ public class CoreDataCardRepository: CardRepositoryDescription {
             if let answerImgURL = newCard.answerImageURL, answerImgURL != cardMO?.answerImageURL {
                 self.fileManager.deleteFile(at: cardMO?.answerImageURL)
                 cardMO?.answerImageURL = answerImgURL
-            }
-        }
-        
-        if !isRestart {
-            let fetchRequestProgress: NSFetchRequest<CardProgressMO> = CardProgressMO.fetchRequest()
-            fetchRequestProgress.predicate = NSPredicate(format: "%K == %@ AND %K == %@", #keyPath(CardProgressMO.cardSetId), (newCard.setID ?? UUID()) as CVarArg, #keyPath(CardProgressMO.cardId), newCard.id as CVarArg)
-            
-            coreDataManager.update(request: fetchRequestProgress) { cardProgressMO in
-                cardProgressMO?.allAttemptsCount += 1
-                cardProgressMO?.successCount += Int32(successLearnedIncrement)
             }
         }
 
@@ -125,8 +113,37 @@ public class CoreDataCardRepository: CardRepositoryDescription {
     }
     
     public func shareCardToSet(cardID: UUID, newSetID: UUID) -> Bool {
-        guard var card = getCard(ID: cardID) else { return false }
+        guard let card = getCard(ID: cardID) else { return false }
         
         return addCard(card: Card(id: UUID(), setID: newSetID, questionText: card.questionText, questionImageURL: card.questionImageURL, answerText: card.answerText, answerImageURL: card.answerImageURL, isLearned: false))
+    }
+    
+    public func markAsLearned(cardID: UUID) {
+        guard var card = getCard(ID: cardID) else { return }
+        
+        card.isLearned = true
+        let _ = updateCard(oldID: cardID, newCard: card)
+        
+        let fetchRequestProgress: NSFetchRequest<CardProgressMO> = CardProgressMO.fetchRequest()
+        fetchRequestProgress.predicate = NSPredicate(format: "%K == %@ AND %K == %@", #keyPath(CardProgressMO.cardSetId), (card.setID ?? UUID()) as CVarArg, #keyPath(CardProgressMO.cardId), card.id as CVarArg)
+        
+        coreDataManager.update(request: fetchRequestProgress) { cardProgressMO in
+            cardProgressMO?.allAttemptsCount += 1
+            cardProgressMO?.successCount += 1
+        }
+    }
+    
+    public func markAsNotLearned(cardID: UUID) {
+        guard var card = getCard(ID: cardID) else { return }
+        
+        card.isLearned = false
+        let _ = updateCard(oldID: cardID, newCard: card)
+        
+        let fetchRequestProgress: NSFetchRequest<CardProgressMO> = CardProgressMO.fetchRequest()
+        fetchRequestProgress.predicate = NSPredicate(format: "%K == %@ AND %K == %@", #keyPath(CardProgressMO.cardSetId), (card.setID ?? UUID()) as CVarArg, #keyPath(CardProgressMO.cardId), card.id as CVarArg)
+        
+        coreDataManager.update(request: fetchRequestProgress) { cardProgressMO in
+            cardProgressMO?.allAttemptsCount += 1
+        }
     }
 }

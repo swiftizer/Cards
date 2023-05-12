@@ -33,17 +33,15 @@ final class CardsListPresenter {
     private lazy var editingCompletion: (Card?) -> () = { newCard in
         if let newCard = newCard {
             var card = newCard
-            var flag = false
             if self.cardController?.getCard(ID: newCard.id) == nil {
                 card = (self.cardController?.createCard(for: self.cardSetID))!
-                flag = true
                 card.questionText = newCard.questionText
                 card.answerText = newCard.answerText
                 card.answerImageURL = newCard.answerImageURL
                 card.questionImageURL = newCard.questionImageURL
                 card.isLearned = newCard.isLearned
             }
-            let _ = self.cardController?.updateCard(oldID: card.id, new: card, isRestart: flag)
+            let _ = self.cardController?.updateCard(oldID: card.id, new: card)
             self.cardIDs = self.getCardIDs
             self.dataEditedNotify?()
         }
