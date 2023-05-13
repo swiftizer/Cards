@@ -192,7 +192,7 @@
             startingLineNumber = "301"
             endingLineNumber = "301"
             landmarkName = "createImagePickerMenu(for:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -208,7 +208,7 @@
             startingLineNumber = "314"
             endingLineNumber = "314"
             landmarkName = "createImagePickerMenu(for:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -240,7 +240,7 @@
             startingLineNumber = "280"
             endingLineNumber = "280"
             landmarkName = "setupUI()"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -503,9 +503,120 @@
             filePath = "PPOcards/CardsLearning/CardsLearningVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "345"
-            endingLineNumber = "345"
+            startingLineNumber = "364"
+            endingLineNumber = "364"
             landmarkName = "showImage()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2B249571-22B5-4F9F-8CCD-DDD28DACEC3B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PPOcards/CardsLearning/CardsLearningPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "CardsLearningPresenter"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "2B249571-22B5-4F9F-8CCD-DDD28DACEC3B - fe23acaf51fa7e51"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PPOcards.CardsLearningPresenter.progressLabelText() -&gt; Swift.String"
+                  moduleName = "PPOcards"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ser.nikolaev/Library/Mobile%20Documents/com~apple~CloudDocs/IOS/PPOcards/PPOcards/CardsLearning/CardsLearningPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "468">
+               </Location>
+               <Location
+                  uuid = "2B249571-22B5-4F9F-8CCD-DDD28DACEC3B - fe23acaf51fa7e51"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PPOcards.CardsLearningPresenter.progressLabelText() -&gt; Swift.String"
+                  moduleName = "PPOcards"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ser.nikolaev/Library/Mobile%20Documents/com~apple~CloudDocs/IOS/PPOcards/PPOcards/CardsLearning/CardsLearningPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "1008">
+               </Location>
+               <Location
+                  uuid = "2B249571-22B5-4F9F-8CCD-DDD28DACEC3B - fe23acaf51fa7e51"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PPOcards.CardsLearningPresenter.progressLabelText() -&gt; Swift.String"
+                  moduleName = "PPOcards"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ser.nikolaev/Library/Mobile%20Documents/com~apple~CloudDocs/IOS/PPOcards/PPOcards/CardsLearning/CardsLearningPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "2056">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "87A21E14-1AE4-444D-B167-7476A53C68CF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DBCoreData/Repositories/CoreDataCardRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "updateCard(oldID:newCard:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AA1E6F04-8C1F-4D62-A45F-AAAD7855BAE9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PPOcards/CardsLearning/CardsLearningPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "CardsLearningPresenter"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A28D8B8A-DB8C-4F16-B1A5-8506F86A28F8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DBCoreData/Repositories/CoreDataCardRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "addCard(card:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

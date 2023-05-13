@@ -10,7 +10,7 @@ import Core
 
 
 public class CoreDataCardRepository: CardRepositoryDescription {
-
+    
     private let coreDataManager = CoreDataManager.shared
     private let fileManager = MyFileManager.shared
     
@@ -38,6 +38,15 @@ public class CoreDataCardRepository: CardRepositoryDescription {
             cardMO.isLearned = card.isLearned
             cardMO.questionImageURL = card.questionImageURL
             cardMO.answerImageURL = card.answerImageURL
+        }
+        
+        coreDataManager.create(entityName: "CardProgressMO") { cardProgressMO in
+            guard let cardProgressMO = cardProgressMO as? CardProgressMO else { return }
+
+            cardProgressMO.cardSetId = card.setID
+            cardProgressMO.cardId = card.id
+            cardProgressMO.successCount = 0
+            cardProgressMO.allAttemptsCount = 0
         }
 
         return true
@@ -89,5 +98,52 @@ public class CoreDataCardRepository: CardRepositoryDescription {
             MyFileManager.shared.deleteFile(at: card.answerImageURL)
         }
         coreDataManager.deleteAll(request: CardMO.fetchRequest())
+        coreDataManager.deleteAll(request: CardProgressMO.fetchRequest())
+    }
+    
+    public func getCardProgress(cardSetID: UUID, cardID: UUID) -> CardProgress? {
+        let fetchRequest: NSFetchRequest<CardProgressMO> = CardProgressMO.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "%K == %@ AND %K == %@", #keyPath(CardProgressMO.cardSetId), cardSetID as CVarArg, #keyPath(CardProgressMO.cardId), cardID as CVarArg)
+
+        guard let cardProgressMO = coreDataManager.fetch(request: fetchRequest).first else { return nil }
+
+        let cardProgress = CardProgress(cardSetId: cardProgressMO.cardSetId ?? UUID(), cardId: cardProgressMO.cardId ?? UUID(), successCount: Int(cardProgressMO.successCount), allAttemptsCount: Int(cardProgressMO.allAttemptsCount))
+
+        return cardProgress
+    }
+    
+    public func shareCardToSet(cardID: UUID, newSetID: UUID) -> Bool {
+        guard let card = getCard(ID: cardID) else { return false }
+        
+        return addCard(card: Card(id: UUID(), setID: newSetID, questionText: card.questionText, questionImageURL: card.questionImageURL, answerText: card.answerText, answerImageURL: card.answerImageURL, isLearned: false))
+    }
+    
+    public func markAsLearned(cardID: UUID) {
+        guard var card = getCard(ID: cardID) else { return }
+        
+        card.isLearned = true
+        let _ = updateCard(oldID: cardID, newCard: card)
+        
+        let fetchRequestProgress: NSFetchRequest<CardProgressMO> = CardProgressMO.fetchRequest()
+        fetchRequestProgress.predicate = NSPredicate(format: "%K == %@ AND %K == %@", #keyPath(CardProgressMO.cardSetId), (card.setID ?? UUID()) as CVarArg, #keyPath(CardProgressMO.cardId), card.id as CVarArg)
+        
+        coreDataManager.update(request: fetchRequestProgress) { cardProgressMO in
+            cardProgressMO?.allAttemptsCount += 1
+            cardProgressMO?.successCount += 1
+        }
+    }
+    
+    public func markAsNotLearned(cardID: UUID) {
+        guard var card = getCard(ID: cardID) else { return }
+        
+        card.isLearned = false
+        let _ = updateCard(oldID: cardID, newCard: card)
+        
+        let fetchRequestProgress: NSFetchRequest<CardProgressMO> = CardProgressMO.fetchRequest()
+        fetchRequestProgress.predicate = NSPredicate(format: "%K == %@ AND %K == %@", #keyPath(CardProgressMO.cardSetId), (card.setID ?? UUID()) as CVarArg, #keyPath(CardProgressMO.cardId), card.id as CVarArg)
+        
+        coreDataManager.update(request: fetchRequestProgress) { cardProgressMO in
+            cardProgressMO?.allAttemptsCount += 1
+        }
     }
 }

@@ -12,6 +12,7 @@ import Logger
 final class CardsListVC: UIViewController {
     private let presenter: CardsListPresenter
     weak var rootVC: CardsLearningVC?
+    private var changedFlag = false
     
     private let cardsTV = UITableView()
     
@@ -76,7 +77,9 @@ final class CardsListVC: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         Logger.shared.log(lvl: .VERBOSE, msg: "VC viewWillDisappear called")
-        rootVC?.reload()
+        if changedFlag {
+            rootVC?.reload()
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -100,6 +103,7 @@ final class CardsListVC: UIViewController {
         
         presenter.dataEditedNotify = {
             self.cardsTV.reloadData()
+            self.changedFlag = true
         }
     }
     
@@ -121,7 +125,7 @@ extension CardsListVC: UITableViewDelegate, UITableViewDataSource {
         
         let card = presenter.cardForTVRow(index: indexPath.row)
         
-        content.text = card?.questionText
+        content.text = (card?.questionText ?? "") + presenter.rateForCard(index: indexPath.row)
         content.secondaryText = card?.answerText
 
         cell.contentConfiguration = content
@@ -140,10 +144,31 @@ extension CardsListVC: UITableViewDelegate, UITableViewDataSource {
         true
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            presenter.deleteCard(index: indexPath.row)
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") {
+            (action, sourceView, completionHandler) in
+            
+            self.presenter.deleteCard(index: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            self.changedFlag = true
+            completionHandler(true)
         }
+        
+        deleteAction.image = UIImage(systemName: "trash")
+        
+        // *********** SHARE ***********
+        let shareAction = UIContextualAction(style: .normal, title: "Share") {
+            (action, sourceView, completionHandler) in
+            let choosingVC = self.presenter.prepareCardSetsChoosingVC(index: indexPath.row)
+            
+            self.present(choosingVC, animated: true)
+        }
+        
+        shareAction.image = UIImage(systemName: "square.and.arrow.up")
+        shareAction.backgroundColor = UIColor(red: 255/255.0, green: 128.0/255.0, blue: 0.0, alpha: 1.0)
+        
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, shareAction])
+        
+        return swipeConfiguration
     }
 }

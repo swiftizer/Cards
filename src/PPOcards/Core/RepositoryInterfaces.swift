@@ -25,7 +25,11 @@ public protocol CardRepositoryDescription {
     func addCard(card: Card) -> Bool
     func updateCard(oldID: UUID, newCard: Card) -> Bool
     func deleteCard(ID: UUID) -> Bool
+    func getCardProgress(cardSetID: UUID, cardID: UUID) -> CardProgress?
+    func shareCardToSet(cardID: UUID, newSetID: UUID) -> Bool
     func deleteAllCards()
+    func markAsLearned(cardID: UUID)
+    func markAsNotLearned(cardID: UUID)
 }
 
 public protocol SettingsRepositoryDescription {

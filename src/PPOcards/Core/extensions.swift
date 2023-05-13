@@ -74,3 +74,10 @@ public extension UserDefaults {
     }
 
 }
+
+public extension Bool {
+    func intRepresentation() -> Int {
+        if self == true { return 1 }
+        return 0
+    }
+}

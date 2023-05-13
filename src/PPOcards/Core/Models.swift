@@ -68,3 +68,21 @@ public struct Settings: Equatable {
         return "- isMixed: \(isMixed); - mixingInPower: \(mixingInPower ?? 0)"
     }
 }
+
+public struct CardProgress: Equatable {
+    public var cardSetId: UUID
+    public var cardId: UUID
+    public var successCount: Int
+    public var allAttemptsCount: Int
+    
+    public init(cardSetId: UUID, cardId: UUID, successCount: Int, allAttemptsCount: Int) {
+        self.cardSetId = cardSetId
+        self.cardId = cardId
+        self.successCount = successCount
+        self.allAttemptsCount = allAttemptsCount
+    }
+    
+    public var logDescription: String {
+        return "- cardSetId: \(cardSetId); - cardId: \(cardId); - successCount: \(successCount); - allAttemptsCount: \(allAttemptsCount)"
+    }
+}

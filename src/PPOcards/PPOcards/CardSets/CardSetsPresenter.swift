@@ -33,7 +33,7 @@ final class CardSetsPresenter {
         var c11 = cardController.createCard(for: setID1)
         c11.answerText = "Answer11"
         c11.questionText = "Question11"
-        c11.isLearned = true
+        c11.isLearned = false
         let _ = cardController.updateCard(oldID: c11.id, new: c11)
         var c12 = cardController.createCard(for: setID1)
         c12.answerText = "Answer12"
@@ -43,7 +43,7 @@ final class CardSetsPresenter {
         var c13 = cardController.createCard(for: setID1)
         c13.answerText = "Answer13"
         c13.questionText = "Question13"
-        c13.isLearned = true
+        c13.isLearned = false
         let _ = cardController.updateCard(oldID: c13.id, new: c13)
         
         var c21 = cardController.createCard(for: setID2)
@@ -72,7 +72,7 @@ final class CardSetsPresenter {
         var c33 = cardController.createCard(for: setID3)
         c33.answerText = "Answer33"
         c33.questionText = "Question33"
-        c33.isLearned = true
+        c33.isLearned = false
         let _ = cardController.updateCard(oldID: c33.id, new: c33)
         var c34 = cardController.createCard(for: setID3)
         c34.answerText = "Answer34"

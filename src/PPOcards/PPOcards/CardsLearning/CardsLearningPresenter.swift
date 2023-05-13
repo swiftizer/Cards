@@ -33,18 +33,7 @@ final class CardsLearningPresenter {
         cardSetController?.getNotLearnedCardIDsFromSet(from: cardSetID) ?? []
     }
     
-    private var getNotLearnedCards: [Card] {
-        var res = [Card]()
-        for ID in notLearnedCardIDs {
-            if let card = cardController?.getCard(ID: ID) {
-                res.append(card)
-            }
-        }
-        return res
-    }
-    
     private lazy var notLearnedCardIDs: [UUID] = getNotLearnedCardIDs
-    private lazy var notLearnedCards: [Card] = getNotLearnedCards
     
     private var allLearnedCardIDs: [UUID] {
         cardSetController?.getAllCardIDsFromSet(from: cardSetID) ?? []
@@ -68,7 +57,7 @@ final class CardsLearningPresenter {
     
     var curNotlearnedCard: Card? {
         if curCardInd < notLearnedCardIDs.count {
-            return notLearnedCards[curCardInd]
+            return cardController?.getCard(ID: notLearnedCardIDs[curCardInd])
         }
         return nil
     }
@@ -82,8 +71,11 @@ final class CardsLearningPresenter {
     }
     
     func reload() {
+        let oldCard = curNotlearnedCard
         notLearnedCardIDs = getNotLearnedCardIDs
-        notLearnedCards = getNotLearnedCards
+        if let ind = notLearnedCardIDs.firstIndex(where: { $0 == oldCard?.id }) {
+            curCardInd = ind
+        }
     }
     
     func prepareCardLayout(side: CardSide) -> (String?, URL?) {
@@ -96,26 +88,21 @@ final class CardsLearningPresenter {
     }
     
     func accept() {
-        guard let oldCard = curNotlearnedCard else { return }
-        var updCard = oldCard
-        updCard.isLearned = true
-        let _ = cardController?.updateCard(oldID: oldCard.id, new: updCard)
+        guard let card = curNotlearnedCard else { return }
+        let _ = cardController?.markAsLearned(cardID: card.id)
         
         nextCard()
     }
     
     func decline() {
-        guard let oldCard = curNotlearnedCard else { return }
-        var updCard = oldCard
-        updCard.isLearned = false
-        let _ = cardController?.updateCard(oldID: oldCard.id, new: updCard)
+        guard let card = curNotlearnedCard else { return }
+        let _ = cardController?.markAsNotLearned(cardID: card.id)
         
         nextCard()
     }
     
     func restart() {
         notLearnedCardIDs = getNotLearnedCardIDs
-        notLearnedCards = getNotLearnedCards
         if notLearnedCardIDs.count == 0 {
             for ID in cardSetController?.getAllCardIDsFromSet(from: cardSetID) ?? [] {
                 if let card = cardController?.getCard(ID: ID) {
@@ -125,9 +112,14 @@ final class CardsLearningPresenter {
                 }
             }
             notLearnedCardIDs = getNotLearnedCardIDs
-            notLearnedCards = getNotLearnedCards
         }
         curCardInd = 0
+    }
+    
+    func progressLabelText() -> String {
+        guard let progress = cardController?.getCardProgress(cardSetID: cardSetID, cardID: curNotlearnedCard?.id ?? UUID()) else { return " " }
+        let res = progress.allAttemptsCount == 0 ? "-" : "\(Int(Double(progress.successCount) / Double(progress.allAttemptsCount) * 100.0)) %"
+        return "Rate: " + res
     }
     
     func prepareCardsListVC(rootVC: CardsLearningVC) -> CardsListVC {
