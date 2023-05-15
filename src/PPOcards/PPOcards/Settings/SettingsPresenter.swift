@@ -7,7 +7,6 @@
 
 import Foundation
 import Core
-import DBCoreData
 
 final class SettingsPresenter {
     private let settingsController: SettingsControllerDescription?

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import DBCoreData
+import Core
 
 final class ImagesProvider {
     static let shared = ImagesProvider()

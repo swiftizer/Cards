@@ -8,7 +8,6 @@
 import UIKit
 import PinLayout
 import Core
-import DBCoreData
 import Logger
 
 class CardSetsChoosingVC: UIViewController {

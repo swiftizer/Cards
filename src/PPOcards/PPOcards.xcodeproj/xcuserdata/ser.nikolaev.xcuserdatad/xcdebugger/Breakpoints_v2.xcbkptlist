@@ -189,8 +189,8 @@
             filePath = "PPOcards/EditCardVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "301"
-            endingLineNumber = "301"
+            startingLineNumber = "300"
+            endingLineNumber = "300"
             landmarkName = "createImagePickerMenu(for:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -205,8 +205,8 @@
             filePath = "PPOcards/EditCardVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "314"
-            endingLineNumber = "314"
+            startingLineNumber = "313"
+            endingLineNumber = "313"
             landmarkName = "createImagePickerMenu(for:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -221,8 +221,8 @@
             filePath = "PPOcards/EditCardVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "409"
-            endingLineNumber = "409"
+            startingLineNumber = "408"
+            endingLineNumber = "408"
             landmarkName = "didSelect(image:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -237,8 +237,8 @@
             filePath = "PPOcards/EditCardVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "280"
-            endingLineNumber = "280"
+            startingLineNumber = "279"
+            endingLineNumber = "279"
             landmarkName = "setupUI()"
             landmarkType = "7">
          </BreakpointContent>
@@ -503,8 +503,8 @@
             filePath = "PPOcards/CardsLearning/CardsLearningVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "364"
-            endingLineNumber = "364"
+            startingLineNumber = "368"
+            endingLineNumber = "368"
             landmarkName = "showImage()"
             landmarkType = "7">
          </BreakpointContent>
@@ -519,10 +519,10 @@
             filePath = "PPOcards/CardsLearning/CardsLearningPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "CardsLearningPresenter"
-            landmarkType = "3">
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "progressLabelText()"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "2B249571-22B5-4F9F-8CCD-DDD28DACEC3B - fe23acaf51fa7e51"
@@ -598,17 +598,17 @@
             filePath = "PPOcards/CardsLearning/CardsLearningPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "CardsLearningPresenter"
-            landmarkType = "3">
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "restart()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "A28D8B8A-DB8C-4F16-B1A5-8506F86A28F8"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DBCoreData/Repositories/CoreDataCardRepository.swift"
@@ -617,6 +617,244 @@
             startingLineNumber = "44"
             endingLineNumber = "44"
             landmarkName = "addCard(card:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A5AD7CC9-522C-4256-8C6E-499800A960DD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DBRealm/Repositories/RealmCardRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "markAsLearned(cardID:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "A5AD7CC9-522C-4256-8C6E-499800A960DD - a3f7de2f5b545568"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DBRealm.RealmCardRepository.markAsLearned(cardID: Foundation.UUID) -&gt; ()"
+                  moduleName = "DBRealm"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ser.nikolaev/Library/Mobile%20Documents/com~apple~CloudDocs/IOS/PPOcards/DBRealm/Repositories/RealmCardRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
+                  offsetFromSymbolStart = "344">
+               </Location>
+               <Location
+                  uuid = "A5AD7CC9-522C-4256-8C6E-499800A960DD - a3f7de2f5b54554f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DBRealm.RealmCardRepository.markAsLearned(cardID: Foundation.UUID) -&gt; ()"
+                  moduleName = "DBRealm"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ser.nikolaev/Library/Mobile%20Documents/com~apple~CloudDocs/IOS/PPOcards/DBRealm/Repositories/RealmCardRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "264">
+               </Location>
+               <Location
+                  uuid = "A5AD7CC9-522C-4256-8C6E-499800A960DD - a3f7de2f5b54554f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DBRealm.RealmCardRepository.markAsLearned(cardID: Foundation.UUID) -&gt; ()"
+                  moduleName = "DBRealm"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ser.nikolaev/Library/Mobile%20Documents/com~apple~CloudDocs/IOS/PPOcards/DBRealm/Repositories/RealmCardRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "328">
+               </Location>
+               <Location
+                  uuid = "A5AD7CC9-522C-4256-8C6E-499800A960DD - a3f7de2f5b54554f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DBRealm.RealmCardRepository.markAsLearned(cardID: Foundation.UUID) -&gt; ()"
+                  moduleName = "DBRealm"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ser.nikolaev/Library/Mobile%20Documents/com~apple~CloudDocs/IOS/PPOcards/DBRealm/Repositories/RealmCardRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "900">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "673522DB-C2D4-49B4-AC40-CD49F54CEC31"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DBRealm/Models/CardRealm.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "init(id:setID:questionText:questionImageURL:answerText:answerImageURL:isLearned:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6EDE441E-9999-4DB5-B86F-AA04CEA0A90A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DBRealm/Models/CardRealm.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "convertToCard()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5D67079A-76D4-4A5B-B2BB-A7F182C3468E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Core/FileManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "getImageFromFS(path:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B28F775D-4C20-48CF-BE3D-6DF538D144AD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PPOcards/CardsLearning/CardsLearningPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "prepareCardLayout(side:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "57C36A5A-8745-437D-A92A-6A9EB4FCE43C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DBRealm/Models/CardRealm.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "init(id:setID:questionText:questionImageURL:answerText:answerImageURL:isLearned:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9C5A9AB2-F584-4EC6-9B42-906D11D19809"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DBRealm/Repositories/RealmCardRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "updateCard(oldID:newCard:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "9C5A9AB2-F584-4EC6-9B42-906D11D19809 - 52804520cb7da634"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DBRealm.RealmCardRepository.updateCard(oldID: Foundation.UUID, newCard: Core.Card) -&gt; Swift.Bool"
+                  moduleName = "DBRealm"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ser.nikolaev/Library/Mobile%20Documents/com~apple~CloudDocs/IOS/PPOcards/DBRealm/Repositories/RealmCardRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "276">
+               </Location>
+               <Location
+                  uuid = "9C5A9AB2-F584-4EC6-9B42-906D11D19809 - 354f005b59c0c4e5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RealmSwift.Query&lt;DBRealm.CardRealm&gt;) -&gt; RealmSwift.Query&lt;Swift.Bool&gt; in DBRealm.RealmCardRepository.updateCard(oldID: Foundation.UUID, newCard: Core.Card) -&gt; Swift.Bool"
+                  moduleName = "DBRealm"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ser.nikolaev/Library/Mobile%20Documents/com~apple~CloudDocs/IOS/PPOcards/DBRealm/Repositories/RealmCardRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4FF06F68-9D09-4517-A6B1-C3052AB9ECDC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DBRealm/Repositories/RealmCardRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "updateCard(oldID:newCard:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "37A40A72-3F24-402C-9BDE-95801D35671C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Core/FileManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "getImageFromFS(path:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

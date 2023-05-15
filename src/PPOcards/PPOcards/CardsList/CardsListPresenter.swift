@@ -7,7 +7,6 @@
 
 import Foundation
 import Core
-import DBCoreData
 
 final class CardsListPresenter {
     private let config: PresenterConfig
