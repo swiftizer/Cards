@@ -25,6 +25,8 @@ final class CardsLearningVC: UIViewController {
     private let restartButton = UIButton()
     private let cardsListButton = UIButton()
     
+    private var curSide = CardSide.question
+    
     convenience init() {
         self.init(config: PresenterConfig(cardController: nil, cardSetController: nil, cardSetID: nil))
     }
@@ -258,7 +260,7 @@ final class CardsLearningVC: UIViewController {
             curImageView.pin
                 .center()
                 .maxWidth(curNotlearnedCardView.bounds.width)
-                .maxHeight(curNotlearnedCardView.bounds.height)
+                .maxHeight(curNotlearnedCardView.bounds.height*0.75)
                 .sizeToFit(.width)
         }
     }
@@ -282,10 +284,12 @@ final class CardsLearningVC: UIViewController {
     @objc
     private func turn() {
         UIImpactFeedbackGenerator(style: .light).impactOccurred()
-        if curTextLabel.text == presenter.curNotlearnedCard?.questionText {
+        if curSide == .question {
             layoutForCard(.answer)
+            curSide = .answer
         } else {
             layoutForCard(.question)
+            curSide = .question
         }
     }
     

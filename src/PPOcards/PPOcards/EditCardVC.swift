@@ -8,8 +8,8 @@
 import UIKit
 import PinLayout
 import Core
-import DBCoreData
 import Logger
+import FileManager
 
 final class EditCardVC: UIViewController {
     private let questionTV = UITextView()

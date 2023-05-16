@@ -7,7 +7,6 @@
 
 import Foundation
 import Core
-import DBCoreData
 
 enum CardSide {
     case question

@@ -46,7 +46,6 @@ public final class MyFileManager: FileManagerDescription {
             print("Error converting UIImage to png data")
             return nil
         }
-
     }
 
 

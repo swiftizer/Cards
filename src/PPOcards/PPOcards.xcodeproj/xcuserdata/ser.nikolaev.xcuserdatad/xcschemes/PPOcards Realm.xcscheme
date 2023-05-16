@@ -90,7 +90,7 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "-CoreData"
+            argument = "-Realm"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

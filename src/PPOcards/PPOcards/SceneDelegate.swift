@@ -18,6 +18,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        if CommandLine.arguments[2] == "-Realm" {
+            ModelProvider.shared.setupDB(type: .Realm)
+        } else {
+            ModelProvider.shared.setupDB(type: .CoreData)
+        }
 
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene

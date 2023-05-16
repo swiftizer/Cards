@@ -7,13 +7,12 @@
 
 import UIKit
 import Core
-import DBCoreData
 import Logger
 
 class TechnicalVC: UIViewController {
-    let settingsController = SettingsController(dataSource: CoreDataSettingsRepository())
-    lazy var cardSetController = CardSetController(dataSource: CoreDataCardSetRepository(), settingsController: settingsController)
-    lazy var cardController = CardController(dataSource: CoreDataCardRepository(), cardSetController: cardSetController)
+    private let settingsController = ModelProvider.shared.settingsController!
+    private lazy var cardSetController = ModelProvider.shared.cardSetController!
+    private lazy var cardController = ModelProvider.shared.cardController!
     
     enum State {
         case mainOverView

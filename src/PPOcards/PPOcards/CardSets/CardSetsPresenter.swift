@@ -6,13 +6,13 @@
 //
 
 import Foundation
+import FileManager
 import Core
-import DBCoreData
 
 final class CardSetsPresenter {
-    private let settingsController = SettingsController(dataSource: CoreDataSettingsRepository())
-    private lazy var cardSetController = CardSetController(dataSource: CoreDataCardSetRepository(), settingsController: settingsController)
-    private lazy var cardController = CardController(dataSource: CoreDataCardRepository(), cardSetController: cardSetController)
+    private let settingsController = ModelProvider.shared.settingsController!
+    private lazy var cardSetController = ModelProvider.shared.cardSetController!
+    private lazy var cardController = ModelProvider.shared.cardController!
     
     init() {
         cardSetController.cardController = cardController
