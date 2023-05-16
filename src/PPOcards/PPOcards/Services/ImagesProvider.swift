@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FileManager
 import Core
 
 final class ImagesProvider {

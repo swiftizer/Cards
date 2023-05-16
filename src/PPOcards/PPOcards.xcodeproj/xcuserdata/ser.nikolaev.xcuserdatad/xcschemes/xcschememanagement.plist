@@ -47,7 +47,7 @@
 		<key>DBRealm.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>18</integer>
+			<integer>6</integer>
 		</dict>
 		<key>DecodeRowByColumnIndex (Playground) 1.xcscheme</key>
 		<dict>
@@ -90,6 +90,11 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>6</integer>
+		</dict>
+		<key>FileManager.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
 		</dict>
 		<key>GettingStarted (Playground) 1.xcscheme</key>
 		<dict>

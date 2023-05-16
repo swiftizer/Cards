@@ -64,7 +64,10 @@
 		FABA2DF22A10F1E000F6AD0C /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FABA2DF12A10F1E000F6AD0C /* RealmSwift */; };
 		FABA2DF42A1102C000F6AD0C /* CardProgressRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA2DF32A1102C000F6AD0C /* CardProgressRealm.swift */; };
 		FABA2DF62A111C6200F6AD0C /* ModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA2DF52A111C6200F6AD0C /* ModelProvider.swift */; };
-		FABA2DF72A1120A800F6AD0C /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339619929E2BB85006DEDDD /* FileManager.swift */; };
+		FABA2EBA2A13E60E00F6AD0C /* FileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FABA2EB92A13E60E00F6AD0C /* FileManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FABA2EBD2A13E60E00F6AD0C /* FileManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FABA2EB72A13E60E00F6AD0C /* FileManager.framework */; };
+		FABA2EBE2A13E60F00F6AD0C /* FileManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FABA2EB72A13E60E00F6AD0C /* FileManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FABA2EC22A13E61900F6AD0C /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339619929E2BB85006DEDDD /* FileManager.swift */; };
 		FACD698129EA035300CB0E33 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD698029EA035300CB0E33 /* AlertManager.swift */; };
 		FAFC65DF29FD2E320040B32A /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = FAFC65DE29FD2E320040B32A /* PinLayout */; };
 		FAFC65E129FD3A140040B32A /* CardsLearningVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFC65E029FD3A140040B32A /* CardsLearningVC.swift */; };
@@ -132,6 +135,13 @@
 			remoteGlobalIDString = FABA2DD42A10EE1200F6AD0C;
 			remoteInfo = DBRealm;
 		};
+		FABA2EBB2A13E60E00F6AD0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B350D21A29C904EB0026B934 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FABA2EB62A13E60E00F6AD0C;
+			remoteInfo = FileManager;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -141,6 +151,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				FABA2EBE2A13E60F00F6AD0C /* FileManager.framework in Embed Frameworks */,
 				FABA2DDC2A10EE1200F6AD0C /* DBRealm.framework in Embed Frameworks */,
 				FA0CE40829F8070600DB094F /* Logger.framework in Embed Frameworks */,
 				FA7B61B829F4395300F0AFEE /* Core.framework in Embed Frameworks */,
@@ -205,6 +216,8 @@
 		FABA2DEA2A10EED100F6AD0C /* RealmSettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmSettingsRepository.swift; sourceTree = "<group>"; };
 		FABA2DF32A1102C000F6AD0C /* CardProgressRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardProgressRealm.swift; sourceTree = "<group>"; };
 		FABA2DF52A111C6200F6AD0C /* ModelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProvider.swift; sourceTree = "<group>"; };
+		FABA2EB72A13E60E00F6AD0C /* FileManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FileManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FABA2EB92A13E60E00F6AD0C /* FileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileManager.h; sourceTree = "<group>"; };
 		FACD698029EA035300CB0E33 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		FAEDF31D29EDEFD00059DD1C /* CardSetMO+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CardSetMO+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FAEDF31E29EDEFD00059DD1C /* CardSetMO+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CardSetMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -232,6 +245,7 @@
 				FABA2DDB2A10EE1200F6AD0C /* DBRealm.framework in Frameworks */,
 				FA0CE40729F8070600DB094F /* Logger.framework in Frameworks */,
 				FA7B61B729F4395300F0AFEE /* Core.framework in Frameworks */,
+				FABA2EBD2A13E60E00F6AD0C /* FileManager.framework in Frameworks */,
 				FAFC65DF29FD2E320040B32A /* PinLayout in Frameworks */,
 				FA7B61CA29F43CEA00F0AFEE /* DBCoreData.framework in Frameworks */,
 				FABA2DCD2A10ED8E00F6AD0C /* Realm in Frameworks */,
@@ -289,6 +303,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FABA2EB42A13E60E00F6AD0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -301,6 +322,7 @@
 				FA0CE40229F8070600DB094F /* Logger */,
 				B350D22429C904EB0026B934 /* PPOcards */,
 				FABA2DD62A10EE1200F6AD0C /* DBRealm */,
+				FABA2EB82A13E60E00F6AD0C /* FileManager */,
 				B350D22329C904EB0026B934 /* Products */,
 				FA0CE2EA29F447CA00DB094F /* UnitTests */,
 				FABA2DEE2A10F1E000F6AD0C /* Frameworks */,
@@ -318,6 +340,7 @@
 				FA0CE2E929F447CA00DB094F /* UnitTests.xctest */,
 				FA0CE40129F8070500DB094F /* Logger.framework */,
 				FABA2DD52A10EE1200F6AD0C /* DBRealm.framework */,
+				FABA2EB72A13E60E00F6AD0C /* FileManager.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -430,7 +453,6 @@
 			isa = PBXGroup;
 			children = (
 				B350D23F29C9100D0026B934 /* RepositoryInterfaces.swift */,
-				B339619929E2BB85006DEDDD /* FileManager.swift */,
 				FA7B61B329F4395300F0AFEE /* Core.h */,
 				B350D24129C910850026B934 /* Models.swift */,
 				B339619129E2183F006DEDDD /* extensions.swift */,
@@ -485,6 +507,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FABA2EB82A13E60E00F6AD0C /* FileManager */ = {
+			isa = PBXGroup;
+			children = (
+				B339619929E2BB85006DEDDD /* FileManager.swift */,
+				FABA2EB92A13E60E00F6AD0C /* FileManager.h */,
+			);
+			path = FileManager;
 			sourceTree = "<group>";
 		};
 		FAFC65F829FF44A10040B32A /* CardsList */ = {
@@ -570,6 +601,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FABA2EB22A13E60E00F6AD0C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FABA2EBA2A13E60E00F6AD0C /* FileManager.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -589,6 +628,7 @@
 				FA7B61B629F4395300F0AFEE /* PBXTargetDependency */,
 				FA7B61C929F43CEA00F0AFEE /* PBXTargetDependency */,
 				FABA2DDA2A10EE1200F6AD0C /* PBXTargetDependency */,
+				FABA2EBC2A13E60E00F6AD0C /* PBXTargetDependency */,
 			);
 			name = PPOcards;
 			packageProductDependencies = (
@@ -730,6 +770,24 @@
 			productReference = FABA2DD52A10EE1200F6AD0C /* DBRealm.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		FABA2EB62A13E60E00F6AD0C /* FileManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FABA2EBF2A13E60F00F6AD0C /* Build configuration list for PBXNativeTarget "FileManager" */;
+			buildPhases = (
+				FABA2EB22A13E60E00F6AD0C /* Headers */,
+				FABA2EB32A13E60E00F6AD0C /* Sources */,
+				FABA2EB42A13E60E00F6AD0C /* Frameworks */,
+				FABA2EB52A13E60E00F6AD0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FileManager;
+			productName = FileManager;
+			productReference = FABA2EB72A13E60E00F6AD0C /* FileManager.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -768,6 +826,9 @@
 						CreatedOnToolsVersion = 14.1;
 						LastSwiftMigration = 1410;
 					};
+					FABA2EB62A13E60E00F6AD0C = {
+						CreatedOnToolsVersion = 14.1;
+					};
 				};
 			};
 			buildConfigurationList = B350D21D29C904EB0026B934 /* Build configuration list for PBXProject "PPOcards" */;
@@ -795,6 +856,7 @@
 				FA0CE2E829F447CA00DB094F /* UnitTests */,
 				FA0CE40029F8070500DB094F /* Logger */,
 				FABA2DD42A10EE1200F6AD0C /* DBRealm */,
+				FABA2EB62A13E60E00F6AD0C /* FileManager */,
 			);
 		};
 /* End PBXProject section */
@@ -852,6 +914,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		FABA2DD32A10EE1200F6AD0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FABA2EB52A13E60E00F6AD0C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -934,7 +1003,6 @@
 				FA0CE30229F4629300DB094F /* RepositoryInterfaces.swift in Sources */,
 				FA0CE2FB29F461D000DB094F /* CardSetController.swift in Sources */,
 				FA7B61BE29F4399800F0AFEE /* extensions.swift in Sources */,
-				FABA2DF72A1120A800F6AD0C /* FileManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -968,6 +1036,14 @@
 				FABA2DE72A10EEAE00F6AD0C /* RealmCardSetRepository.swift in Sources */,
 				FABA2DEB2A10EED100F6AD0C /* RealmSettingsRepository.swift in Sources */,
 				FABA2DE32A10EE7B00F6AD0C /* CardRealm.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FABA2EB32A13E60E00F6AD0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FABA2EC22A13E61900F6AD0C /* FileManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1008,6 +1084,11 @@
 			isa = PBXTargetDependency;
 			target = FABA2DD42A10EE1200F6AD0C /* DBRealm */;
 			targetProxy = FABA2DD92A10EE1200F6AD0C /* PBXContainerItemProxy */;
+		};
+		FABA2EBC2A13E60E00F6AD0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FABA2EB62A13E60E00F6AD0C /* FileManager */;
+			targetProxy = FABA2EBB2A13E60E00F6AD0C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1073,7 +1154,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1127,7 +1208,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1152,7 +1233,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1181,7 +1262,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1322,7 +1403,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1353,7 +1434,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1384,7 +1465,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1415,7 +1496,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1446,7 +1527,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1477,7 +1558,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1509,7 +1590,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1542,7 +1623,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1550,6 +1631,68 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bmstu.ppo.DBRealm;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FABA2EC02A13E60F00F6AD0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = Q9ZS8V8CB6;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bmstu.ppo.FileManager;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FABA2EC12A13E60F00F6AD0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = Q9ZS8V8CB6;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bmstu.ppo.FileManager;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1640,6 +1783,15 @@
 			buildConfigurations = (
 				FABA2DDE2A10EE1200F6AD0C /* Debug */,
 				FABA2DDF2A10EE1200F6AD0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FABA2EBF2A13E60F00F6AD0C /* Build configuration list for PBXNativeTarget "FileManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FABA2EC02A13E60F00F6AD0C /* Debug */,
+				FABA2EC12A13E60F00F6AD0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
