@@ -68,12 +68,18 @@ paths:
             schema:
               $ref: "#/components/schemas/Card"
       responses:
-        '200':
+        '201':
           description: Успех.
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/Card"
+        '400':
+          description: Ошибка в request body.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error404"
         '404':
           description: Ресурс не найден.
           content:
@@ -137,6 +143,12 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Card"
+        '400':
+          description: Ошибка в request body.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error400"
         '404':
           description: Ресурс не найден.
           content:
@@ -215,12 +227,18 @@ paths:
             schema:
               $ref: "#/components/schemas/CardSet"
       responses:
-        '200':
+        '201':
           description: Успех.
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/CardSet"
+        '400':
+          description: Ошибка в request body.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error400"
         '404':
           description: Ресурс не найден.
           content:
@@ -284,6 +302,12 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/CardSet"
+        '400':
+          description: Ошибка в request body.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error400"
         '404':
           description: Ресурс не найден.
           content:
@@ -447,6 +471,16 @@ components:
       type: array
       items:
         $ref: "#/components/schemas/Card"
+
+    Error400:
+      type: object
+      properties:
+        code:
+          type: integer
+          example: 400
+        message:
+          type: string
+          example: bad request
 
     Error404:
       type: object
