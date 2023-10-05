@@ -379,6 +379,12 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Settings"
+        '400':
+          description: Ошибка в request body.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error400"
         '404':
           description: Ресурс не найден.
           content:
