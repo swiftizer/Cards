@@ -21,7 +21,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/SimpleFilter"
+              $ref: "#/components/schemas/SimpleFilterPaginating"
       responses:
         '200':
           description: Успех.
@@ -31,8 +31,16 @@ paths:
                 $ref: "#/components/schemas/Cards"
         '401':
           description: Фильтрация по переданным полям недоступна.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error401"
         '404':
           description: Ресурс не найден.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error404"
     
     post:
       summary: Создать карточку.
@@ -55,6 +63,10 @@ paths:
                 $ref: "#/components/schemas/Card"
         '404':
           description: Ресурс не найден.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error404"
 
   /cards/{card_id}:
     get:
@@ -80,6 +92,10 @@ paths:
                 $ref: "#/components/schemas/Card"
         '404':
           description: Ресурс не найден.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error404"
     
     put:
       summary: Изменить карточку.
@@ -110,6 +126,10 @@ paths:
                 $ref: "#/components/schemas/Card"
         '404':
           description: Ресурс не найден.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error404"
 
     delete:
       summary: Удалить карточку.
@@ -130,6 +150,10 @@ paths:
           description: Успех.
         '404':
           description: Ресурс не найден.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error404"
 
   /card_sets:
     get:
@@ -138,6 +162,12 @@ paths:
       operationId: getCardSets
       tags:
        - card_set
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SimpleFilterPaginating"
       responses:
         '200':
           description: Успех.
@@ -147,6 +177,10 @@ paths:
                 $ref: "#/components/schemas/CardSets"
         '404':
           description: Ресурс не найден.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error404"
     
     post:
       summary: Создать набор карточек.
@@ -169,6 +203,10 @@ paths:
                 $ref: "#/components/schemas/CardSet"
         '404':
           description: Ресурс не найден.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error404"
 
   /card_sets/{card_set_id}:
     get:
@@ -194,6 +232,10 @@ paths:
                 $ref: "#/components/schemas/CardSet"
         '404':
           description: Ресурс не найден.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error404"
     
     put:
       summary: Изменить информацию о наборе карточек.
@@ -224,6 +266,10 @@ paths:
                 $ref: "#/components/schemas/CardSet"
         '404':
           description: Ресурс не найден.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error404"
 
     delete:
       summary: Удалить набор карточек.
@@ -244,6 +290,10 @@ paths:
           description: Успех.
         '404':
           description: Ресурс не найден.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error404"
 
   /settings:
     get:
@@ -261,6 +311,10 @@ paths:
                 $ref: "#/components/schemas/Settings"
         '404':
           description: Ресурс не найден.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error404"
     
     post:
       summary: Создать настройки.
@@ -283,6 +337,10 @@ paths:
                 $ref: "#/components/schemas/Settings"
         '404':
           description: Ресурс не найден.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error404"
 
     put:
       summary: Изменить настройки.
@@ -305,10 +363,13 @@ paths:
                 $ref: "#/components/schemas/Settings"
         '404':
           description: Ресурс не найден.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error404"
 
 
 components:
-
   schemas: 
     Card:
       type: object
@@ -324,8 +385,6 @@ components:
           type: string
           example: 83DD159B-316D-4A30-A765-24B841253A1A
           description: Id набора карточек, к которому относится карточка.
-        card_set:
-          $ref: "#/components/schemas/CardSet"
         question_text:
           type: string
           example: Столица Германии?
@@ -405,13 +464,47 @@ components:
         property:
           description: Свойство, по которому происходит фильтрация.
           type: string
-          example: role
+          example: is_learned
         value:
           description: Искомое значение.
           type: string
-          example: signed-user
+          example: true
     
     SimpleFilter:
       type: array
       items:
         $ref: "#/components/schemas/SimpleFilterClause"
+
+    SimpleFilterPaginating:
+      type: object
+      required:
+        - limit
+      properties:
+        limit:
+          type: integer
+          example: 20
+        offset:
+          type: integer
+          example: 0
+        filter:
+          $ref: "#/components/schemas/SimpleFilter"
+
+    Error401:
+      type: object
+      properties:
+        code:
+          type: integer
+          example: 401
+        message:
+          type: string
+          example: unsupported filter fields
+
+    Error404:
+      type: object
+      properties:
+        code:
+          type: integer
+          example: 404
+        message:
+          type: string
+          example: object not found
