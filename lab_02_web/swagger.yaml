@@ -16,12 +16,31 @@ paths:
       operationId: getCards
       tags:
        - card
-      requestBody:
-        required: false
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/SimpleFilterPaginating"
+      parameters:
+        - name: limit
+          in: query
+          required: true
+          example: 20
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          required: false
+          example: 0
+          schema:
+            type: integer
+        - name: card_set_id
+          in: query
+          required: false
+          example: 83DD159B-316D-4A30-A765-24B841253A1A
+          schema:
+            type: string
+        - name: is_learned
+          in: query
+          required: false
+          example: true
+          schema:
+            type: boolean
       responses:
         '200':
           description: Успех.
@@ -29,12 +48,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Cards"
-        '401':
-          description: Фильтрация по переданным полям недоступна.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Error401"
         '404':
           description: Ресурс не найден.
           content:
@@ -162,12 +175,19 @@ paths:
       operationId: getCardSets
       tags:
        - card_set
-      requestBody:
-        required: false
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/SimpleFilterPaginating"
+      parameters:
+        - name: limit
+          in: query
+          required: true
+          example: 20
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          required: false
+          example: 0
+          schema:
+            type: integer
       responses:
         '200':
           description: Успех.
@@ -427,51 +447,6 @@ components:
       type: array
       items:
         $ref: "#/components/schemas/Card"
-
-    SimpleFilterClause:
-      description: Основанное на операторе равенство фильтрующее утверждение.
-      type: object
-      required:
-        - property
-        - value
-      properties:
-        property:
-          description: Свойство, по которому происходит фильтрация.
-          type: string
-          example: is_learned
-        value:
-          description: Искомое значение.
-          type: string
-          example: true
-    
-    SimpleFilter:
-      type: array
-      items:
-        $ref: "#/components/schemas/SimpleFilterClause"
-
-    SimpleFilterPaginating:
-      type: object
-      required:
-        - limit
-      properties:
-        limit:
-          type: integer
-          example: 20
-        offset:
-          type: integer
-          example: 0
-        filter:
-          $ref: "#/components/schemas/SimpleFilter"
-
-    Error401:
-      type: object
-      properties:
-        code:
-          type: integer
-          example: 401
-        message:
-          type: string
-          example: unsupported filter fields
 
     Error404:
       type: object
