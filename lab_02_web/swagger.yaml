@@ -315,34 +315,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Error404"
-    
-    post:
-      summary: Создать настройки.
-      description: Создать настройки.
-      operationId: createSettings
-      tags:
-       - settings
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/Settings"
-      responses:
-        '200':
-          description: Успех.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Settings"
-        '404':
-          description: Ресурс не найден.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Error404"
 
-    put:
+    patch:
       summary: Изменить настройки.
       description: Изменить настройки.
       operationId: changeSettings
