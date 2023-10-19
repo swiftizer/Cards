@@ -109,8 +109,8 @@
             filePath = "API V1/CardSetsEndpointHandler.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "registerHandlers()"
             landmarkType = "7">
             <Locations>
@@ -188,8 +188,8 @@
             filePath = "API V1/CardsEndpointHandler.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
             landmarkName = "registerHandlers()"
             landmarkType = "7">
             <Locations>
@@ -315,8 +315,8 @@
             filePath = "API V1/CardsEndpointHandler.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "registerHandlers()"
             landmarkType = "7">
             <Locations>

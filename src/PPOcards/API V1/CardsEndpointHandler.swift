@@ -49,9 +49,14 @@ final class CardsEndpointHandler {
         server.GET[path] = { [weak self] request in
             guard let limitStr = request.queryParams.first(where: { $0.0 == "limit" })?.1,
                   let limit = Int(limitStr),
-                  let self = self
+                  let self = self, limit > 0
             else {
                 return .raw(400, "Bad request", self?.failureHeaders, { try? $0.write(Data("Missing limit parameter".utf8)) })
+            }
+            if let offset = Int(request.queryParams.first(where: { $0.0 == "offset" })?.1 ?? "") {
+                if offset < 0 {
+                    return .raw(400, "Bad request", self.failureHeaders, { try? $0.write(Data("Missing limit parameter".utf8)) })
+                }
             }
             let offset = Int(request.queryParams.first(where: { $0.0 == "offset" })?.1 ?? "")
             let cardSetId = UUID(uuidString: (request.queryParams.first(where: { $0.0 == "card_set_id" })?.1 ?? ""))
@@ -134,7 +139,7 @@ final class CardsEndpointHandler {
             if let data = try? JSONDecoder().decode(Card.self, from: Data(request.body)) {
                 if let card = self.cardController.getCard(ID: id),
                    self.cardController.updateCard(oldID: id, new: data),
-                   let updatedCard = self.cardController.getCard(ID: data.id),
+                   let updatedCard = self.cardController.getCard(ID: id),
                    let jsonData = try? JSONEncoder().encode(updatedCard) {
                     return .raw(200, "OK", self.successHeaders, { try? $0.write(jsonData) })
                 }

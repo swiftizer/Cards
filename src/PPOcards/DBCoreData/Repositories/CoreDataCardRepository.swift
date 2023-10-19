@@ -58,7 +58,6 @@ public class CoreDataCardRepository: CardRepositoryDescription {
         fetchRequest.predicate = NSPredicate(format: "id == %@", oldID as CVarArg)
 
         coreDataManager.update(request: fetchRequest) { cardMO in
-            cardMO?.id = newCard.id
             cardMO?.setID = newCard.setID
             cardMO?.questionText = newCard.questionText
             cardMO?.answerText = newCard.answerText
