@@ -44,6 +44,7 @@
 		FA2986D52A0831BE005B9B66 /* CardProgressMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2986D32A0831BE005B9B66 /* CardProgressMO+CoreDataClass.swift */; };
 		FA2986D62A0831BE005B9B66 /* CardProgressMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2986D42A0831BE005B9B66 /* CardProgressMO+CoreDataProperties.swift */; };
 		FA2986D82A085BB8005B9B66 /* CardSetsChoosingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2986D72A085BB8005B9B66 /* CardSetsChoosingVC.swift */; };
+		FA2E6E5F2AE1DC28003D0EB5 /* BaseEndpointHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2E6E5E2AE1DC28003D0EB5 /* BaseEndpointHandler.swift */; };
 		FA503A142AD2130C00C41970 /* Services.h in Headers */ = {isa = PBXBuildFile; fileRef = FA503A132AD2130C00C41970 /* Services.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FA503A172AD2130C00C41970 /* Services.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA503A112AD2130C00C41970 /* Services.framework */; };
 		FA503A182AD2130C00C41970 /* Services.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA503A112AD2130C00C41970 /* Services.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -327,6 +328,7 @@
 		FA2986D32A0831BE005B9B66 /* CardProgressMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardProgressMO+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		FA2986D42A0831BE005B9B66 /* CardProgressMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardProgressMO+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		FA2986D72A085BB8005B9B66 /* CardSetsChoosingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSetsChoosingVC.swift; sourceTree = "<group>"; };
+		FA2E6E5E2AE1DC28003D0EB5 /* BaseEndpointHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseEndpointHandler.swift; sourceTree = "<group>"; };
 		FA503A112AD2130C00C41970 /* Services.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Services.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA503A132AD2130C00C41970 /* Services.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Services.h; sourceTree = "<group>"; };
 		FA7B61B129F4395200F0AFEE /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -649,6 +651,7 @@
 				FA2217EB2AE05C7D00974DB9 /* CardsEndpointHandler.swift */,
 				FA855B062AD2089100338086 /* SettingsEndpointHandler.swift */,
 				FA2216CC2ADF1D2300974DB9 /* Array+pagination.swift */,
+				FA2E6E5E2AE1DC28003D0EB5 /* BaseEndpointHandler.swift */,
 			);
 			path = "API V1";
 			sourceTree = "<group>";
@@ -1290,6 +1293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA2E6E5F2AE1DC28003D0EB5 /* BaseEndpointHandler.swift in Sources */,
 				FA855B072AD2089100338086 /* SettingsEndpointHandler.swift in Sources */,
 				FA2217EC2AE05C7D00974DB9 /* CardsEndpointHandler.swift in Sources */,
 				FA2216CD2ADF1D2300974DB9 /* Array+pagination.swift in Sources */,

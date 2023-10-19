@@ -9,30 +9,13 @@ import Foundation
 import Swifter
 import Core
 
-final class SettingsEndpointHandler {
-    private let server: HttpServer
-    private let path = "/settings"
+final class SettingsEndpointHandler: BaseEndpointHandler {
+    
     private let settingsController: SettingsControllerDescription
-    private var CORSAllowHeaders: [String: String] = {
-        var headers = [String: String]()
-        headers["Access-Control-Allow-Origin"] = "*"
-        headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, PATCH, DELETE, OPTIONS"
-        headers["Access-Control-Allow-Headers"] = "Content-Type"
-        headers["Content-Type"] = "application/json"
-        return headers
-    }()
-    private lazy var successHeaders = {
-        self.CORSAllowHeaders["Content-Type"] = "application/json"
-        return self.CORSAllowHeaders
-    }()
-    private lazy var failureHeaders = {
-        self.CORSAllowHeaders["Content-Type"] = "text/plain"
-        return self.CORSAllowHeaders
-    }()
 
     init(server: HttpServer, settingsController: SettingsControllerDescription) {
-        self.server = server
         self.settingsController = settingsController
+        super.init(server: server, path: "/settings")
         registerHandlers()
     }
 

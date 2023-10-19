@@ -8,30 +8,13 @@
 import Swifter
 import Core
 
-final class CardSetsEndpointHandler {
-    private let server: HttpServer
-    private let path = "/card_sets"
+final class CardSetsEndpointHandler: BaseEndpointHandler {
+
     private let cardSetController: CardSetControllerDescription
-    private var CORSAllowHeaders: [String: String] = {
-        var headers = [String: String]()
-        headers["Access-Control-Allow-Origin"] = "*"
-        headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, PATCH, DELETE, OPTIONS"
-        headers["Access-Control-Allow-Headers"] = "Content-Type"
-        headers["Content-Type"] = "application/json"
-        return headers
-    }()
-    private lazy var successHeaders = {
-        self.CORSAllowHeaders["Content-Type"] = "application/json"
-        return self.CORSAllowHeaders
-    }()
-    private lazy var failureHeaders = {
-        self.CORSAllowHeaders["Content-Type"] = "text/plain"
-        return self.CORSAllowHeaders
-    }()
 
     init(server: HttpServer, cardSetController: CardSetControllerDescription) {
-        self.server = server
         self.cardSetController = cardSetController
+        super.init(server: server, path: "/card_sets")
         registerHandlers()
     }
 
