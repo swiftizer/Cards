@@ -6,8 +6,9 @@
 //
 
 import Foundation
-import FileManager
 import Core
+import FileManager
+import Services
 
 final class CardSetsPresenter {
     private let settingsController = ModelProvider.shared.settingsController!
@@ -88,7 +89,12 @@ final class CardSetsPresenter {
     func viewWillAppear() {
         cardSets = getCardSets
     }
-    
+
+    func didPullToRefrash() {
+        cardSets = getCardSets
+        cardSets.map { cardSetController.updateCardSetProgress(cardSetID: $0.id) }
+    }
+
     func addCardSetAction(name: String) {
         let _ = cardSetController.createCardSet(title: name)
         cardSets = getCardSets

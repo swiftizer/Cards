@@ -8,11 +8,13 @@
 import UIKit
 import Core
 import Logger
+import Services
+import API_V1
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    var API: APIV1Assembly?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let _ = (scene as? UIWindowScene) else { return }
@@ -24,6 +26,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         } else {
             ModelProvider.shared.setupDB(type: .CoreData)
         }
+
+        API = APIV1Assembly(port: 8080).assemble()
 
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene

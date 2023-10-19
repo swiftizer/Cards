@@ -11,8 +11,8 @@ import XCTest
 
 final class PPOCardControllerUnitTests: XCTestCase {
     
-    var cardSetController = CardSetController(dataSource: CoreDataCardSetRepository(), settingsController: SettingsController(dataSource: CoreDataSettingsRepository()))
-    lazy var cardController = CardController(dataSource: CoreDataCardRepository(), cardSetController: cardSetController)
+    var cardSetController = CardSetController(dataSource: CoreDataCardSetRepository() as! any CardSetRepositoryDescription as CardSetRepositoryDescription, settingsController: SettingsController(dataSource: CoreDataSettingsRepository() as! any SettingsRepositoryDescription as SettingsRepositoryDescription))
+    lazy var cardController = CardController(dataSource: CoreDataCardRepository() as! CardRepositoryDescription, cardSetController: cardSetController)
 
     private func setUUID(param: Int) -> UUID {
         return UUID(uuidString: "00000000-0000-0000-0000-00000000000" + String(param))!

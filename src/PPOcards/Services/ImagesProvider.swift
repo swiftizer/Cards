@@ -6,17 +6,17 @@
 //
 
 import UIKit
-import FileManager
 import Core
+import FileManager
 
-final class ImagesProvider {
-    static let shared = ImagesProvider()
-    
+public final class ImagesProvider {
+    public static let shared = ImagesProvider()
+
     private init() {}
     
     private let imageNames = ["t", "t1", "t2"]
     
-    lazy var images: [String:UIImage] = {
+    public lazy var images: [String:UIImage] = {
         var imgs = [String:UIImage]()
         
         for name in self.imageNames {
@@ -26,7 +26,7 @@ final class ImagesProvider {
         return imgs
     }()
     
-    func getImageFromDB(path: URL?) -> UIImage? {
+    public func getImageFromDB(path: URL?) -> UIImage? {
         MyFileManager.shared.getImageFromFS(path: path)
     }
 }

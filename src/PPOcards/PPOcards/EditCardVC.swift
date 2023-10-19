@@ -10,6 +10,7 @@ import PinLayout
 import Core
 import Logger
 import FileManager
+import Services
 
 final class EditCardVC: UIViewController {
     private let questionTV = UITextView()
@@ -81,6 +82,14 @@ final class EditCardVC: UIViewController {
         return button
     }()
 
+    private lazy var closeButton: UIButton = {
+        let button = UIButton()
+        button.tintColor = .white
+        button.setImage(UIImage(systemName: "xmark.circle"), for: .normal)
+        button.addTarget(self, action: #selector(closeButtonPressed), for: .touchUpInside)
+        return button
+    }()
+
 
     private let readOnlyFlag: Bool
     private let card: Card?
@@ -130,6 +139,7 @@ final class EditCardVC: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        closeButton.frame = .init(x: view.frame.width-50, y: 0, width: 50, height: 50)
         Logger.shared.log(lvl: .VERBOSE, msg: "VC viewDidLayoutSubviews called")
         
         questionLabel.pin
@@ -258,7 +268,8 @@ final class EditCardVC: UIViewController {
         view.addSubview(doneButton)
         view.addSubview(isLearnedLabel)
         view.addSubview(isLearnedSwitcher)
-        
+        view.addSubview(closeButton)
+
         [questionTV, answerTV].forEach {
             $0.font = UIFont.boldSystemFont(ofSize: 16)
             $0.backgroundColor = .black
@@ -402,6 +413,11 @@ final class EditCardVC: UIViewController {
         [answerTV, questionTV].forEach {
             $0.resignFirstResponder()
         }
+    }
+
+    @objc
+    private func closeButtonPressed() {
+        dismiss(animated: true)
     }
 }
 
