@@ -7,16 +7,16 @@
 
 import UIKit
 
-protocol BasicAlertDescription {
+public protocol BasicAlertDescription {
     func showAlert(presentTo: UIViewController, title: String?, message: String?)
 }
 
-final class AlertManager: BasicAlertDescription {
-    static let shared: BasicAlertDescription = AlertManager()
+public final class AlertManager: BasicAlertDescription {
+    public static let shared: BasicAlertDescription = AlertManager()
     
     private init() {}
     
-    func showAlert(presentTo controller: UIViewController, title: String?, message: String?) {
+    public func showAlert(presentTo controller: UIViewController, title: String?, message: String?) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .cancel)
         alertController.addAction(okAction)

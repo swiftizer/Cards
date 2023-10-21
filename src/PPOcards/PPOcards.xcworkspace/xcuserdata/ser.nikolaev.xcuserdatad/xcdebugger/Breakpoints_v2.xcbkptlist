@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "7A7297DE-619A-4A6A-B998-86F2256F9123"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E48B76AD-6D48-460D-8F3E-3C7365C845CA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "API V1/CardSetsEndpointHandler.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "registerHandlers()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E48B76AD-6D48-460D-8F3E-3C7365C845CA - 9872a3da14e1ab11"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swifter.HttpRequest) -&gt; Swifter.HttpResponse in API_V1.CardSetsEndpointHandler.registerHandlers() -&gt; ()"
+                  moduleName = "API_V1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ser.nikolaev/Library/Mobile%20Documents/com~apple~CloudDocs/IOS/PPOcards/API%20V1/CardSetsEndpointHandler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  uuid = "E48B76AD-6D48-460D-8F3E-3C7365C845CA - e2bf1ba2b3e6911"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 ((Swift.String, Swift.String)) -&gt; Swift.Bool in closure #1 (Swifter.HttpRequest) -&gt; Swifter.HttpResponse in API_V1.CardSetsEndpointHandler.registerHandlers() -&gt; ()"
+                  moduleName = "API_V1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ser.nikolaev/Library/Mobile%20Documents/com~apple~CloudDocs/IOS/PPOcards/API%20V1/CardSetsEndpointHandler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "E48B76AD-6D48-460D-8F3E-3C7365C845CA - 9872a3da14e1ab11"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swifter.HttpRequest) -&gt; Swifter.HttpResponse in API_V1.CardSetsEndpointHandler.registerHandlers() -&gt; ()"
+                  moduleName = "API_V1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ser.nikolaev/Library/Mobile%20Documents/com~apple~CloudDocs/IOS/PPOcards/API%20V1/CardSetsEndpointHandler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "148">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7BDA414B-B34A-41D6-9A43-54460794930F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Core/Models.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "description"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "93C1A011-401E-43D3-9F04-E35C15992EBA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PPOcards/CardSets/CardSetsVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A259D1BA-DB14-4418-A009-C1989465EA85"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "API V1/CardSetsEndpointHandler.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "registerHandlers()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A259D1BA-DB14-4418-A009-C1989465EA85 - 4b03ad0b184f4354"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (Swifter.HttpRequest) -&gt; Swifter.HttpResponse in API_V1.CardSetsEndpointHandler.registerHandlers() -&gt; ()"
+                  moduleName = "API_V1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ser.nikolaev/Library/Mobile%20Documents/com~apple~CloudDocs/IOS/PPOcards/API%20V1/CardSetsEndpointHandler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "360">
+               </Location>
+               <Location
+                  uuid = "A259D1BA-DB14-4418-A009-C1989465EA85 - fa03a32d2948d9df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 ((key: Swift.String, value: Swift.String)) -&gt; Swift.Bool in closure #3 (Swifter.HttpRequest) -&gt; Swifter.HttpResponse in API_V1.CardSetsEndpointHandler.registerHandlers() -&gt; ()"
+                  moduleName = "API_V1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ser.nikolaev/Library/Mobile%20Documents/com~apple~CloudDocs/IOS/PPOcards/API%20V1/CardSetsEndpointHandler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "A259D1BA-DB14-4418-A009-C1989465EA85 - 4b03ad0b184f4354"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (Swifter.HttpRequest) -&gt; Swifter.HttpResponse in API_V1.CardSetsEndpointHandler.registerHandlers() -&gt; ()"
+                  moduleName = "API_V1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ser.nikolaev/Library/Mobile%20Documents/com~apple~CloudDocs/IOS/PPOcards/API%20V1/CardSetsEndpointHandler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "532">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2DB04A09-41F1-4174-8AA4-98FD03BD3C29"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "API V1/CardSetsEndpointHandler.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "CardSetsEndpointHandler"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1AA0EE8C-88BC-4B6A-A930-FD7916FD127D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "API V1/CardsEndpointHandler.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "registerHandlers()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1AA0EE8C-88BC-4B6A-A930-FD7916FD127D - 53c832abe4fe1916"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #5 (Swifter.HttpRequest) -&gt; Swifter.HttpResponse in API_V1.CardsEndpointHandler.registerHandlers() -&gt; ()"
+                  moduleName = "API_V1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ser.nikolaev/Library/Mobile%20Documents/com~apple~CloudDocs/IOS/PPOcards/API%20V1/CardsEndpointHandler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "776">
+               </Location>
+               <Location
+                  uuid = "1AA0EE8C-88BC-4B6A-A930-FD7916FD127D - 53c832abe4fe1916"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #5 (Swifter.HttpRequest) -&gt; Swifter.HttpResponse in API_V1.CardsEndpointHandler.registerHandlers() -&gt; ()"
+                  moduleName = "API_V1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ser.nikolaev/Library/Mobile%20Documents/com~apple~CloudDocs/IOS/PPOcards/API%20V1/CardsEndpointHandler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "332">
+               </Location>
+               <Location
+                  uuid = "1AA0EE8C-88BC-4B6A-A930-FD7916FD127D - fa91d0990598c28f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 ((key: Swift.String, value: Swift.String)) -&gt; Swift.Bool in closure #5 (Swifter.HttpRequest) -&gt; Swifter.HttpResponse in API_V1.CardsEndpointHandler.registerHandlers() -&gt; ()"
+                  moduleName = "API_V1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ser.nikolaev/Library/Mobile%20Documents/com~apple~CloudDocs/IOS/PPOcards/API%20V1/CardsEndpointHandler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "72">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0B236F4B-256A-4F49-96E1-EBE93B0F3857"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "API V1/SettingsEndpointHandler.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "registerHandlers()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0B236F4B-256A-4F49-96E1-EBE93B0F3857 - c8aaeffc4b7ab35b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swifter.HttpRequest) -&gt; Swifter.HttpResponse in API_V1.SettingsEndpointHandler.registerHandlers() -&gt; ()"
+                  moduleName = "API_V1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ser.nikolaev/Desktop/web/src/PPOcards/API%20V1/SettingsEndpointHandler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "152">
+               </Location>
+               <Location
+                  uuid = "0B236F4B-256A-4F49-96E1-EBE93B0F3857 - c8aaeffc4b7ab35b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swifter.HttpRequest) -&gt; Swifter.HttpResponse in API_V1.SettingsEndpointHandler.registerHandlers() -&gt; ()"
+                  moduleName = "API_V1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ser.nikolaev/Desktop/web/src/PPOcards/API%20V1/SettingsEndpointHandler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "508">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B7BFBDDF-93B3-4194-8CE1-C136485D5479"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "API V1/SettingsEndpointHandler.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "registerHandlers()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B4A51E2A-45E6-4421-AC38-4CD1C5FFD7AA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "API V1/CardsEndpointHandler.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "registerHandlers()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B4A51E2A-45E6-4421-AC38-4CD1C5FFD7AA - ffc3ca4242b6f70"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (Swifter.HttpRequest) -&gt; Swifter.HttpResponse in API_V1.CardsEndpointHandler.registerHandlers() -&gt; ()"
+                  moduleName = "API_V1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ser.nikolaev/Desktop/web/src/PPOcards/API%20V1/CardsEndpointHandler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "1012">
+               </Location>
+               <Location
+                  uuid = "B4A51E2A-45E6-4421-AC38-4CD1C5FFD7AA - ffc3ca4242b6f70"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (Swifter.HttpRequest) -&gt; Swifter.HttpResponse in API_V1.CardsEndpointHandler.registerHandlers() -&gt; ()"
+                  moduleName = "API_V1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ser.nikolaev/Desktop/web/src/PPOcards/API%20V1/CardsEndpointHandler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "1460">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "001937C0-4029-4BB7-A681-9BFA21219327"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Core/Controllers/CardSetController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "updateCardSetProgress(cardSetID:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A2C583AB-BD35-4AB6-A820-4BB1CD4680EE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "API V1/CardsEndpointHandler.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "registerHandlers()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A2C583AB-BD35-4AB6-A820-4BB1CD4680EE - dcc7e39b1cf3fff2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swifter.HttpRequest) -&gt; Swifter.HttpResponse in API_V1.CardsEndpointHandler.registerHandlers() -&gt; ()"
+                  moduleName = "API_V1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ser.nikolaev/Desktop/web/src/PPOcards/API%20V1/CardsEndpointHandler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  uuid = "A2C583AB-BD35-4AB6-A820-4BB1CD4680EE - 34de4eba7eef44c1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swifter.HttpResponseBodyWriter) -&gt; () in closure #2 (Swifter.HttpRequest) -&gt; Swifter.HttpResponse in API_V1.CardsEndpointHandler.registerHandlers() -&gt; ()"
+                  moduleName = "API_V1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ser.nikolaev/Desktop/web/src/PPOcards/API%20V1/CardsEndpointHandler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A638D496-7D84-4084-83EF-FCADAF165A6B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "API V1/CardsEndpointHandler.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "registerHandlers()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A638D496-7D84-4084-83EF-FCADAF165A6B - adcfa2fe74bb494f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swifter.HttpRequest) -&gt; Swifter.HttpResponse in API_V1.CardsEndpointHandler.registerHandlers() -&gt; ()"
+                  moduleName = "API_V1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ser.nikolaev/Desktop/web/src/PPOcards/API%20V1/CardsEndpointHandler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  uuid = "A638D496-7D84-4084-83EF-FCADAF165A6B - 34de4eba7eef447d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swifter.HttpResponseBodyWriter) -&gt; () in closure #1 (Swifter.HttpRequest) -&gt; Swifter.HttpResponse in API_V1.CardsEndpointHandler.registerHandlers() -&gt; ()"
+                  moduleName = "API_V1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ser.nikolaev/Desktop/web/src/PPOcards/API%20V1/CardsEndpointHandler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4C41F911-E6C4-4083-B4A0-D1905094340B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "API V1/CardSetsEndpointHandler.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "init(server:cardSetController:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

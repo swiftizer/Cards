@@ -113,7 +113,6 @@ public class CoreDataCardSetRepository: CardSetRepositoryDescription {
         fetchRequest.predicate = NSPredicate(format: "id == %@", oldID as CVarArg)
 
         coreDataManager.update(request: fetchRequest) { cardSetMO in
-            cardSetMO?.id = newSet.id
             cardSetMO?.title = newSet.title
             cardSetMO?.allCardsCount = Int32(newSet.allCardsCount)
             cardSetMO?.learnedCardsCount = Int32(newSet.learnedCardsCount)

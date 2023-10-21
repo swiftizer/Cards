@@ -12,7 +12,14 @@ import Logger
 class CardSetsVC: UIViewController {
     private let cardSetsTV = UITableView()
     private let presenter = CardSetsPresenter()
-    
+    private let refreshControl = UIRefreshControl()
+
+    override var keyCommands: [UIKeyCommand]? {
+        return [
+            UIKeyCommand(input: "r", modifierFlags: .command, action: #selector(didPullToRefresh))
+        ]
+    }
+
     override func loadView() {
         super.loadView()
         Logger.shared.log(lvl: .VERBOSE, msg: "VC loadView called")
@@ -72,7 +79,9 @@ class CardSetsVC: UIViewController {
     private func setupUI() {
         view.addSubview(cardSetsTV)
         cardSetsTV.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        
+        refreshControl.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
+        cardSetsTV.addSubview(refreshControl)
+
         cardSetsTV.delegate = self
         cardSetsTV.dataSource = self
         
@@ -104,6 +113,12 @@ class CardSetsVC: UIViewController {
         let vc = presenter.setupSettingsVCToPresent(with: fillDB)
         present(vc, animated: true)
     }
+
+    @objc
+    private func didPullToRefresh() {
+        presenter.didPullToRefrash()
+        self.cardSetsTV.reloadData()
+    }
 }
 
 extension CardSetsVC: UITableViewDelegate, UITableViewDataSource {
@@ -127,6 +142,10 @@ extension CardSetsVC: UITableViewDelegate, UITableViewDataSource {
         let green = (255 - (red >> 16)) << 8
         cell.backgroundColor = UIColor(rgb: red + green).withAlphaComponent(0.6)
         cell.accessoryType = .disclosureIndicator
+
+        if indexPath.row == presenter.numberOfTVRows() - 1 {
+            refreshControl.endRefreshing()
+        }
 
         return cell
     }

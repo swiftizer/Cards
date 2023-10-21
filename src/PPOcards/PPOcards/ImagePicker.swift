@@ -12,7 +12,7 @@ protocol ImagePickerDelegate: AnyObject {
     func didSelect(image: UIImage?)
 }
 
-open class ImagePicker: NSObject {
+final class ImagePicker: NSObject {
     private let pickerController: UIImagePickerController
     private weak var presentationController: EditCardVC?
     private weak var delegate: ImagePickerDelegate?
@@ -30,7 +30,7 @@ open class ImagePicker: NSObject {
         self.pickerController.mediaTypes = ["public.image"]
     }
 
-    func performAction(type: UIImagePickerController.SourceType) {
+    public func performAction(type: UIImagePickerController.SourceType) {
         if type == .camera {
             if AVCaptureDevice.authorizationStatus(for: .video) ==  .authorized {
                 // already authorized

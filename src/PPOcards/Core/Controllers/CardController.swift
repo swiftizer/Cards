@@ -55,7 +55,7 @@ public class CardController: CardControllerDescription {
         let res = dataSource.updateCard(oldID: oldID, newCard: new)
         if res { msg += "Success" } else { msg += "Can not update card" }
         Logger.shared.log(lvl: .DEBUG, msg: msg)
-        
+
         cardSetController.updateCardSetProgress(cardSetID: new.setID ?? UUID())
         
         return res

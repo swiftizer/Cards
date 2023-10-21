@@ -8,6 +8,7 @@
 import UIKit
 import PinLayout
 import Logger
+import Services
 
 final class CardsListVC: UIViewController {
     private let presenter: CardsListPresenter
@@ -23,7 +24,15 @@ final class CardsListVC: UIViewController {
         button.addTarget(self, action: #selector(addCardButtonPressed), for: .touchUpInside)
         return button
     }()
-    
+
+    private lazy var closeButton: UIButton = {
+        let button = UIButton()
+        button.tintColor = .white
+        button.setImage(UIImage(systemName: "xmark.circle"), for: .normal)
+        button.addTarget(self, action: #selector(closeButtonPressed), for: .touchUpInside)
+        return button
+    }()
+
     convenience init() {
         self.init(rootVC: nil, config: PresenterConfig(cardController: nil, cardSetController: nil, cardSetID: nil))
     }
@@ -66,6 +75,7 @@ final class CardsListVC: UIViewController {
         Logger.shared.log(lvl: .VERBOSE, msg: "VC viewDidLayoutSubviews called")
         
         addButton.frame = .init(x: view.frame.width-50, y: 0, width: 50, height: 50)
+        closeButton.frame = .init(x: 0, y: 0, width: 50, height: 50)
         cardsTV.frame = .init(x: 0, y: 50, width: view.frame.width, height: view.frame.height)
     }
     
@@ -95,6 +105,7 @@ final class CardsListVC: UIViewController {
         view.backgroundColor = .systemBackground
         view.addSubview(cardsTV)
         view.addSubview(addButton)
+        view.addSubview(closeButton)
         cardsTV.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         cardsTV.delegate = self
         cardsTV.dataSource = self
@@ -111,6 +122,11 @@ final class CardsListVC: UIViewController {
     private func addCardButtonPressed() {
         let vc = presenter.prepareEditCardVCForAdd()
         self.present(vc, animated: true)
+    }
+
+    @objc
+    private func closeButtonPressed() {
+        dismiss(animated: true)
     }
 }
 

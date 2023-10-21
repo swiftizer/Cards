@@ -22,7 +22,15 @@ final class SettingsVC: UIViewController {
     private let mixingInPowerSlider = UISlider()
     private let mixingInPowerValueLabel = UILabel()
     private let refillButton = UIButton()
-    
+
+    private lazy var closeButton: UIButton = {
+        let button = UIButton()
+        button.tintColor = .white
+        button.setImage(UIImage(systemName: "xmark.circle"), for: .normal)
+        button.addTarget(self, action: #selector(closeButtonPressed), for: .touchUpInside)
+        return button
+    }()
+
     convenience init() {
         self.init(presenter: SettingsPresenter(settingsController: nil), refillAction: {})
     }
@@ -32,7 +40,7 @@ final class SettingsVC: UIViewController {
         self.refillAction = refillAction
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -63,7 +71,8 @@ final class SettingsVC: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         Logger.shared.log(lvl: .VERBOSE, msg: "VC viewDidLayoutSubviews called")
-        
+        closeButton.frame = .init(x: view.frame.width-50, y: 0, width: 50, height: 50)
+
         isMixedLabel.pin
             .left(20)
             .top(view.pin.safeArea.top + 40)
@@ -140,7 +149,8 @@ final class SettingsVC: UIViewController {
         view.addSubview(mixingInPowerValueLabel)
         view.addSubview(mixingInPowerDescriptionLabel)
         view.addSubview(refillButton)
-        
+        view.addSubview(closeButton)
+
         mixingInPowerSlider.addTarget(self, action: #selector(handleSliderChange(slider:)), for: .valueChanged)
         
         mixingInPowerSlider.addTarget(self, action: #selector(handleSliderDidStopEditing), for: .allTouchEvents)
@@ -192,5 +202,10 @@ final class SettingsVC: UIViewController {
         mixingInPowerSlider.value = presenter.sliderValue
         mixingInPowerValueLabel.text = "\(Int(round(mixingInPowerSlider.value * 100)))"
         mixingSwitcher.isOn = presenter.isMixingValue
+    }
+
+    @objc
+    private func closeButtonPressed() {
+        dismiss(animated: true)
     }
 }

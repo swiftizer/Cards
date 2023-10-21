@@ -8,6 +8,7 @@
 import UIKit
 import Core
 import Logger
+import Services
 
 class TechnicalVC: UIViewController {
     private let settingsController = ModelProvider.shared.settingsController!
