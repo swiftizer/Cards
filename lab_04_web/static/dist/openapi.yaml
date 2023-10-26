@@ -1,0 +1,482 @@
+openapi: 3.0.0
+
+info:
+  title: Cards
+  version: '0.0.1'
+
+servers:
+  - url: http://localhost:8078
+    description: dev server
+
+paths:
+  /cards:
+    get:
+      summary: Получить список карточек.
+      description: Получить список карточек.
+      operationId: getCards
+      tags:
+       - card
+      parameters:
+        - name: limit
+          in: query
+          required: true
+          example: 20
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          required: false
+          example: 0
+          schema:
+            type: integer
+        - name: card_set_id
+          in: query
+          required: false
+          example: 83DD159B-316D-4A30-A765-24B841253A1A
+          schema:
+            type: string
+        - name: is_learned
+          in: query
+          required: false
+          example: true
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: Успех.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Cards"
+        '400':
+          description: Ошибка в запросе.
+          content:
+            text/plain:
+              schema:
+                $ref: "#/components/schemas/Error400GET"
+        '404':
+          description: Ресурс не найден.
+    
+    post:
+      summary: Создать карточку.
+      description: Создать карточку.
+      operationId: createCard
+      tags:
+       - card
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Card"
+      responses:
+        '201':
+          description: Успех.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Card"
+        '400':
+          description: Ошибка в запросе.
+          content:
+            text/plain:
+              schema:
+                $ref: "#/components/schemas/Error400"
+        '404':
+          description: Ресурс не найден.
+
+  /cards/{card_id}:
+    get:
+      summary: Получить карточку.
+      description: Получить карточку.
+      operationId: getCardById
+      tags:
+        - card
+      parameters:
+        - name: card_id
+          in: path
+          required: true
+          description: Идентификатор карточки.
+          example: 67790390-9A85-4AEB-9B03-1FA34F6D5030
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Успех.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Card"
+        '400':
+          description: Ошибка в запросе.
+          content:
+            text/plain:
+              schema:
+                $ref: "#/components/schemas/Error400Delete"
+        '404':
+          description: Ресурс не найден.
+    
+    put:
+      summary: Изменить карточку.
+      description: Изменить карточку.
+      operationId: changeCardById
+      tags:
+        - card
+      parameters:
+        - name: card_id
+          in: path
+          required: true
+          description: Идентификатор карточки.
+          example: 67790390-9A85-4AEB-9B03-1FA34F6D5030
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Card"
+      responses:
+        '200':
+          description: Успех.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Card"
+        '400':
+          description: Ошибка в запросе.
+          content:
+            text/plain:
+              schema:
+                $ref: "#/components/schemas/Error400Delete"
+        '404':
+          description: Ресурс не найден.
+
+    delete:
+      summary: Удалить карточку.
+      description: Удалить карточку.
+      operationId: deleteCardById
+      tags:
+        - card
+      parameters:
+        - name: card_id
+          in: path
+          required: true
+          description: Идентификатор карточки.
+          example: 67790390-9A85-4AEB-9B03-1FA34F6D5030
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Успех.
+        '400':
+          description: Ошибка в запросе.
+          content:
+            text/plain:
+              schema:
+                $ref: "#/components/schemas/Error400Delete"
+        '404':
+          description: Ресурс не найден.
+
+  /card_sets:
+    get:
+      summary: Получить список наборов карточек.
+      description: Получить список наборов карточек.
+      operationId: getCardSets
+      tags:
+       - card_set
+      parameters:
+        - name: limit
+          in: query
+          required: true
+          example: 20
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          required: false
+          example: 0
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Успех.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CardSets"
+        '400':
+          description: Ошибка в запросе.
+          content:
+            text/plain:
+              schema:
+                $ref: "#/components/schemas/Error400GET"
+        '404':
+          description: Ресурс не найден.
+    
+    post:
+      summary: Создать набор карточек.
+      description: Создать набор карточек.
+      operationId: createCardSet
+      tags:
+       - card_set
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CardSet"
+      responses:
+        '201':
+          description: Успех.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CardSet"
+        '400':
+          description: Ошибка в запросе.
+          content:
+            text/plain:
+              schema:
+                $ref: "#/components/schemas/Error400"
+        '404':
+          description: Ресурс не найден.
+
+  /card_sets/{card_set_id}:
+    get:
+      summary: Получить информацию о наборе карточек.
+      description: Получить информацию о наборе карточек.
+      operationId: getCardSetById
+      tags:
+        - card_set
+      parameters:
+        - name: card_set_id
+          in: path
+          required: true
+          description: Идентификатор набора карточек.
+          example: 83DD159B-316D-4A30-A765-24B841253A1A
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Успех.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CardSet"
+        '400':
+          description: Ошибка в запросе.
+          content:
+            text/plain:
+              schema:
+                $ref: "#/components/schemas/Error400Delete"
+        '404':
+          description: Ресурс не найден.
+    
+    put:
+      summary: Изменить информацию о наборе карточек.
+      description: Изменить информацию о наборе карточек.
+      operationId: changeCardSetById
+      tags:
+        - card_set
+      parameters:
+        - name: card_set_id
+          in: path
+          required: true
+          description: Идентификатор набора карточек.
+          example: 83DD159B-316D-4A30-A765-24B841253A1A
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CardSet"
+      responses:
+        '200':
+          description: Успех.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CardSet"
+        '400':
+          description: Ошибка в запросе.
+          content:
+            text/plain:
+              schema:
+                $ref: "#/components/schemas/Error400"
+        '404':
+          description: Ресурс не найден.
+
+    delete:
+      summary: Удалить набор карточек.
+      description: Удалить набор карточек.
+      operationId: deleteCardSetById
+      tags:
+        - card_set
+      parameters:
+        - name: card_set_id
+          in: path
+          required: true
+          description: Идентификатор набора карточек.
+          example: 83DD159B-316D-4A30-A765-24B841253A1A
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Успех.
+        '400':
+          description: Ошибка в запросе.
+          content:
+            text/plain:
+              schema:
+                $ref: "#/components/schemas/Error400Delete"
+        '404':
+          description: Ресурс не найден.
+
+  /settings:
+    get:
+      summary: Получить настройки.
+      description: Получить настройки.
+      operationId: getSettings
+      tags:
+       - settings
+      responses:
+        '200':
+          description: Успех.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Settings"
+        '404':
+          description: Ресурс не найден.
+
+    patch:
+      summary: Изменить настройки.
+      description: Изменить настройки.
+      operationId: changeSettings
+      tags:
+        - settings
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Settings"
+      responses:
+        '200':
+          description: Успех.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Settings"
+        '400':
+          description: Ошибка в запросе.
+          content:
+            text/plain:
+              schema:
+                $ref: "#/components/schemas/Error400"
+        '404':
+          description: Ресурс не найден.
+
+
+components:
+  schemas: 
+    Card:
+      type: object
+      required:
+        - card_id
+        - card_set_id
+      properties:
+        card_id:
+          type: string
+          example: 67790390-9A85-4AEB-9B03-1FA34F6D5030
+          description: Id карточки.
+        card_set_id:
+          type: string
+          example: 83DD159B-316D-4A30-A765-24B841253A1A
+          description: Id набора карточек, к которому относится карточка.
+        question_text:
+          type: string
+          example: Столица Германии?
+          description: Текст вопроса карточки.
+        question_image:
+          type: string
+          example: file:///Documents/5DBD7DD8-41DE-4F62-B399-E249E52A4B74.png
+          description: Путь к файлу картинки вопроса.
+        answer_text:
+          type: string
+          example: Берлин
+          description: Текст ответа карточки.
+        answer_image:
+          type: string
+          example: file:///Documents/5DBD7DD8-41DE-4F62-B359-E249E52A4B74.png
+          description: Путь к файлу картинки ответа.
+        is_learned:
+          type: boolean
+          example: false
+          description: Флаг, показывающий выучена карточка или нет.
+
+    CardSet:
+      type: object
+      required:
+        - card_set_id
+      properties:
+        card_set_id:
+          type: string
+          example: 83DD159B-316D-4A30-A765-24B841253A1A
+          description: Id набора карточек.
+        title:
+          type: string
+          example: Столицы стран Европы
+          description: Заголовок набора карточек.
+        all_cards_count:
+          type: integer
+          example: 10
+          description: Общее количество карточек в наборе.
+        learned_cards_count:
+          type: integer
+          example: 3
+          description: Количество выученных карточек в наборе.
+        color:
+          type: integer
+          example: 16711680
+          description: Цвет набора карточек.
+
+    Settings:
+      type: object
+      properties:
+        is_mixed:
+          type: boolean
+          example: false
+          description: Флаг, определяющий подмешивать выученные карточки к невыученным или нет.
+        mixing_in_power:
+          type: integer
+          example: 40
+          description: Степень подмешивания (0...100)%.
+
+    CardSets:
+      type: array
+      items:
+        $ref: "#/components/schemas/CardSet"
+
+    Cards:
+      type: array
+      items:
+        $ref: "#/components/schemas/Card"
+
+    Error400:
+      type: string
+      example: Incorrect request body
+      description: Ошибка в запросе
+      
+    Error400GET:
+      type: string
+      example: Missing limit parameter
+      description: Ошибка в запросе
+      
+    Error400Delete:
+      type: string
+      example: Incorrect id
+      description: Ошибка в запросе
