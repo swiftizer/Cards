@@ -27,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             ModelProvider.shared.setupDB(type: .CoreData)
         }
 
-        API = APIV1Assembly(port: 8080).assemble()
+        API = APIV1Assembly(port: 8078).assemble()
 
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
