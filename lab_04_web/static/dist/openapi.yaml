@@ -5,8 +5,14 @@ info:
   version: '0.0.1'
 
 servers:
+  - url: http://localhost:8080/api/v1
+    description: nginx API
+  - url: http://localhost:8080/mirror/api/v1
+    description: mirror API
   - url: http://localhost:8078
-    description: dev server
+    description: admin server
+  - url: http://localhost:8077
+    description: reader server
 
 paths:
   /cards:

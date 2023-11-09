@@ -25,13 +25,13 @@ public class CardSetController: CardSetControllerDescription {
         Logger.shared.log(lvl: .DEBUG, msg: "User gets all card sets")
         let setIDs = dataSource.getAllCardSetIDs()
         
-        var res = [CardSet]()
+//        var res = [CardSet]()
+//        
+//        for setID in setIDs {
+//            res.append(dataSource.getCardSet(ID: setID)!)
+//        }
         
-        for setID in setIDs {
-            res.append(dataSource.getCardSet(ID: setID)!)
-        }
-        
-        return res
+        return setIDs.compactMap { dataSource.getCardSet(ID: $0) }
     }
 
     public func getCardSet(ID: UUID) -> CardSet? {

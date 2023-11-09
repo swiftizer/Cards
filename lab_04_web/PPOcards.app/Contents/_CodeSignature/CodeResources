@@ -39,7 +39,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			N3W5Cl1AzMgffXVvyQN8SJMEl/8=
+			qBv1DL7p4IaN7X3pG3R64SrDH+A=
 			</data>
 			<key>requirement</key>
 			<string>identifier "com.bmstu.web.API-V1" and anchor apple generic and certificate leaf[subject.CN] = "Apple Development: Sergey Nikolaev (3PQ99GWGFK)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
@@ -48,7 +48,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			vKTjRyVb1Ksxt7TXMd146PP4eII=
+			iYPjNNUGAm466EQGjt2NDa5W4D0=
 			</data>
 			<key>requirement</key>
 			<string>identifier "com.bmstu.ppo.Core" and anchor apple generic and certificate leaf[subject.CN] = "Apple Development: Sergey Nikolaev (3PQ99GWGFK)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
@@ -62,11 +62,20 @@
 			<key>requirement</key>
 			<string>identifier "com.bmstu.ppo.DBCoreData" and anchor apple generic and certificate leaf[subject.CN] = "Apple Development: Sergey Nikolaev (3PQ99GWGFK)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
 		</dict>
+		<key>Frameworks/DBPostgres.framework</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			TzUdnuqmw669SU9UKQaplwDMnzk=
+			</data>
+			<key>requirement</key>
+			<string>identifier "com.bmstu.web.DBPostgres" and anchor apple generic and certificate leaf[subject.CN] = "Apple Development: Sergey Nikolaev (3PQ99GWGFK)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
+		</dict>
 		<key>Frameworks/DBRealm.framework</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			VpWAXcrp8l+2LiguCxec5zgDU4o=
+			HIE1ArCDRZ4RRCYKzlNlp2PnzsE=
 			</data>
 			<key>requirement</key>
 			<string>identifier "com.bmstu.ppo.DBRealm" and anchor apple generic and certificate leaf[subject.CN] = "Apple Development: Sergey Nikolaev (3PQ99GWGFK)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
@@ -111,7 +120,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			T+dN22WhZtrneE+3ZbD7qMFQUeM=
+			bgiJVt42gWQWP34foD8BUY+49Zg=
 			</data>
 			<key>requirement</key>
 			<string>identifier "com.bmstu.web.Services" and anchor apple generic and certificate leaf[subject.CN] = "Apple Development: Sergey Nikolaev (3PQ99GWGFK)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>

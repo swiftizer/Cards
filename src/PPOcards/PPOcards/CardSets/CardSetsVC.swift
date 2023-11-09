@@ -85,7 +85,7 @@ class CardSetsVC: UIViewController {
         cardSetsTV.delegate = self
         cardSetsTV.dataSource = self
         
-        navigationItem.leftBarButtonItem = .init(image: UIImage(systemName: "gearshape")?.withTintColor(.label, renderingMode: .alwaysOriginal), style: .done, target: self, action: #selector(didTapSettingsButton))
+        navigationItem.leftBarButtonItem = .init(image: UIImage(systemName: "gearshape")?.withTintColor(ProcessInfo.processInfo.environment["PG_USER_NAME"] == "web_admin" ? .red : .label, renderingMode: .alwaysOriginal), style: .done, target: self, action: #selector(didTapSettingsButton))
         navigationItem.rightBarButtonItem = .init(image: UIImage(systemName: "plus")?.withTintColor(.label, renderingMode: .alwaysOriginal), style: .done, target: self, action: #selector(didTapAddButton))
     }
     

@@ -20,17 +20,30 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        
+
+        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window?.windowScene = windowScene
+
+        guard CommandLine.arguments.count > 1 else {
+            ModelProvider.shared.setupDB(type: .Postgres)
+            API = APIV1Assembly(port: UInt16(Int(ProcessInfo.processInfo.environment["API_PORT"] ?? "8078") ?? 8078)).assemble()
+            let nav1 = UINavigationController()
+            nav1.viewControllers = [CardSetsVC()]
+            window?.rootViewController = nav1
+            window?.makeKeyAndVisible()
+            return
+        }
+
         if CommandLine.arguments[2] == "-Realm" {
             ModelProvider.shared.setupDB(type: .Realm)
+        } else if CommandLine.arguments[2] == "-Postgres" {
+            ModelProvider.shared.setupDB(type: .Postgres)
         } else {
             ModelProvider.shared.setupDB(type: .CoreData)
         }
 
         API = APIV1Assembly(port: 8078).assemble()
 
-        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-        window?.windowScene = windowScene
         if CommandLine.arguments[1] == "-GUI" {
             let nav1 = UINavigationController()
             nav1.viewControllers = [CardSetsVC()]
