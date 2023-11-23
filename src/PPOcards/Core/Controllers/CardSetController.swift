@@ -128,7 +128,10 @@ public class CardSetController: CardSetControllerDescription {
         if var set = getCardSet(ID: cardSetID) {
             set.allCardsCount = getAllCardIDsFromSet(from: cardSetID).count
             set.learnedCardsCount = getLearnedCardIDsFromSet(from: cardSetID).count
-            
+            let red = (255 - 255 * set.learnedCardsCount / (set.allCardsCount == 0 ? 1 : set.allCardsCount)) << 16
+            let green = (255 - (red >> 16)) << 8
+            set.color = red + green
+
             let _ = updateCardSet(oldID: cardSetID, new: set)
         }
     }

@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
 
         guard CommandLine.arguments.count > 1 else {
-            ModelProvider.shared.setupDB(type: .Postgres)
+            ModelProvider.shared.setupDB(type: .CoreData)
             API = APIV1Assembly(port: UInt16(Int(ProcessInfo.processInfo.environment["API_PORT"] ?? "8078") ?? 8078)).assemble()
             let nav1 = UINavigationController()
             nav1.viewControllers = [CardSetsVC()]

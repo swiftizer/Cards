@@ -137,10 +137,8 @@ extension CardSetsVC: UITableViewDelegate, UITableViewDataSource {
         content.secondaryText = "\(cardSet.learnedCardsCount)/\(cardSet.allCardsCount)"
 
         cell.contentConfiguration = content
-        
-        let red = (255 - 255 * cardSet.learnedCardsCount / (cardSet.allCardsCount == 0 ? 1 : cardSet.allCardsCount)) << 16
-        let green = (255 - (red >> 16)) << 8
-        cell.backgroundColor = UIColor(rgb: red + green).withAlphaComponent(0.6)
+
+        cell.backgroundColor = UIColor(rgb: cardSet.color).withAlphaComponent(0.6)
         cell.accessoryType = .disclosureIndicator
 
         if indexPath.row == presenter.numberOfTVRows() - 1 {
