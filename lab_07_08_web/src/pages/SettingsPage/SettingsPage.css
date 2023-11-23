@@ -1,0 +1,20 @@
+.option-wrapper {
+  display: flex;
+  margin-bottom: 20px;
+
+  align-items: center;
+  gap: 5px;
+}
+
+.option-title {
+  width: 300px;
+}
+
+.slider-value {
+  margin-left: 10px;
+  width: 100px;
+}
+
+.bool-button-wrapper {
+  margin-left: 14px;
+}

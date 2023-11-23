@@ -1,0 +1,14 @@
+.bool-button {
+    padding: 5px 15px;
+    border-radius: 10px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.bool-button.positive {
+    background: #5097a1;
+}
+
+.bool-button.negative {
+    background: #c5ac97;
+}
