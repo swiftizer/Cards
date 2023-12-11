@@ -33,7 +33,6 @@ public final class ModelProvider {
             cardSetController = CardSetController(dataSource: CoreDataCardSetRepository(), settingsController: settingsController)
             cardController = CardController(dataSource: CoreDataCardRepository(), cardSetController: cardSetController)
         case .Realm:
-            print("gg")
             settingsController = SettingsController(dataSource: RealmSettingsRepository())
             cardSetController = CardSetController(dataSource: RealmCardSetRepository(), settingsController: settingsController)
             cardController = CardController(dataSource: RealmCardRepository(), cardSetController: cardSetController)

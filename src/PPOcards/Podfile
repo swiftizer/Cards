@@ -57,12 +57,12 @@ target 'PPOcards' do
   # Pods for PPOcards
   pod 'RealmSwift', '~>10'
 
-  target 'PPOcardsIntegrationTests' do
+  target 'IntegrationTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
-  target 'PPOcardsUnitTests' do
+  target 'UnitTests' do
     inherit! :search_paths
     # Pods for testing
   end

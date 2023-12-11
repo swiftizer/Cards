@@ -1,0 +1,13 @@
+src/PPOcards/TestResults.xcresult
+src/PPOcards/allure-results
+src/PPOcards/DerivedData/*
+src/PPOcards/Pods/*
+src/PPOcards/tests_artifacts/*
+src/PPOcards/TestResults.xcresult
+src/PPOcards/allure-results
+src/PPOcards/builds
+!src/PPOcards/DerivedData/.keep
+!src/PPOcards/Pods/.keep
+!src/PPOcards/tests_artifacts/.keep
+src/PPOcards/log.pcap
+lab_07_08_web/node_modules

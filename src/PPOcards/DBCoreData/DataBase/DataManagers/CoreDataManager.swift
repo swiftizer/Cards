@@ -9,7 +9,7 @@ import CoreData
 import Core
 import Logger
 
-protocol CoreDataManagerDescription {
+public protocol CoreDataManagerDescription {
     func fetch<T: NSManagedObject>(request: NSFetchRequest<T>) -> [T]
     func count<T: NSManagedObject>(request: NSFetchRequest<T>) -> Int
     func create<T: NSManagedObject>(entityName: String, configurationBlock: @escaping (T?) -> Void)

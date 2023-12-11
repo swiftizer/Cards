@@ -35,8 +35,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B378FD9529E3102900879570"
-               BuildableName = "PPOcardsIntegrationTests.xctest"
-               BlueprintName = "PPOcardsIntegrationTests"
+               BuildableName = "IntegrationTests.xctest"
+               BlueprintName = "IntegrationTests"
                ReferencedContainer = "container:PPOcards.xcodeproj">
             </BuildableReference>
          </TestableReference>

@@ -41,10 +41,10 @@ public class RealmCardSetRepository: CardSetRepositoryDescription {
         return true
     }
     
-    public func getAllCardSetIDs() -> [UUID] {
+    public func getAllCardSets() -> [CardSet] {
         let cardSetsRealm = realm.objects(CardSetRealm.self)
         
-        return cardSetsRealm.map { $0._id }
+        return cardSetsRealm.map { CardSet(id: $0._id, title: $0.title, allCardsCount: Int($0.allCardsCount), learnedCardsCount: Int($0.learnedCardsCount), color: Int($0.color)) }
     }
     
     public func getAllCardIDsFromSet(setID: UUID) -> [UUID] {

@@ -95,10 +95,14 @@ public class RealmCardRepository: CardRepositoryDescription {
         return nil
     }
     
-    public func shareCardToSet(cardID: UUID, newSetID: UUID) -> Bool {
-        guard let card = getCard(ID: cardID) else { return false }
-        
-        return addCard(card: Card(id: UUID(), setID: newSetID, questionText: card.questionText, questionImageURL: card.questionImageURL, answerText: card.answerText, answerImageURL: card.answerImageURL, isLearned: false))
+    public func shareCardToSet(cardID: UUID, newSetID: UUID) -> Card? {
+        guard let card = getCard(ID: cardID) else { return nil }
+
+        let newCard = Card(id: UUID(), setID: newSetID, questionText: card.questionText, questionImageURL: card.questionImageURL, answerText: card.answerText, answerImageURL: card.answerImageURL, isLearned: false)
+
+        guard addCard(card: newCard) else { return nil }
+
+        return newCard
     }
     
     public func deleteAllCards() {
@@ -139,4 +143,6 @@ public class RealmCardRepository: CardRepositoryDescription {
             cardProgress?.allAttemptsCount += 1
         }
     }
+    
+    
 }

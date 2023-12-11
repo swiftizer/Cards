@@ -10,7 +10,7 @@ import Foundation
 public protocol CardSetRepositoryDescription {
     func getCardSet(ID: UUID) -> CardSet?
     func addCardSet(set: CardSet) -> Bool
-    func getAllCardSetIDs() -> [UUID]
+    func getAllCardSets() -> [CardSet]
     func getAllCardIDsFromSet(setID: UUID) -> [UUID]
     func getNotLearnedCardIDsFromSet(from setID: UUID) -> [UUID]
     func getLearnedCardIDsFromSet(from setID: UUID) -> [UUID]
@@ -26,7 +26,7 @@ public protocol CardRepositoryDescription {
     func updateCard(oldID: UUID, newCard: Card) -> Bool
     func deleteCard(ID: UUID) -> Bool
     func getCardProgress(cardSetID: UUID, cardID: UUID) -> CardProgress?
-    func shareCardToSet(cardID: UUID, newSetID: UUID) -> Bool
+    func shareCardToSet(cardID: UUID, newSetID: UUID) -> Card?
     func deleteAllCards()
     func markAsLearned(cardID: UUID)
     func markAsNotLearned(cardID: UUID)

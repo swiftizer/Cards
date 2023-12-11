@@ -11,25 +11,57 @@ import Core
 
 public class CoreDataSettingsRepository: SettingsRepositoryDescription {
 
+    private let coreDataManager: CoreDataManagerDescription!
+
     public init() {
-        if !UserDefaults.exists(key: "SettingsIsMixed") || !UserDefaults.exists(key: "SettingsMixingInPower") {
+        coreDataManager = CoreDataManager.shared
+        guard let _ = coreDataManager.fetch(request: SettingsMO.fetchRequest()).first else {
             let _ = createSettings()
+            return
+        }
+    }
+
+    public init(customDataManager: CoreDataManagerDescription) {
+        coreDataManager = customDataManager
+        guard let _ = coreDataManager.fetch(request: SettingsMO.fetchRequest()).first else {
+            let _ = createSettings()
+            return
         }
     }
 
     private func createSettings() -> Bool {
-        UserDefaults.standard.set(false, forKey: "SettingsIsMixed")
-        UserDefaults.standard.set(0, forKey: "SettingsMixingInPower")
+        coreDataManager.create(entityName: "SettingsMO") { settingsMO in
+            guard let settingsMO = settingsMO as? SettingsMO else { return }
+
+            settingsMO.isMixed = false
+            settingsMO.mixingInPower = 0
+        }
         return true
     }
 
     public func getSettings() -> Settings {
-        Settings(isMixed: UserDefaults.standard.bool(forKey: "SettingsIsMixed"), mixingInPower: UserDefaults.standard.integer(forKey: "SettingsMixingInPower"))
+        let fetchRequest: NSFetchRequest<SettingsMO> = SettingsMO.fetchRequest()
+
+        guard let settingsMO = coreDataManager.fetch(request: fetchRequest).first else {
+            let _ = createSettings()
+            return getSettings()
+        }
+
+        let settings = Settings(isMixed: settingsMO.isMixed, mixingInPower: Int(settingsMO.mixingInPower))
+
+        return settings
     }
 
     public func updateSettings(to newSettings: Settings) -> Bool {
-        UserDefaults.standard.set(newSettings.isMixed, forKey: "SettingsIsMixed")
-        UserDefaults.standard.set(newSettings.mixingInPower, forKey: "SettingsMixingInPower")
+        let fetchRequest: NSFetchRequest<SettingsMO> = SettingsMO.fetchRequest()
+
+        coreDataManager.update(request: fetchRequest) { settingsMO in
+            guard let settingsMO = settingsMO as? SettingsMO else { return }
+
+            settingsMO.isMixed = newSettings.isMixed
+            settingsMO.mixingInPower = Int32(newSettings.mixingInPower ?? 0)
+        }
+
         return true
     }
 
