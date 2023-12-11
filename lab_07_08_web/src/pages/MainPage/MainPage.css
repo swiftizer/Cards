@@ -1,0 +1,8 @@
+.main-page {
+    width: 90%;
+    max-width: 810px;
+    margin: 0 auto;
+
+    overflow-y: auto;
+}
+

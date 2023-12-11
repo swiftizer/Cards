@@ -1,0 +1,60 @@
+.card-set-item-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 110px;
+
+  margin-bottom: 10px;
+}
+
+.card-set-item {
+  position: relative;
+
+  background: rgba(200, 200, 200, 1);
+
+  width: 90%;
+  min-height: 110px;
+
+  border-radius: 10px;
+
+  display: flex;
+  gap: 10px;
+  padding: 0 12px;
+}
+
+.card-set-mark-wrapper {
+  min-height: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-set-mark {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #000;
+}
+
+.card-set-body {
+  width: 90%;
+  min-height: 110px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-set-title {
+  max-width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-set-item-arrow {
+  width: 10px;
+  height: 17px;
+  position: absolute;
+  right: 10px;
+
+  top: 43%;
+}

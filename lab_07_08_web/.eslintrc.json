@@ -1,0 +1,25 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["eslint:recommended"],
+  "parser": "@typescript-eslint/parser",
+  "root": true,
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "ignorePatterns": ["*.test.tsx"],
+  "plugins": ["react", "@typescript-eslint"],
+  "rules": {
+    "semi": [2, "always"],
+    "semi-spacing": [2, { "before": false, "after": true }],
+    "no-extra-semi": 2,
+    "comma-spacing": [2, { "before": false, "after": true }],
+    "no-unused-vars": "off"
+  }
+}

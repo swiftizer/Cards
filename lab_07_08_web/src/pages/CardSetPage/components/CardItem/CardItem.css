@@ -1,0 +1,73 @@
+.card-item-wrapper {
+  position: relative;
+
+  width: 600px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.card-item {
+  flex: 1;
+  background: rgba(200, 200, 200, 1);
+
+  width: 520px;
+  min-height: 110px;
+  height: auto;
+
+  border-radius: 10px;
+
+  display: flex;
+  gap: 10px;
+  padding: 0 12px;
+
+  margin-bottom: 20px;
+
+  position: relative;
+}
+
+.card-mark-wrapper {
+  min-height: 110px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-mark {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #000;
+}
+
+.card-mark.learned {
+  background: rgba(0, 255, 0, 1);
+}
+
+.card-mark.not-learned {
+  background: rgba(255, 0, 0, 1);
+}
+
+.card-body {
+  min-height: 110px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-delete-button {
+  font-size: 14px;
+  padding: 10px 10px;
+
+  background: tomato;
+
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .card-item-wrapper {
+    width: 400px;
+  }
+}

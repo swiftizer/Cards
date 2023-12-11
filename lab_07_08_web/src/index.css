@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: rgba(251, 246, 234, 1);
+
+  height: 100vh;
+  width: 100%;
+}
+
+#root {
+  height: 100vh;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.text-bold {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 40px;
+}
+
+.text-small {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.text-field {
+  width: 400px;
+  height: 48px;
+  border-radius: 10px;
+  border: 0.5px solid rgba(173, 97, 19, 1);
+
+  font-size: 24px;
+  line-height: 28px;
+
+  padding: 0 5px;
+}
+
+.text-field.invalid {
+  border: 4px solid rgba(255, 0, 0, 1);
+}
+
+.text-field.large {
+  height: 200px;
+}
+
+.create-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  justify-content: flex-end;
+
+  padding: 10px 0px;
+
+  margin-top: 40px;
+}
+
+.primary-button {
+  background: rgba(80, 151, 161, 1);
+  border-radius: 10px;
+  font-size: 28px;
+  width: 250px;
+  height: 70px;
+}
+
+.delete-button {
+  font-size: 14px;
+  padding: 10px 10px;
+
+  position: absolute;
+  left: 91%;
+  top: 37px;
+
+  background: tomato;
+
+  border-radius: 10px;
+}
+
+input[type=range] {
+  margin: auto;
+  outline: none;
+  padding: 0;
+  height: 40px;
+
+  width: 300px;
+  background-color: rgba(46, 40, 54, 0.1);
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  box-shadow: none;
+  border: none;
+  background: transparent;
+  -webkit-appearance: none;
+}
+
+
+input[type=range]::-webkit-slider-thumb {
+  height: 40px;
+  width: 40px;
+  background: #fff;
+  border: 2px solid rgba(52, 48, 37, 1);
+  border-radius: 10px;
+  -webkit-appearance: none;
+}

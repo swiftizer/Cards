@@ -1,0 +1,52 @@
+.card-page {
+    position: relative;
+
+    overflow-y: auto;
+}
+
+.caption {
+    text-align: center;
+    margin-bottom: 10px;
+
+    font-size: 28px;
+}
+
+.card-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.learned-button {
+    background: rgba(80, 255, 32, 0.8);
+}
+
+.not-learned-button {
+    background: rgba(255, 0, 0, 0.8);
+}
+
+.learned-button,
+.not-learned-button {
+    height: 50px;
+    width: 100px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.edit-card-set-button {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.restore-cards-button {
+    padding: 10px;
+    border-radius: 10px;
+    display: block;
+    margin: 20px auto;
+
+    font-size: 24px;
+
+    background: rgba(200, 200, 200, 1);
+}
