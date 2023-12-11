@@ -16,6 +16,14 @@
 		B378FD9929E3102900879570 /* CardSetRepositoryIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B378FD9829E3102900879570 /* CardSetRepositoryIntegrationTests.swift */; };
 		B378FDA029E31E4100879570 /* CardRepositoryIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B378FD9F29E31E4100879570 /* CardRepositoryIntegrationTests.swift */; };
 		B378FDA229E321CF00879570 /* SettingsRepositoryIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B378FDA129E321CF00879570 /* SettingsRepositoryIntegrationTests.swift */; };
+		FA0383772AF2C71D0083DAEE /* DBPostgres.h in Headers */ = {isa = PBXBuildFile; fileRef = FA0383762AF2C71D0083DAEE /* DBPostgres.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA03837A2AF2C71D0083DAEE /* DBPostgres.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA0383742AF2C71D0083DAEE /* DBPostgres.framework */; };
+		FA03837B2AF2C71D0083DAEE /* DBPostgres.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA0383742AF2C71D0083DAEE /* DBPostgres.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FA0383822AF2C74E0083DAEE /* PostgresClientKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA0383812AF2C74E0083DAEE /* PostgresClientKit */; };
+		FA0383842AF2ED0C0083DAEE /* PostgresManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0383832AF2ED0C0083DAEE /* PostgresManager.swift */; };
+		FA0383862AF2EE520083DAEE /* PostgresCardSetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0383852AF2EE520083DAEE /* PostgresCardSetRepository.swift */; };
+		FA0383882AF2EE690083DAEE /* PostgresCardRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0383872AF2EE690083DAEE /* PostgresCardRepository.swift */; };
+		FA03838A2AF2EE7B0083DAEE /* PostgresSettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0383892AF2EE7B0083DAEE /* PostgresSettingsRepository.swift */; };
 		FA0CE2F329F4480600DB094F /* ControllerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0CE2F229F4480600DB094F /* ControllerUnitTests.swift */; };
 		FA0CE2F529F4481800DB094F /* SetControllerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0CE2F429F4481800DB094F /* SetControllerUnitTests.swift */; };
 		FA0CE2F729F4482700DB094F /* SettingsUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0CE2F629F4482700DB094F /* SettingsUnitTests.swift */; };
@@ -108,6 +116,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = B350D22129C904EB0026B934;
 			remoteInfo = PPOcards;
+		};
+		FA0383782AF2C71D0083DAEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B350D21A29C904EB0026B934 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA0383732AF2C71D0083DAEE;
+			remoteInfo = DBPostgres;
+		};
+		FA03837F2AF2C7430083DAEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B350D21A29C904EB0026B934 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA7B61B029F4395200F0AFEE;
+			remoteInfo = Core;
+		};
+		FA0384662AF6B2B00083DAEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B350D21A29C904EB0026B934 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA0383732AF2C71D0083DAEE;
+			remoteInfo = DBPostgres;
 		};
 		FA0CE2ED29F447CA00DB094F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -277,6 +306,7 @@
 				FABA2DDC2A10EE1200F6AD0C /* DBRealm.framework in Embed Frameworks */,
 				FA855AFE2AD1F2B000338086 /* API_V1.framework in Embed Frameworks */,
 				FA0CE40829F8070600DB094F /* Logger.framework in Embed Frameworks */,
+				FA03837B2AF2C71D0083DAEE /* DBPostgres.framework in Embed Frameworks */,
 				FA7B61B829F4395300F0AFEE /* Core.framework in Embed Frameworks */,
 				FA7B61CB29F43CEA00F0AFEE /* DBCoreData.framework in Embed Frameworks */,
 			);
@@ -315,6 +345,12 @@
 		B378FDAE29E3258B00879570 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		B3C47C5D29D8925500FCC58A /* SettingsMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsMO+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B3C47C5E29D8925500FCC58A /* SettingsMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FA0383742AF2C71D0083DAEE /* DBPostgres.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DBPostgres.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA0383762AF2C71D0083DAEE /* DBPostgres.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBPostgres.h; sourceTree = "<group>"; };
+		FA0383832AF2ED0C0083DAEE /* PostgresManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostgresManager.swift; sourceTree = "<group>"; };
+		FA0383852AF2EE520083DAEE /* PostgresCardSetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostgresCardSetRepository.swift; sourceTree = "<group>"; };
+		FA0383872AF2EE690083DAEE /* PostgresCardRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostgresCardRepository.swift; sourceTree = "<group>"; };
+		FA0383892AF2EE7B0083DAEE /* PostgresSettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostgresSettingsRepository.swift; sourceTree = "<group>"; };
 		FA0CE2E929F447CA00DB094F /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA0CE2F229F4480600DB094F /* ControllerUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerUnitTests.swift; sourceTree = "<group>"; };
 		FA0CE2F429F4481800DB094F /* SetControllerUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetControllerUnitTests.swift; sourceTree = "<group>"; };
@@ -382,6 +418,7 @@
 				FABA2EBD2A13E60E00F6AD0C /* FileManager.framework in Frameworks */,
 				FA855AFD2AD1F2B000338086 /* API_V1.framework in Frameworks */,
 				FAFC65DF29FD2E320040B32A /* PinLayout in Frameworks */,
+				FA03837A2AF2C71D0083DAEE /* DBPostgres.framework in Frameworks */,
 				FA7B61CA29F43CEA00F0AFEE /* DBCoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,6 +434,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA0383712AF2C71D0083DAEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA0383822AF2C74E0083DAEE /* PostgresClientKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +525,7 @@
 				B378FD9729E3102900879570 /* IntegrationTests */,
 				FA855AF82AD1F2B000338086 /* API V1 */,
 				FA503A122AD2130C00C41970 /* Services */,
+				FA0383752AF2C71D0083DAEE /* DBPostgres */,
 				B350D22329C904EB0026B934 /* Products */,
 				67828205C34C400769DA2224 /* Pods */,
 			);
@@ -499,6 +545,7 @@
 				FABA2EB72A13E60E00F6AD0C /* FileManager.framework */,
 				FA855AF72AD1F2B000338086 /* API_V1.framework */,
 				FA503A112AD2130C00C41970 /* Services.framework */,
+				FA0383742AF2C71D0083DAEE /* DBPostgres.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -587,6 +634,18 @@
 				B3C47C5E29D8925500FCC58A /* SettingsMO+CoreDataProperties.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FA0383752AF2C71D0083DAEE /* DBPostgres */ = {
+			isa = PBXGroup;
+			children = (
+				FA0383762AF2C71D0083DAEE /* DBPostgres.h */,
+				FA0383832AF2ED0C0083DAEE /* PostgresManager.swift */,
+				FA0383852AF2EE520083DAEE /* PostgresCardSetRepository.swift */,
+				FA0383872AF2EE690083DAEE /* PostgresCardRepository.swift */,
+				FA0383892AF2EE7B0083DAEE /* PostgresSettingsRepository.swift */,
+			);
+			path = DBPostgres;
 			sourceTree = "<group>";
 		};
 		FA0CE2EA29F447CA00DB094F /* UnitTests */ = {
@@ -735,6 +794,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		FA03836F2AF2C71D0083DAEE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA0383772AF2C71D0083DAEE /* DBPostgres.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FA0CE3FC29F8070500DB094F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -813,6 +880,7 @@
 				FA7B61C929F43CEA00F0AFEE /* PBXTargetDependency */,
 				FA855AFC2AD1F2B000338086 /* PBXTargetDependency */,
 				FA503A162AD2130C00C41970 /* PBXTargetDependency */,
+				FA0383792AF2C71D0083DAEE /* PBXTargetDependency */,
 			);
 			name = PPOcards;
 			packageProductDependencies = (
@@ -857,6 +925,28 @@
 			productName = PPOcardsIntegrationTests;
 			productReference = B378FD9629E3102900879570 /* PPOcardsIntegrationTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FA0383732AF2C71D0083DAEE /* DBPostgres */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA03837C2AF2C71D0083DAEE /* Build configuration list for PBXNativeTarget "DBPostgres" */;
+			buildPhases = (
+				FA03836F2AF2C71D0083DAEE /* Headers */,
+				FA0383702AF2C71D0083DAEE /* Sources */,
+				FA0383712AF2C71D0083DAEE /* Frameworks */,
+				FA0383722AF2C71D0083DAEE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA0383802AF2C7430083DAEE /* PBXTargetDependency */,
+			);
+			name = DBPostgres;
+			packageProductDependencies = (
+				FA0383812AF2C74E0083DAEE /* PostgresClientKit */,
+			);
+			productName = DBPostgres;
+			productReference = FA0383742AF2C71D0083DAEE /* DBPostgres.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 		FA0CE2E829F447CA00DB094F /* UnitTests */ = {
 			isa = PBXNativeTarget;
@@ -906,6 +996,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				FA0384672AF6B2B00083DAEE /* PBXTargetDependency */,
 				FA77D0BB2AE0B0B200F00D6B /* PBXTargetDependency */,
 				FA503A222AD2137A00C41970 /* PBXTargetDependency */,
 				FA503A242AD2137A00C41970 /* PBXTargetDependency */,
@@ -1043,6 +1134,10 @@
 						CreatedOnToolsVersion = 14.3;
 						TestTargetID = B350D22129C904EB0026B934;
 					};
+					FA0383732AF2C71D0083DAEE = {
+						CreatedOnToolsVersion = 15.0;
+						LastSwiftMigration = 1500;
+					};
 					FA0CE2E829F447CA00DB094F = {
 						CreatedOnToolsVersion = 14.1;
 						TestTargetID = B350D22129C904EB0026B934;
@@ -1084,6 +1179,7 @@
 			packageReferences = (
 				FAFC65DD29FD2E320040B32A /* XCRemoteSwiftPackageReference "PinLayout" */,
 				FA855AE52AD1CBEC00338086 /* XCRemoteSwiftPackageReference "swifter.git" */,
+				FA03836E2AF2C6D10083DAEE /* XCRemoteSwiftPackageReference "PostgresClientKit" */,
 			);
 			productRefGroup = B350D22329C904EB0026B934 /* Products */;
 			projectDirPath = "";
@@ -1100,6 +1196,7 @@
 				FABA2EB62A13E60E00F6AD0C /* FileManager */,
 				FA855AF62AD1F2AF00338086 /* API V1 */,
 				FA503A102AD2130C00C41970 /* Services */,
+				FA0383732AF2C71D0083DAEE /* DBPostgres */,
 			);
 		};
 /* End PBXProject section */
@@ -1122,6 +1219,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B378FD9429E3102900879570 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA0383722AF2C71D0083DAEE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1224,6 +1328,17 @@
 				B378FDA029E31E4100879570 /* CardRepositoryIntegrationTests.swift in Sources */,
 				B378FDA229E321CF00879570 /* SettingsRepositoryIntegrationTests.swift in Sources */,
 				B378FD9929E3102900879570 /* CardSetRepositoryIntegrationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA0383702AF2C71D0083DAEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA0383842AF2ED0C0083DAEE /* PostgresManager.swift in Sources */,
+				FA0383862AF2EE520083DAEE /* PostgresCardSetRepository.swift in Sources */,
+				FA03838A2AF2EE7B0083DAEE /* PostgresSettingsRepository.swift in Sources */,
+				FA0383882AF2EE690083DAEE /* PostgresCardRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1336,6 +1451,21 @@
 			isa = PBXTargetDependency;
 			target = B350D22129C904EB0026B934 /* PPOcards */;
 			targetProxy = B378FD9A29E3102900879570 /* PBXContainerItemProxy */;
+		};
+		FA0383792AF2C71D0083DAEE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA0383732AF2C71D0083DAEE /* DBPostgres */;
+			targetProxy = FA0383782AF2C71D0083DAEE /* PBXContainerItemProxy */;
+		};
+		FA0383802AF2C7430083DAEE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA7B61B029F4395200F0AFEE /* Core */;
+			targetProxy = FA03837F2AF2C7430083DAEE /* PBXContainerItemProxy */;
+		};
+		FA0384672AF6B2B00083DAEE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA0383732AF2C71D0083DAEE /* DBPostgres */;
+			targetProxy = FA0384662AF6B2B00083DAEE /* PBXContainerItemProxy */;
 		};
 		FA0CE2EE29F447CA00DB094F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1601,6 +1731,8 @@
 				DEVELOPMENT_TEAM = Q9ZS8V8CB6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PPOcards/Info.plist;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Allow camera usage";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1611,7 +1743,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "-1455.PPOcards";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bmstu.PPOcards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
@@ -1633,6 +1765,8 @@
 				DEVELOPMENT_TEAM = Q9ZS8V8CB6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PPOcards/Info.plist;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Allow camera usage";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1643,7 +1777,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "-1455.PPOcards";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bmstu.PPOcards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
@@ -1726,6 +1860,86 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PPOcards.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PPOcards";
+			};
+			name = Release;
+		};
+		FA03837D2AF2C71D0083DAEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = Q9ZS8V8CB6;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bmstu.web.DBPostgres;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FA03837E2AF2C71D0083DAEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = Q9ZS8V8CB6;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bmstu.web.DBPostgres;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -2276,6 +2490,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		FA03837C2AF2C71D0083DAEE /* Build configuration list for PBXNativeTarget "DBPostgres" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA03837D2AF2C71D0083DAEE /* Debug */,
+				FA03837E2AF2C71D0083DAEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FA0CE2EF29F447CA00DB094F /* Build configuration list for PBXNativeTarget "UnitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2351,6 +2574,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FA03836E2AF2C6D10083DAEE /* XCRemoteSwiftPackageReference "PostgresClientKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/codewinsdotcom/PostgresClientKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		FA855AE52AD1CBEC00338086 /* XCRemoteSwiftPackageReference "swifter.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/httpswift/swifter.git";
@@ -2378,6 +2609,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FA0383812AF2C74E0083DAEE /* PostgresClientKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA03836E2AF2C6D10083DAEE /* XCRemoteSwiftPackageReference "PostgresClientKit" */;
+			productName = PostgresClientKit;
+		};
 		FA855B042AD1F35800338086 /* Swifter */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FA855AE52AD1CBEC00338086 /* XCRemoteSwiftPackageReference "swifter.git" */;

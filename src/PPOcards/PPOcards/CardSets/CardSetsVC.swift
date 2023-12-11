@@ -85,7 +85,7 @@ class CardSetsVC: UIViewController {
         cardSetsTV.delegate = self
         cardSetsTV.dataSource = self
         
-        navigationItem.leftBarButtonItem = .init(image: UIImage(systemName: "gearshape")?.withTintColor(.label, renderingMode: .alwaysOriginal), style: .done, target: self, action: #selector(didTapSettingsButton))
+        navigationItem.leftBarButtonItem = .init(image: UIImage(systemName: "gearshape")?.withTintColor(ProcessInfo.processInfo.environment["PG_USER_NAME"] == "web_admin" ? .red : .label, renderingMode: .alwaysOriginal), style: .done, target: self, action: #selector(didTapSettingsButton))
         navigationItem.rightBarButtonItem = .init(image: UIImage(systemName: "plus")?.withTintColor(.label, renderingMode: .alwaysOriginal), style: .done, target: self, action: #selector(didTapAddButton))
     }
     
@@ -137,10 +137,8 @@ extension CardSetsVC: UITableViewDelegate, UITableViewDataSource {
         content.secondaryText = "\(cardSet.learnedCardsCount)/\(cardSet.allCardsCount)"
 
         cell.contentConfiguration = content
-        
-        let red = (255 - 255 * cardSet.learnedCardsCount / (cardSet.allCardsCount == 0 ? 1 : cardSet.allCardsCount)) << 16
-        let green = (255 - (red >> 16)) << 8
-        cell.backgroundColor = UIColor(rgb: red + green).withAlphaComponent(0.6)
+
+        cell.backgroundColor = UIColor(rgb: cardSet.color).withAlphaComponent(0.6)
         cell.accessoryType = .disclosureIndicator
 
         if indexPath.row == presenter.numberOfTVRows() - 1 {

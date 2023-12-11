@@ -1,0 +1,39 @@
+version: "3.9"
+
+services:
+
+  postgresql_master:
+    image: postgres:15
+    container_name: postgresql_master
+    restart: always
+    volumes:
+      - /Users/ser.nikolaev/Documents/postgresql/master/data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: webdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5432:5432
+
+  postgresql_slave:
+    image: postgres:15
+    container_name: postgresql_slave
+    restart: always
+    volumes:
+      - /Users/ser.nikolaev/Documents/postgresql/slave/data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: webdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5433:5432
+
+  pg_admin:
+    image: dpage/pgadmin4
+    container_name: pg_admin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: user@domain.com
+      PGADMIN_DEFAULT_PASSWORD: SuperSecret
+    ports:
+      - 5050:80

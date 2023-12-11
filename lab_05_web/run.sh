@@ -1,0 +1,4 @@
+PG_USER_NAME=web_admin CREATE_ENTITIES=true PG_USER_PORT=5432 API_PORT=8078 open -n PPOcards.app
+PG_USER_NAME=web_reader PG_USER_PORT=5433 API_PORT=8077 open -n PPOcards.app
+PG_USER_NAME=web_reader PG_USER_PORT=5433 API_PORT=8076 open -n PPOcards.app
+PG_USER_NAME=web_admin CREATE_ENTITIES=true PG_USER_PORT=5432 API_PORT=8075 open -n PPOcards.app

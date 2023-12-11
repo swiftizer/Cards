@@ -139,6 +139,4 @@ public class RealmCardRepository: CardRepositoryDescription {
             cardProgress?.allAttemptsCount += 1
         }
     }
-    
-    
 }

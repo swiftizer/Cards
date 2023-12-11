@@ -94,7 +94,7 @@ final class CardsEndpointHandler: BaseEndpointHandler {
                    let jsonData = try? JSONEncoder().encode(addedCard) {
                     return .raw(200, "OK", self.successHeaders, { try? $0.write(jsonData) })
                 }
-                return .raw(404, "Not Found", self.failureHeaders, .none)
+                return .raw(400, "Bad request", self.failureHeaders, .none)
             }
             return .raw(400, "Bad request", self.failureHeaders, { try? $0.write(Data("Incorrect request body".utf8)) })
         }
@@ -126,7 +126,7 @@ final class CardsEndpointHandler: BaseEndpointHandler {
                    let jsonData = try? JSONEncoder().encode(updatedCard) {
                     return .raw(200, "OK", self.successHeaders, { try? $0.write(jsonData) })
                 }
-                return .raw(404, "Not Found", self.failureHeaders, .none)
+                return .raw(400, "Bad request", self.failureHeaders, .none)
             }
             return .raw(400, "Bad request", self.failureHeaders, { try? $0.write(Data("Incorrect request body".utf8)) })
         }
@@ -141,7 +141,7 @@ final class CardsEndpointHandler: BaseEndpointHandler {
             if self.cardController.deleteCard(ID: id) {
                 return .raw(200, "OK", self.successHeaders, { try? $0.write(Data()) })
             }
-            return .raw(404, "Not Found", self.failureHeaders, .none)
+            return .raw(400, "Bad request", self.failureHeaders, .none)
         }
     }
 }

@@ -8,7 +8,6 @@
 import RealmSwift
 import Core
 
-
 public class RealmSettingsRepository: SettingsRepositoryDescription {
     
     let realm = try! Realm()
@@ -53,6 +52,4 @@ public class RealmSettingsRepository: SettingsRepositoryDescription {
         
         return true
     }
-    
-    
 }
