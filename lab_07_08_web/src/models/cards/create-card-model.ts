@@ -22,7 +22,7 @@ export const useCreateCardModel = (apiService: CardService, { cardSetId, onSucce
                 }
             });
 
-            onSuccess?.();
+            onSuccess?.(); 
         } catch (err) {
             console.log("");
         }
