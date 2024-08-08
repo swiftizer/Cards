@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
 
         guard CommandLine.arguments.count > 1 else {
-            ModelProvider.shared.setupDB(type: .CoreData)
+            ModelProvider.shared.setupDB(type: .Postgres)
             API = APIV1Assembly(port: UInt16(Int(ProcessInfo.processInfo.environment["API_PORT"] ?? "8078") ?? 8078)).assemble()
             let nav1 = UINavigationController()
             nav1.viewControllers = [CardSetsVC()]
@@ -44,12 +44,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         API = APIV1Assembly(port: 8078).assemble()
 
-        if CommandLine.arguments[1] == "-GUI" {
+        if CommandLine.arguments[1] == "-TUI" {
+            window?.rootViewController = TechnicalVC()
+        } else {
             let nav1 = UINavigationController()
             nav1.viewControllers = [CardSetsVC()]
             window?.rootViewController = nav1
-        } else {
-            window?.rootViewController = TechnicalVC()
         }
         window?.makeKeyAndVisible()
     }

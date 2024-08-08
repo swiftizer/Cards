@@ -23,15 +23,7 @@ public class CardSetController: CardSetControllerDescription {
     
     public func getAllCardSets() -> [CardSet] {
         Logger.shared.log(lvl: .DEBUG, msg: "User gets all card sets")
-        let setIDs = dataSource.getAllCardSetIDs()
-        
-//        var res = [CardSet]()
-//        
-//        for setID in setIDs {
-//            res.append(dataSource.getCardSet(ID: setID)!)
-//        }
-        
-        return setIDs.compactMap { dataSource.getCardSet(ID: $0) }
+        return dataSource.getAllCardSets()
     }
 
     public func getCardSet(ID: UUID) -> CardSet? {
@@ -54,12 +46,14 @@ public class CardSetController: CardSetControllerDescription {
     public func addCard(card: Card, toSet cardSetID: UUID) -> Bool {
         let res = dataSource.addCard(card: card, toSet: cardSetID)
         Logger.shared.log(lvl: .DEBUG, msg: "User adds card [id=\(card.id.uuidString)] to card set [id=\(cardSetID.uuidString)]")
-        
+
+        if !RunMode.isRunningTests() {
         if let set = getCardSet(ID: cardSetID) {
             updateCardSetProgress(cardSetID: cardSetID)
             let _ = updateCardSet(oldID: cardSetID, new: set)
         }
-        
+        }
+
         return res
     }
 

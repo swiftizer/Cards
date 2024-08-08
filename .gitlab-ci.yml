@@ -1,0 +1,92 @@
+stages:
+  - unit_tests
+  - integration_tests
+  - e2e_tests
+  - react_tests
+  - run_service
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - src/PPOcards/DerivedData/
+
+unit_tests:
+  stage: unit_tests
+  interruptible: true
+  script:
+    - set +e
+    - set -x
+    - cd src/PPOcards
+    - pod install
+    - bash scripts/runXcodeTests.sh UnitTests
+  tags:
+    - Swift
+  artifacts:
+    when: always
+    paths: 
+      - src/PPOcards/tests_artifacts/
+
+integration_tests:
+  stage: integration_tests
+  interruptible: true
+  script:
+    - set +e
+    - set -x
+    - cd src/PPOcards
+    - pod install
+    - bash scripts/runXcodeTests.sh IntegrationTests
+  tags:
+    - Swift
+  artifacts:
+    when: always
+    paths: 
+      - src/PPOcards/tests_artifacts/
+
+e2e_tests:
+  stage: e2e_tests
+  interruptible: true
+  script:
+    - set +e
+    - set -x
+    - cd src/PPOcards
+    - bash scripts/runE2eTest.sh
+  tags:
+    - Swift
+  artifacts:
+    when: always
+    paths: 
+      - src/PPOcards/tests_artifacts/
+
+react_tests:
+  stage: react_tests
+  interruptible: true
+  script:
+    - set +e
+    - set -x
+    - cd lab_07_08_web
+    - bash scripts/runReactTests.sh; export TESTS_RETURN_CODE=$?
+    - rm -rf cache/
+    - if [ ${TESTS_RETURN_CODE} != 0 ]; then exit 1; fi
+  tags:
+    - Swift
+  artifacts:
+    when: always
+    paths: 
+      - src/PPOcards/tests_artifacts/
+
+run_service:
+  stage: run_service
+  interruptible: true
+  script:
+    - set +e
+    - set -x
+    - cd lab_07_08_web
+    - bash scripts/runService.sh; export RETURN_CODE=$?
+    - rm -rf cache/
+    - if [ ${RETURN_CODE} != 0 ]; then exit 1; fi
+  tags:
+    - Swift
+  artifacts:
+    when: always
+    paths: 
+      - src/PPOcards/tests_artifacts/

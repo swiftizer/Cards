@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "BBB2B37B-25B3-412F-BF67-3C9F56FF43A2",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:PPOcards.xcodeproj",
+        "identifier" : "FAFF79842B25D2ED00B2174B",
+        "name" : "Benchmark"
+      }
+    }
+  ],
+  "version" : 1
+}

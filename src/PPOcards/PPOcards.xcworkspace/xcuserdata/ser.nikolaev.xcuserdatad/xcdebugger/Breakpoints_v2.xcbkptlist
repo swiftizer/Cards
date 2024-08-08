@@ -31,8 +31,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "128">
+                  endingLineNumber = "33">
                </Location>
                <Location
                   uuid = "E48B76AD-6D48-460D-8F3E-3C7365C845CA - e2bf1ba2b3e6911"
@@ -46,8 +45,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "72">
+                  endingLineNumber = "33">
                </Location>
                <Location
                   uuid = "E48B76AD-6D48-460D-8F3E-3C7365C845CA - 9872a3da14e1ab11"
@@ -61,8 +59,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "148">
+                  endingLineNumber = "33">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -126,8 +123,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "360">
+                  endingLineNumber = "66">
                </Location>
                <Location
                   uuid = "A259D1BA-DB14-4418-A009-C1989465EA85 - fa03a32d2948d9df"
@@ -141,8 +137,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "72">
+                  endingLineNumber = "66">
                </Location>
                <Location
                   uuid = "A259D1BA-DB14-4418-A009-C1989465EA85 - 4b03ad0b184f4354"
@@ -156,8 +151,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "532">
+                  endingLineNumber = "66">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -205,8 +199,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "118"
-                  endingLineNumber = "118"
-                  offsetFromSymbolStart = "776">
+                  endingLineNumber = "118">
                </Location>
                <Location
                   uuid = "1AA0EE8C-88BC-4B6A-A930-FD7916FD127D - 53c832abe4fe1916"
@@ -220,8 +213,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "118"
-                  endingLineNumber = "118"
-                  offsetFromSymbolStart = "332">
+                  endingLineNumber = "118">
                </Location>
                <Location
                   uuid = "1AA0EE8C-88BC-4B6A-A930-FD7916FD127D - fa91d0990598c28f"
@@ -235,8 +227,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "118"
-                  endingLineNumber = "118"
-                  offsetFromSymbolStart = "72">
+                  endingLineNumber = "118">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -268,8 +259,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "152">
+                  endingLineNumber = "49">
                </Location>
                <Location
                   uuid = "0B236F4B-256A-4F49-96E1-EBE93B0F3857 - c8aaeffc4b7ab35b"
@@ -283,8 +273,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "508">
+                  endingLineNumber = "49">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -332,8 +321,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "89"
-                  endingLineNumber = "89"
-                  offsetFromSymbolStart = "1012">
+                  endingLineNumber = "89">
                </Location>
                <Location
                   uuid = "B4A51E2A-45E6-4421-AC38-4CD1C5FFD7AA - ffc3ca4242b6f70"
@@ -347,8 +335,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "89"
-                  endingLineNumber = "89"
-                  offsetFromSymbolStart = "1460">
+                  endingLineNumber = "89">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -396,8 +383,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "46"
-                  endingLineNumber = "46"
-                  offsetFromSymbolStart = "92">
+                  endingLineNumber = "46">
                </Location>
                <Location
                   uuid = "A2C583AB-BD35-4AB6-A820-4BB1CD4680EE - 34de4eba7eef44c1"
@@ -411,8 +397,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "46"
-                  endingLineNumber = "46"
-                  offsetFromSymbolStart = "16">
+                  endingLineNumber = "46">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -444,8 +429,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "92">
+                  endingLineNumber = "42">
                </Location>
                <Location
                   uuid = "A638D496-7D84-4084-83EF-FCADAF165A6B - 34de4eba7eef447d"
@@ -459,8 +443,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "16">
+                  endingLineNumber = "42">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -510,6 +493,132 @@
             startingLineNumber = "91"
             endingLineNumber = "91"
             landmarkName = "getAllCardIDsFromSet(setID:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FF39666C-01BD-4D1D-96B2-0F61FC62D064"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IntegrationTests/CardRepositoryIntegrationTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "test_deleteCard()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "00A4EB11-103E-4ED1-A72A-5EDB831B8621"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IntegrationTests/CardRepositoryIntegrationTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "test_deleteCard()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D39260A3-C2A8-48A5-87DF-1FC37CD6CD68"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IntegrationTests/CardRepositoryIntegrationTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "test_deleteCard()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5F51529B-96A9-40BA-BA54-138F66D4BC73"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IntegrationTests/CardRepositoryIntegrationTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "test_updateCard()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5F51529B-96A9-40BA-BA54-138F66D4BC73 - 9ddc741aa09930ea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PPOcardsIntegrationTests.PPOCardRepositoryIntegrationTests.test_updateCard() -&gt; ()"
+                  moduleName = "PPOcardsIntegrationTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ser.nikolaev/Desktop/testing-and-debugging/src2/PPOcards/IntegrationTests/CardRepositoryIntegrationTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116">
+               </Location>
+               <Location
+                  uuid = "5F51529B-96A9-40BA-BA54-138F66D4BC73 - 9ddc741aa09930ea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PPOcardsIntegrationTests.PPOCardRepositoryIntegrationTests.test_updateCard() -&gt; ()"
+                  moduleName = "PPOcardsIntegrationTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ser.nikolaev/Desktop/testing-and-debugging/src2/PPOcards/IntegrationTests/CardRepositoryIntegrationTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E3509964-599D-4C5E-AC97-CA379D8204A3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DBPostgres/PostgresCardRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "addCard(card:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B61DBA1D-BD48-4105-80BC-D7B68CD75CBB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Benchmark/Benchmark.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "test_30PerformanceCoreData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

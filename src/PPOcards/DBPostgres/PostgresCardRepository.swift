@@ -145,10 +145,14 @@ public class PostgresCardRepository: CardRepositoryDescription {
         }
     }
 
-    public func shareCardToSet(cardID: UUID, newSetID: UUID) -> Bool {
-        guard let card = getCard(ID: cardID) else { return false }
+    public func shareCardToSet(cardID: UUID, newSetID: UUID) -> Card? {
+        guard let card = getCard(ID: cardID) else { return nil }
 
-        return addCard(card: Card(id: UUID(), setID: newSetID, questionText: card.questionText, questionImageURL: card.questionImageURL, answerText: card.answerText, answerImageURL: card.answerImageURL, isLearned: false))
+        let newCard = Card(id: UUID(), setID: newSetID, questionText: card.questionText, questionImageURL: card.questionImageURL, answerText: card.answerText, answerImageURL: card.answerImageURL, isLearned: false)
+
+        guard addCard(card: newCard) else { return nil }
+
+        return newCard
     }
 
     public func deleteAllCards() {

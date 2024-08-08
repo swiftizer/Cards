@@ -64,7 +64,7 @@ public class PostgresCardSetRepository: CardSetRepositoryDescription {
         }
     }
 
-    public func getAllCardSetIDs() -> [UUID] {
+    public func getAllCardSets() -> [CardSet] {
         do {
             let statement = try connection.prepareStatement(text: """
                 SELECT _id FROM cardsets;
@@ -79,7 +79,7 @@ public class PostgresCardSetRepository: CardSetRepositoryDescription {
                 ids.append(id)
             }
 
-            return ids
+            return ids.compactMap { getCardSet(ID: $0) }
         } catch {
             return []
         }

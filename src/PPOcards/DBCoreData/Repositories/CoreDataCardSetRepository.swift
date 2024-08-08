@@ -12,10 +12,16 @@ import Core
 
 public class CoreDataCardSetRepository: CardSetRepositoryDescription {
 
-    private let coreDataManager = CoreDataManager.shared
+    private let coreDataManager: CoreDataManagerDescription!
     private let fileManager = MyFileManager.shared
-    
-    public init() {}
+
+    public init() {
+        coreDataManager = CoreDataManager.shared
+    }
+
+    public init(customDataManager: CoreDataManagerDescription) {
+        coreDataManager = customDataManager
+    }
 
     public func getCardSet(ID: UUID) -> CardSet? {
 
@@ -45,11 +51,11 @@ public class CoreDataCardSetRepository: CardSetRepositoryDescription {
         return true
     }
 
-    public func getAllCardSetIDs() -> [UUID] {
+    public func getAllCardSets() -> [CardSet] {
         let fetchRequest: NSFetchRequest<CardSetMO> = CardSetMO.fetchRequest()
-        let cardSetMO = coreDataManager.fetch(request: fetchRequest)
+        let cardSets = coreDataManager.fetch(request: fetchRequest)
 
-        return cardSetMO.map { $0.id! }
+        return cardSets.map { CardSet(id: $0.id ?? UUID(), title: $0.title ?? "", allCardsCount: Int($0.allCardsCount), learnedCardsCount: Int($0.learnedCardsCount), color: Int($0.color)) }
     }
 
     public func getAllCardIDsFromSet(setID: UUID) -> [UUID] {
@@ -113,6 +119,7 @@ public class CoreDataCardSetRepository: CardSetRepositoryDescription {
         fetchRequest.predicate = NSPredicate(format: "id == %@", oldID as CVarArg)
 
         coreDataManager.update(request: fetchRequest) { cardSetMO in
+            cardSetMO?.id = newSet.id
             cardSetMO?.title = newSet.title
             cardSetMO?.allCardsCount = Int32(newSet.allCardsCount)
             cardSetMO?.learnedCardsCount = Int32(newSet.learnedCardsCount)

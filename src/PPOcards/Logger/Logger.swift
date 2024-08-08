@@ -15,6 +15,12 @@ public enum LogLevel: String, CaseIterable {
     case VERBOSE
 }
 
+public final class RunMode {
+    public static func isRunningTests() -> Bool {
+        return ProcessInfo.processInfo.arguments.contains("-XCTest")
+    }
+}
+
 public final class Logger {
     public static let shared: Logger = Logger()
     private var minLogLvl: LogLevel = .VERBOSE

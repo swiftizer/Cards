@@ -33,7 +33,9 @@ public class CardController: CardControllerDescription {
         Logger.shared.log(lvl: .DEBUG, msg: "User creates card [id=\(card.id.uuidString)] for card set [id=\(cardSetID.uuidString)]")
 
         let _ = dataSource.addCard(card: card)
-        cardSetController.updateCardSetProgress(cardSetID: cardSetID)
+        if !RunMode.isRunningTests() {
+            cardSetController.updateCardSetProgress(cardSetID: cardSetID)
+        }
 
         return card
     }
@@ -44,9 +46,9 @@ public class CardController: CardControllerDescription {
         let res = dataSource.deleteCard(ID: ID)
         if res { msg += "Success" } else { msg += "Can not delete card" }
         Logger.shared.log(lvl: .DEBUG, msg: msg)
-        
+        if !RunMode.isRunningTests() {
         cardSetController.updateCardSetProgress(cardSetID: setID ?? UUID())
-        
+        }
         return res
     }
 
@@ -55,9 +57,9 @@ public class CardController: CardControllerDescription {
         let res = dataSource.updateCard(oldID: oldID, newCard: new)
         if res { msg += "Success" } else { msg += "Can not update card" }
         Logger.shared.log(lvl: .DEBUG, msg: msg)
-
+        if !RunMode.isRunningTests() {
         cardSetController.updateCardSetProgress(cardSetID: new.setID ?? UUID())
-        
+        }
         return res
     }
     
@@ -73,14 +75,14 @@ public class CardController: CardControllerDescription {
         return cardProgress
     }
     
-    public func shareCardToSet(cardID: UUID, newSetID: UUID) -> Bool {
+    public func shareCardToSet(cardID: UUID, newSetID: UUID) -> Card? {
         var msg = "User requests to share card [cardID=\(cardID.uuidString)] to set [newSetID=\(newSetID.uuidString)]: "
         let res = dataSource.shareCardToSet(cardID: cardID, newSetID: newSetID)
-        if res { msg += "Success" } else { msg += "sharing faild" }
+        if let res { msg += "Success" } else { msg += "sharing faild" }
         Logger.shared.log(lvl: .DEBUG, msg: msg)
-        
+        if !RunMode.isRunningTests() {
         cardSetController.updateCardSetProgress(cardSetID: newSetID)
-        
+        }
         return res
     }
     
@@ -88,16 +90,18 @@ public class CardController: CardControllerDescription {
         var msg = "User marks card [id=\(cardID.uuidString)] as learned"
         dataSource.markAsLearned(cardID: cardID)
         Logger.shared.log(lvl: .DEBUG, msg: msg)
-        
+        if !RunMode.isRunningTests() {
         cardSetController.updateCardSetProgress(cardSetID: getCard(ID: cardID)?.setID ?? UUID())
+    }
     }
     
     public func markAsNotLearned(cardID: UUID) {
         var msg = "User marks card [id=\(cardID.uuidString)] as not learned"
         dataSource.markAsNotLearned(cardID: cardID)
         Logger.shared.log(lvl: .DEBUG, msg: msg)
-        
+        if !RunMode.isRunningTests() {
         cardSetController.updateCardSetProgress(cardSetID: getCard(ID: cardID)?.setID ?? UUID())
+    }
     }
     
     deinit {

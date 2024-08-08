@@ -7,7 +7,7 @@
 		<key>API V1.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>21</integer>
+			<integer>23</integer>
 		</dict>
 		<key>BasicOperation (Playground) 1.xcscheme</key>
 		<dict>
@@ -29,6 +29,11 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>9</integer>
+		</dict>
+		<key>Benchmark.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
 		</dict>
 		<key>Core.xcscheme_^#shared#^_</key>
 		<dict>
@@ -52,7 +57,7 @@
 		<key>DBPostgres.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>23</integer>
+			<integer>21</integer>
 		</dict>
 		<key>DBRealm.xcscheme_^#shared#^_</key>
 		<dict>
@@ -201,7 +206,7 @@
 		<key>Services.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>19</integer>
+			<integer>24</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -252,6 +257,11 @@
 			<true/>
 		</dict>
 		<key>FAFC66D72A0185710040B32A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FAFF79842B25D2ED00B2174B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

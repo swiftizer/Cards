@@ -30,7 +30,7 @@ export const useCreateCardSetModel = (cardSetApiService: CardSetService, { onSuc
             setCardSetName("");
             onSuccess?.();
         } catch (err) {
-            console.log("Ошибка при создании набора карточек");
+            console.log("");
         }
     };
 

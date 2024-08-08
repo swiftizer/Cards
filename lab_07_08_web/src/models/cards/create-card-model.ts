@@ -22,9 +22,9 @@ export const useCreateCardModel = (apiService: CardService, { cardSetId, onSucce
                 }
             });
 
-            onSuccess?.();
+            onSuccess?.(); 
         } catch (err) {
-            console.log("Ошибка при создании набора карточек");
+            console.log("");
         }
     };
 

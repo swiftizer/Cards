@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct CardSet: Codable {
+public struct CardSet: Codable, Equatable {
     public let id: UUID
     public var title: String
     public var allCardsCount: Int
@@ -35,7 +35,7 @@ public struct CardSet: Codable {
     }
 }
 
-public struct Card: Codable {
+public struct Card: Codable, Equatable {
     public let id: UUID
     public let setID: UUID?
     public var questionText: String?
@@ -67,9 +67,17 @@ public struct Card: Codable {
     public var description: String {
         return "  - id: \(id)\n  - setID: \(setID!)\n  - questionText: \(questionText ?? " - ")\n  - answerText: \(answerText ?? " - ")\n  - isLearned: \(isLearned)\n"
     }
+
+    public static func ==(lhs: Card, rhs: Card) -> Bool {
+        return lhs.id == rhs.id &&
+            lhs.setID == rhs.setID &&
+            lhs.questionText == rhs.questionText &&
+            lhs.answerText == rhs.answerText &&
+            lhs.isLearned == rhs.isLearned
+    }
 }
 
-public struct Settings: Codable {
+public struct Settings: Codable, Equatable {
     public var isMixed: Bool
     public var mixingInPower: Int?
     
