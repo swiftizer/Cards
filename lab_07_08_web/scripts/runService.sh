@@ -3,4 +3,4 @@
 open ../src/PPOcards/DerivedData/Build/Products/Debug-maccatalyst/PPOcards.app
 
 npm install
-npm run
+npm run start  
